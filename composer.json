@@ -17,8 +17,8 @@
         "illuminate/foundation": ">=5.0.0"
     },
     "autoload": {
-        "psr-0": {
-            "Caffeinated\\Beverage": "src/"
+        "psr-4": {
+            "Caffeinated\\Beverage\\": "src/Caffeinated/Beverage/"
         }
     },
     "extra": {
