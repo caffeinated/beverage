@@ -4,7 +4,7 @@ Caffeinated Beverage allows the means to easily configure the default paths of y
 
 Installation
 ------------
-Begin by installing the package through Composer. The best way to do this is through your terminal via Composer itself:
+Begin by installing the package through Composer. The best way to do this is through your terminal via Composer itself: 
 
 ```
 composer require caffeinated/beverage
