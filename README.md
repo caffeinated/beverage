@@ -32,7 +32,7 @@ From here, feel free to configure any paths that you'd like!
 ### Setting a Custom Config Path
 If you'd like to also move your config directory, provide the path as the second parameter when creating a new instance of the Caffeinated Beverage Application:
 
-```
+```php
 $app = new Caffeinated\Beverage\Application(
 	realpath(__DIR__.'/../'),
 	realpath(__DIR__.'/../system/config/')   // Your custom config path
