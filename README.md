@@ -1,6 +1,32 @@
 Caffeinated Beverage
 ====================
-Caffeinated Beverage allows the means to easily configure the default paths of your Laravel 5.0 application.
+Caffeinated Beverage allows the means to easily configure the default paths of your Laravel 5.0 application. This means you can take the default Laravel framework structure:
+
+```
+laravel5/
+|-- app/
+|-- bootstrap/
+|-- config/
+|-- database/
+|-- public/
+|-- resources/
+|-- storage/
+|-- tests/
+```
+
+And configure it into something like:
+
+```
+laravel5/
+|-- acme/
+|-- bootstrap/
+|-- system/
+	|-- config/
+	|-- database/
+	|-- resources/
+	|-- storage/
+	|-- tests/
+```
 
 Installation
 ------------
