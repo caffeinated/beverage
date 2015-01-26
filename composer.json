@@ -1,0 +1,30 @@
+{
+    "name": "caffeinated/beverage",
+    "description": "Caffeinated Beverage provides the means to customize Laravel's app structure.",
+    "keywords": ["laravel", "caffeinated", "beverage"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shea Lewis",
+            "email": "shea.lewis89@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": ">=5.0.0",
+        "illuminate/filesystem": ">=5.0.0",
+        "illuminate/config": ">=5.0.0",
+        "illuminate/foundation": ">=5.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Caffeinated\\Beverage": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
