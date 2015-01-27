@@ -66,3 +66,48 @@ $app = new Caffeinated\Beverage\Application(
 	realpath(__DIR__.'/../system/config/')   // Your custom config path
 );
 ```
+
+### Changing The Bootstrap Path
+Caffeinated Beverage does not provide the means to change your bootstrap directory path, **because** it's a simple edit you need to make within your *public* `index.php` file. You'll be wanting to change the following two `require` paths:
+
+```php
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader for
+| our application. We just need to utilize it! We'll simply require it
+| into the script here so that we don't have to worry about manual
+| loading any of our classes later on. It feels nice to relax.
+|
+*/
+
+require __DIR__.'/../bootstrap/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let us turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight our users.
+|
+*/
+
+$app = require_once __DIR__.'/../bootstrap/app.php';
+```
+
+So if you'd like to consolidate your bootstrap directory within a systems directory, your paths would be the following:
+
+```php
+require __DIR__.'/../system/bootstrap/autoload.php';
+```
+
+and
+
+```php
+$app = require_once __DIR__.'/../system/bootstrap/app.php';
+```
