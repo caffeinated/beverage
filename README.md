@@ -68,7 +68,10 @@ $app = new Caffeinated\Beverage\Application(
 ```
 
 ### Changing The Bootstrap Path
-Caffeinated Beverage does not provide the means to change your bootstrap directory path, **because** it's a simple edit you need to make within your *public* `index.php` file. You'll be wanting to change the following two `require` paths:
+Caffeinated Beverage does not provide the means to change your bootstrap directory path, **because** it's a simple edit you need to make within a few of your application files (don't worry, it's nothing complicated).
+
+#### Step 1: Updating `public/index.php`
+First off, you'll be wanting to change the following two `require` paths within your `public/index.php` file:
 
 ```php
 /*
@@ -111,3 +114,46 @@ and
 ```php
 $app = require_once __DIR__.'/../system/bootstrap/app.php';
 ```
+
+#### Step 2: Updating `bootstrap/app.php`
+Secondly, open your `bootstrap/app.php` file and update the relevant path to your application base:
+
+```php
+$app = new Caffeinated\Beverage\Application(
+	realpath(__DIR__.'/../')                   // Update this path
+);
+```
+
+#### Step 3: Updating `bootstrap/autoload.php`
+Lastly, open your `bootstrap/autoload.php` file and update both the *Composer autoload* and *compiled class* paths:
+
+```php
+/*
+|--------------------------------------------------------------------------
+| Register The Composer Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application. We just need to utilize it! We'll require it
+| into the script here so that we do not have to worry about the
+| loading of any our classes "manually". Feels great to relax.
+|
+*/
+
+require __DIR__.'/../vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Include The Compiled Class File
+|--------------------------------------------------------------------------
+|
+| To dramatically increase your application's performance, you may use a
+| compiled class file which contains all of the classes commonly used
+| by a request. The Artisan "optimize" is used to create this file.
+|
+*/
+
+$compiledPath = __DIR__.'/../storage/framework/compiled.php';
+```
+
+That should be it! Simply fire up your app to verify.
