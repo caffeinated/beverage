@@ -103,18 +103,6 @@ require __DIR__.'/../bootstrap/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 ```
 
-So if you'd like to consolidate your bootstrap directory within a systems directory, your paths would be the following:
-
-```php
-require __DIR__.'/../system/bootstrap/autoload.php';
-```
-
-and
-
-```php
-$app = require_once __DIR__.'/../system/bootstrap/app.php';
-```
-
 #### Step 2: Updating `bootstrap/app.php`
 Secondly, open your `bootstrap/app.php` file and update the relevant path to your application base:
 
