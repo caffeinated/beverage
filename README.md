@@ -68,7 +68,11 @@ $app = new Caffeinated\Beverage\Application(
 ```
 
 ### Changing The Bootstrap Path
-Caffeinated Beverage does not provide the means to change your bootstrap directory path, **because** it's a simple edit you need to make within a few of your application files (don't worry, it's nothing complicated).
+Caffeinated Beverage does not provide the means to change your bootstrap directory path, **because** it's a simple edit you need to make within the three following files (don't worry, it's nothing complicated):
+
+- `public/index.php`
+- `bootstrap/app.php`
+- `bootstrap/autoload.php`
 
 #### Step 1: Updating `public/index.php`
 First off, you'll be wanting to change the following two `require` paths within your `public/index.php` file:
