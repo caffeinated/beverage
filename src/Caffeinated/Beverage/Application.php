@@ -8,7 +8,7 @@ class Application extends \Illuminate\Foundation\Application
 	 *
 	 * @var array
 	 */
-	protected $path;
+	protected $beverage;
 
 	/**
 	 * Create a new Caffeinated Beverage application instance.
@@ -20,7 +20,7 @@ class Application extends \Illuminate\Foundation\Application
 	{
 		if ($basePath) $this->setBasePath($basePath);
 
-		$this->path = $this->loadConfig($configPath);
+		$this->beverage = $this->loadConfig($configPath);
 
 		parent::__construct($basePath);
 	}
@@ -32,7 +32,7 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	public function path()
 	{
-		return $this->basePath.'/'.$this->path['app'];
+		return $this->basePath.'/'.$this->beverage['app_path'];
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	public function configPath()
 	{
-		return $this->basePath.'/'.$this->path['config'];
+		return $this->basePath.'/'.$this->beverage['config_path'];
 	}
 
 	/**
@@ -52,7 +52,7 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	public function databasePath()
 	{
-		return $this->basePath.'/'.$this->path['database'];
+		return $this->basePath.'/'.$this->beverage['database_path'];
 	}
 
 	/**
@@ -62,7 +62,7 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	public function langPath()
 	{
-		return $this->basePath.'/'.$this->path['lang'];
+		return $this->basePath.'/'.$this->beverage['lang_path'];
 	}
 
 	/**
@@ -72,7 +72,7 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	public function publicPath()
 	{
-		return $this->basePath.'/'.$this->path['public'];
+		return $this->basePath.'/'.$this->beverage['public_path'];
 	}
 
 	/**
@@ -83,16 +83,24 @@ class Application extends \Illuminate\Foundation\Application
 	public function storagePath()
 	{
 
-		return $this->basePath.'/'.$this->path['storage'];
+		return $this->basePath.'/'.$this->beverage['storage_path'];
 	}
 
-
-
+	/**
+	 * Manually load our beverage config file. We need to do this since this
+	 * file is loaded before the config service provider is kicked in.
+	 *
+	 * @return array
+	 */
 	protected function loadConfig($customConfigPath = null)
 	{
+		if (is_null($customConfigPath)) {
+			$customConfigPath = $this->basePath.'/config';
+		}
+
 		$beverageConfigPath = realpath(__DIR__.'/../../config');
-		$beverageConfigFile = $beverageConfigPath.'/paths.php';
-		$customConfigFile   = $customConfigPath.'/caffeinated/paths.php';
+		$beverageConfigFile = $beverageConfigPath.'/beverage.php';
+		$customConfigFile   = $customConfigPath.'/beverage.php';
 
 		$customConfig   = [];
 		$beverageConfig = include($beverageConfigFile);

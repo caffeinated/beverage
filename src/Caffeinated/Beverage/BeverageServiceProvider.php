@@ -13,13 +13,16 @@ class BeverageServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
-	 * Array of packages config files.
+	 * Boot the service provider.
 	 *
-	 * @var array
+	 * @return void
 	 */
-	protected $configFiles = [
-		'paths'
-	];
+	public function boot()
+	{
+		$this->publishes([
+			__DIR__.'/../../config/beverage.php' => config_path('beverage.php'),
+		], 'config');
+	}
 
 	/**
 	 * Register the service provider.
@@ -28,27 +31,8 @@ class BeverageServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->registerResources();
-	}
-
-	/**
-	 * Register the package resources.
-	 *
-	 * @return void
-	 */
-	protected function registerResources()
-	{
-		foreach ($this->configFiles as $configFile) {
-			$userConfigFile    = app()->configPath().'/caffeinated/'.$configFile.'.php';
-			$packageConfigFile = __DIR__.'/../../config/'.$configFile.'.php';
-			$config            = $this->app['files']->getRequire($packageConfigFile);
-
-			if (file_exists($userConfigFile)) {
-				$userConfig = $this->app['files']->getRequire($userConfigFile);
-				$config     = array_replace_recursive($config, $userConfig);
-			}
-
-			$this->app['config']->set('caffeinated::'.$configFile, $config);
-		}		
+		$this->mergeConfigFrom(
+			__DIR__.'/../../config/beverage.php', 'beverage'
+		);
 	}
 }

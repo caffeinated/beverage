@@ -10,7 +10,7 @@ return [
 	| Path to the application "app" directory.
 	*/
 
-	'app' => 'app',
+	'app_path' => 'app',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
 	| Path to the application configuration files.
 	*/
 
-	'config' => 'config',
+	'config_path' => 'config',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ return [
 	| Path to the database directory.
 	*/
 
-	'database' => 'database',
+	'database_path' => 'database',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
 	| Path to the language files.
 	*/
 
-	'lang' => 'resources/lang',
+	'lang_path' => 'resources/lang',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
 	| Path to the public / web directory.
 	*/
 
-	'public' => 'public',
+	'public_path' => 'public',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -60,6 +60,6 @@ return [
 	| Path to the storage directory.
 	*/
 
-	'storage' => 'storage'
+	'storage_path' => 'storage'
 
 ];
