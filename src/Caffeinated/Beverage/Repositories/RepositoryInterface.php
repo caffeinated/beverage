@@ -4,11 +4,11 @@ namespace Caffeinated\Beverage\Repositories;
 interface RepositoryInterface
 {
 	// Common CRUD methods
-	public function getAll(array $orderBy = array('id', 'asc'));
-	public function getAllPaginated(array $orderBy = array('id', 'asc'), $perPage = 25);
+	public function getAll($orderBy = array('id', 'asc'));
+	public function getAllPaginated($orderBy = array('id', 'asc'), $perPage = 25);
 	public function find($id);
-	public function store(array $request);
-	public function update($id, array $request);
+	public function store($request);
+	public function update($id, $request);
 	public function delete($id);
 
 	// Additional candy methods
