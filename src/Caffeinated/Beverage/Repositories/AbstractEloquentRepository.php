@@ -1,23 +1,27 @@
 <?php
 namespace Caffeinated\Beverage\Repositories;
 
-abstract class EloquentRepository implements Repository
+use Illuminate\Contracts\Container\Container;
+
+abstract class AbstractEloquentRepository implements RepositoryInterface
 {
 	/**
-	 * @var Model $model
+	 * @var Container
+	 */
+	protected $app;
+
+	/**
+	 * @var Model
 	 */
 	protected $model;
 
 	/**
-	 * @var string $namespace
-	 */
-	protected $namespace;
-
-	/**
 	 * Constructor method.
 	 */
-	public function __construct()
+	public function __construct(Container $app)
 	{
+		$this->app = $app;
+
 		$this->loadModel();
 	}
 
@@ -28,9 +32,7 @@ abstract class EloquentRepository implements Repository
 	 */
 	protected function loadModel()
 	{
-		if (class_exists) {
-			$this->model = new $this->namespace;
-		}
+		$this->model = $this->app->make($this->namespace);
 	}
 
 	/**
@@ -39,9 +41,9 @@ abstract class EloquentRepository implements Repository
 	 * @param  array $orderBy
 	 * @return mixed
 	 */
-	public function getAll(array $orderBy = array('id', 'asc'))
+	public function getAll($orderBy = array('id', 'asc'))
 	{
-		lists($column, $order) = $orderBy;
+		list($column, $order) = $orderBy;
 
 		return $this->model->orderBy($column, $order)->get();
 	}
@@ -52,9 +54,9 @@ abstract class EloquentRepository implements Repository
 	 * @param  array $orderBy
 	 * @return mixed
 	 */
-	public function getAllPaginated(array $orderBy = array('id', 'asc'), $perPage = 25)
+	public function getAllPaginated($orderBy = array('id', 'asc'), $perPage = 25)
 	{
-		lists($column, $order) = $orderBy;
+		list($column, $order) = $orderBy;
 
 		return $this->model->orderBy($column, $order)->paginate($perPage);
 	}

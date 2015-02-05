@@ -1,7 +1,7 @@
 <?php
 namespace Caffeinated\Beverage\Repositories;
 
-interface Repository
+interface RepositoryInterface
 {
 	// Common CRUD methods
 	public function getAll(array $orderBy = array('id', 'asc'));
