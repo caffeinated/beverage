@@ -16,6 +16,11 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	protected $model;
 
 	/**
+	 * @var array
+	 */
+	protected $withRelationships = [];
+
+	/**
 	 * Constructor method.
 	 */
 	public function __construct(Container $app)
@@ -35,6 +40,26 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 		$this->model = $this->app->make($this->namespace);
 	}
 
+	protected function newQuery()
+	{
+		$query = $this->model->newQuery();
+
+		foreach ($this->withRelationships as $relationship) {
+			$query->with($relationship);
+		}
+
+		return $query;
+	}
+
+	public function with($relationship)
+	{
+		if (! in_array($relationship, $this->withRelationships)) {
+			$this->withRelationships[] = $relationship;
+		}
+
+		return $this;
+	}
+
 	/**
 	 * Get all resources.
 	 *
@@ -45,7 +70,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	{
 		list($column, $order) = $orderBy;
 
-		return $this->model->orderBy($column, $order)->get();
+		return $this->newQuery()->orderBy($column, $order)->get();
 	}
 
 	/**
@@ -58,7 +83,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	{
 		list($column, $order) = $orderBy;
 
-		return $this->model->orderBy($column, $order)->paginate($perPage);
+		return $this->newQuery()->orderBy($column, $order)->paginate($perPage);
 	}
 
 	/**
@@ -69,7 +94,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	public function find($id)
 	{
-		return $this->model->find($id);
+		return $this->newQuery()->find($id);
 	}
 
 	/**
