@@ -22,6 +22,8 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 
 	/**
 	 * Constructor method.
+	 * 
+	 * @param Container  $app
 	 */
 	public function __construct(Container $app)
 	{
@@ -40,6 +42,11 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 		$this->model = $this->app->make($this->namespace);
 	}
 
+	/**
+	 * Create a new newQuery instance with eager loaded relationships.
+	 *
+	 * @return newQuery
+	 */
 	protected function newQuery()
 	{
 		$query = $this->model->newQuery();
@@ -51,10 +58,22 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 		return $query;
 	}
 
-	public function with($relationship)
+	/**
+	 * Assign eager loading relationships.
+	 *
+	 * @param  string|array  $relationships
+	 * @return AbstractEloquentRepository
+	 */
+	public function with($relationships)
 	{
-		if (! in_array($relationship, $this->withRelationships)) {
-			$this->withRelationships[] = $relationship;
+		if (! is_array($relationships)) {
+			$relationships = explode(', ', $relationships);
+		}
+
+		if (! in_array($relationships, $this->withRelationships)) {
+			foreach ($relationships as $with) {
+				$this->withRelationships[] = $with;
+			}			
 		}
 
 		return $this;
@@ -63,7 +82,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	/**
 	 * Get all resources.
 	 *
-	 * @param  array $orderBy
+	 * @param  array  $orderBy
 	 * @return mixed
 	 */
 	public function getAll($orderBy = array('id', 'asc'))
@@ -76,7 +95,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	/**
 	 * Get all resources.
 	 *
-	 * @param  array $orderBy
+	 * @param  array  $orderBy
 	 * @return mixed
 	 */
 	public function getAllPaginated($orderBy = array('id', 'asc'), $perPage = 25)
@@ -89,7 +108,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	/**
 	 * Find a resource by ID.
 	 *
-	 * @param  int $id
+	 * @param  int  $id
 	 * @return mixed
 	 */
 	public function find($id)
@@ -100,7 +119,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	/**
 	 * Store a new resource.
 	 *
-	 * @param  mixed $request
+	 * @param  mixed  $request
 	 * @return mixed
 	 */
 	public function store($request)
@@ -111,8 +130,8 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	/**
 	 * Update an existing resource.
 	 *
-	 * @param  int   $id
-	 * @param  mixed $request
+	 * @param  int    $id
+	 * @param  mixed  $request
 	 * @return mixed
 	 */
 	public function update($id, $request)
@@ -123,7 +142,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	/**
 	 * Find and delete a resource by ID.
 	 *
-	 * @param  int $id
+	 * @param  int  $id
 	 * @return bool
 	 */
 	public function delete($id)
