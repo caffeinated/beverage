@@ -9,6 +9,7 @@ interface RepositoryInterface
 	|--------------------------------------------------------------------------
 	|
 	*/
+
 	public function delete($id);
 	public function find($id);
 	public function getAll($orderBy = array('id', 'asc'));
@@ -23,5 +24,6 @@ interface RepositoryInterface
 	|--------------------------------------------------------------------------
 	|
 	*/
+
 	public function dropdown($name, $value);
 }
