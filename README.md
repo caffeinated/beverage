@@ -20,4 +20,4 @@ Begin by installing the package through Composer. The best way to do this is thr
 composer require caffeinated/beverage
 ```
 
-And that's it! With your coffee in reach, start building out some awesome web apps!
+And that's it! With your coffee in reach, start building out some awesome web applications!
