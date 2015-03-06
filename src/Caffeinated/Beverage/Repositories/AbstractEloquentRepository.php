@@ -22,7 +22,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 
 	/**
 	 * Constructor method.
-	 * 
+	 *
 	 * @param Container  $app
 	 */
 	public function __construct(Container $app)
@@ -32,51 +32,33 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 		$this->loadModel();
 	}
 
+	/*
+	|--------------------------------------------------------------------------
+	| Common CRUD methods
+	|--------------------------------------------------------------------------
+	|
+	*/
+
 	/**
-	 * Instantiate the model class.
+	 * Find and delete a resource by ID.
 	 *
-	 * @return null
+	 * @param  int  $id
+	 * @return bool
 	 */
-	protected function loadModel()
+	public function delete($id)
 	{
-		$this->model = $this->app->make($this->namespace);
+		return $this->model->destroy($id);
 	}
 
 	/**
-	 * Create a new newQuery instance with eager loaded relationships.
+	 * Find a resource by ID.
 	 *
-	 * @return newQuery
+	 * @param  int  $id
+	 * @return mixed
 	 */
-	protected function newQuery()
+	public function find($id)
 	{
-		$query = $this->model->newQuery();
-
-		foreach ($this->withRelationships as $relationship) {
-			$query->with($relationship);
-		}
-
-		return $query;
-	}
-
-	/**
-	 * Assign eager loading relationships.
-	 *
-	 * @param  string|array  $relationships
-	 * @return AbstractEloquentRepository
-	 */
-	public function with($relationships)
-	{
-		if (! is_array($relationships)) {
-			$relationships = explode(', ', $relationships);
-		}
-
-		if (! in_array($relationships, $this->withRelationships)) {
-			foreach ($relationships as $with) {
-				$this->withRelationships[] = $with;
-			}			
-		}
-
-		return $this;
+		return $this->newQuery()->find($id);
 	}
 
 	/**
@@ -106,17 +88,6 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	}
 
 	/**
-	 * Find a resource by ID.
-	 *
-	 * @param  int  $id
-	 * @return mixed
-	 */
-	public function find($id)
-	{
-		return $this->newQuery()->find($id);
-	}
-
-	/**
 	 * Store a new resource.
 	 *
 	 * @param  mixed  $request
@@ -140,15 +111,32 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	}
 
 	/**
-	 * Find and delete a resource by ID.
+	 * Assign eager loading relationships.
 	 *
-	 * @param  int  $id
-	 * @return bool
+	 * @param  string|array  $relationships
+	 * @return AbstractEloquentRepository
 	 */
-	public function delete($id)
+	public function with($relationships)
 	{
-		return $this->model->destroy($id);
+		if (! is_array($relationships)) {
+			$relationships = explode(', ', $relationships);
+		}
+
+		if (! in_array($relationships, $this->withRelationships)) {
+			foreach ($relationships as $with) {
+				$this->withRelationships[] = $with;
+			}
+		}
+
+		return $this;
 	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Additional Candy Methods
+	|--------------------------------------------------------------------------
+	|
+	*/
 
 	/**
 	 * Returns an array suitable for dropdowns.
@@ -158,5 +146,38 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	public function dropdown($name, $value)
 	{
 		return $this->model->lists($name, $value);
+	}
+
+	/*
+	|--------------------------------------------------------------------------
+	| Protected Helper Methods
+	|--------------------------------------------------------------------------
+	|
+	*/
+
+	/**
+	 * Instantiate the model class.
+	 *
+	 * @return null
+	 */
+	protected function loadModel()
+	{
+		$this->model = $this->app->make($this->namespace);
+	}
+
+	/**
+	 * Create a new newQuery instance with eager loaded relationships.
+	 *
+	 * @return newQuery
+	 */
+	protected function newQuery()
+	{
+		$query = $this->model->newQuery();
+
+		foreach ($this->withRelationships as $relationship) {
+			$query->with($relationship);
+		}
+
+		return $query;
 	}
 }
