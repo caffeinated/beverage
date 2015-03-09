@@ -62,6 +62,17 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	}
 
 	/**
+	 * Find a resource by its slug.
+	 *
+	 * @param  string  $slug
+	 * @return mixed
+	 */
+	public function findBySlug($slug)
+	{
+		return $this->newQuery()->where('slug', $slug)->firstOrFail();
+	}
+
+	/**
 	 * Get all resources.
 	 *
 	 * @param  array  $orderBy
