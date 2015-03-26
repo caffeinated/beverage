@@ -2,6 +2,7 @@
 namespace Caffeinated\Beverage\Repositories;
 
 use Illuminate\Contracts\Container\Container;
+use Illuminate\Events\Dispatcher;
 
 abstract class AbstractEloquentRepository implements RepositoryInterface
 {
@@ -21,13 +22,19 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	protected $withRelationships = [];
 
 	/**
+	 * @var array
+	 */
+	protected $fireEvents = [];
+
+	/**
 	 * Constructor method.
 	 *
 	 * @param Container  $app
 	 */
-	public function __construct(Container $app)
+	public function __construct(Container $app, Dispatcher $event)
 	{
-		$this->app = $app;
+		$this->app   = $app;
+		$this->event = $event;
 
 		$this->loadModel();
 	}
@@ -47,7 +54,13 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	public function delete($id)
 	{
-		return $this->model->destroy($id);
+		$this->fireEvent('destroying', [$id]);
+
+		$destroyed = $this->model->destroy($id);
+
+		$this->fireEvent('destroyed', [$id, $destroyed]);
+
+		return $destroyed;
 	}
 
 	/**
@@ -106,7 +119,13 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	public function store($request)
 	{
-		return $this->model->create($request);
+		$this->fireEvent('creating', [$request]);
+
+		$created = $this->model->create($request);
+
+		$this->fireEvent('created', [$created]);
+
+		return $created;
 	}
 
 	/**
@@ -118,7 +137,13 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	public function update($id, $request)
 	{
-		return $this->find($id)->update($request);
+		$this->fireEvent('updating', [$id, $request]);
+
+		$updated = $this->find($id)->update($request);
+
+		$this->fireEvent('updated', [$id, $updated]);
+
+		return $updated;
 	}
 
 	/**
@@ -190,5 +215,23 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 		}
 
 		return $query;
+	}
+
+	/**
+	 * Fire off an event if one is defined.
+	 *
+	 * @param  string  $event
+	 * @param  array   $data
+	 * @return mixed
+	 */
+	protected function fireEvent($event, $data)
+	{
+		$fireableEvent = $this->fireEvents[$event];
+
+		if (! empty($fireableEvent)) {
+			return $this->event->fire($fireableEvent, $data);
+		}
+
+		return null;
 	}
 }
