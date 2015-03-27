@@ -54,13 +54,13 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	public function delete($id)
 	{
-		$this->fireEvent('destroying', [$id]);
+		$this->fireEvent('deleting', [$id]);
 
-		$destroyed = $this->model->destroy($id);
+		$deleted = $this->model->destroy($id);
 
-		$this->fireEvent('destroyed', [$id, $destroyed]);
+		$this->fireEvent('deleted', [$id, $deleted]);
 
-		return $destroyed;
+		return $deleted;
 	}
 
 	/**
@@ -226,9 +226,9 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	protected function fireEvent($event, $data)
 	{
-		$fireableEvent = $this->fireEvents[$event];
+		$fireableEvent = isset($this->fireEvents[$event]) ? $this->fireEvents[$event] : null;
 
-		if (! empty($fireableEvent)) {
+		if (! is_null($fireableEvent)) {
 			return $this->event->fire($fireableEvent, $data);
 		}
 
