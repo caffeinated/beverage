@@ -86,6 +86,16 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	}
 
 	/**
+	 * Get the first resource or fail.
+	 *
+	 * @return mixed
+	 */
+	public function firstOrFail()
+	{
+		return $this->newQuery()->firstOrFail();
+	}
+
+	/**
 	 * Get all resources.
 	 *
 	 * @param  array  $orderBy
