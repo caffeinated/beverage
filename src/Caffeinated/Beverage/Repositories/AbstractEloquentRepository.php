@@ -82,7 +82,7 @@ abstract class AbstractEloquentRepository implements RepositoryInterface
 	 */
 	public function findBySlug($slug)
 	{
-		return $this->newQuery()->where('slug', $slug)->firstOrFail();
+		return $this->newQuery()->where('slug', $slug)->first();
 	}
 
 	/**
