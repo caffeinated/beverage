@@ -1,7 +1,7 @@
 {
     "name": "caffeinated/beverage",
-    "description": "Caffeinated Beverage provides the means to customize Laravel's app structure.",
-    "keywords": ["laravel", "caffeinated", "beverage"],
+    "description": "Laravel 5 support package (common repository and ability to change app structure)",
+    "keywords": ["laravel", "caffeinated", "beverage", "repositories", "structure"],
     "license": "MIT",
     "authors": [
         {
@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "5.0.*",
-        "illuminate/filesystem": "5.0.*",
-        "illuminate/config": "5.0.*",
-        "illuminate/foundation": "5.0.*"
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.*",
+        "illuminate/filesystem": "5.1.*",
+        "illuminate/config": "5.1.*",
+        "illuminate/foundation": "5.1.*"
     },
     "autoload": {
         "psr-4": {
