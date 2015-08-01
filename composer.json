@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Caffeinated\\Beverage\\": "src/Caffeinated/Beverage/"
+            "Caffeinated\\Beverage\\": "src/"
         }
     }
 }
