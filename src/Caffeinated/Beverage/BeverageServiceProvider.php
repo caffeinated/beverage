@@ -3,6 +3,14 @@ namespace Caffeinated\Beverage;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Caffeinated Beverage Service Provider
+ *
+ * @author    Caffeinated Dev Team
+ * @copyright Copyright (c) 2015, Caffeinated
+ * @license   https://tldrlegal.com/license/mit-license MIT License
+ * @package   Caffeinated\Beverage
+ */
 class BeverageServiceProvider extends ServiceProvider {
 
 	/**

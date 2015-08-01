@@ -4,6 +4,14 @@ namespace Caffeinated\Beverage\Repositories;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Events\Dispatcher;
 
+/**
+ * Abstract Eloquent repository class
+ *
+ * @author    Caffeinated Dev Team
+ * @copyright Copyright (c) 2015, Caffeinated
+ * @license   https://tldrlegal.com/license/mit-license MIT License
+ * @package   Caffeinated\Beverage
+ */
 abstract class AbstractEloquentRepository implements RepositoryInterface
 {
 	/**

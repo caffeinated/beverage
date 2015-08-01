@@ -4,6 +4,14 @@ namespace Caffeinated\Beverage\Models;
 use Config;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
+/**
+ * Base model class
+ *
+ * @author    Caffeinated Dev Team
+ * @copyright Copyright (c) 2015, Caffeinated
+ * @license   https://tldrlegal.com/license/mit-license MIT License
+ * @package   Caffeinated\Beverage
+ */
 class Model extends Eloquent
 {
 	public function __call($method, $parameters)

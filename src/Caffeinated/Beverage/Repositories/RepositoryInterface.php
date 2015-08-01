@@ -1,6 +1,14 @@
 <?php
 namespace Caffeinated\Beverage\Repositories;
 
+/**
+ * Base Repository contract
+ *
+ * @author    Caffeinated Dev Team
+ * @copyright Copyright (c) 2015, Caffeinated
+ * @license   https://tldrlegal.com/license/mit-license MIT License
+ * @package   Caffeinated\Beverage
+ */
 interface RepositoryInterface
 {
 	/*
