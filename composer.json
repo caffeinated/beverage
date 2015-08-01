@@ -1,14 +1,20 @@
 {
     "name": "caffeinated/beverage",
-    "description": "Laravel 5 support package (common repository and ability to change app structure)",
+    "description": "Laravel 5 support package",
     "keywords": ["laravel", "caffeinated", "beverage", "repositories", "structure"],
     "license": "MIT",
     "authors": [
         {
             "name": "Shea Lewis",
             "email": "shea.lewis89@gmail.com"
+        },
+        {
+            "name": "Robin Radic",
+            "email": "robin@radic.nl"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
         "illuminate/support": "5.1.*",
