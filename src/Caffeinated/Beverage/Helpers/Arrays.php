@@ -85,6 +85,34 @@ class Arrays
 		return $array;
 	}
 
+	/**
+	 * Remove one or more array key items from the given array using "dot" notation.
+	 *
+	 * @param  array         $array
+	 * @param  array|string  $keys
+	 * @return void
+	 */
+	public static function forget(&$array, $keys)
+	{
+		$original =& $array;
+
+		foreach ((array) $keys as $key) {
+			$parts = explode('.', $key);
+
+			while (count($parts) > 1) {
+				$part = array_shift($parts);
+
+				if (isset($array[$part]) and is_array($array[$part])) {
+					$array =& $array[$part];
+				}
+
+				unset($array[array_shift($parts)]);
+
+				$array =& $original;
+			}
+		}
+	}
+
 	public static function __callStatic($name, $arguments)
 	{
 		return call_user_func_array([new static(), $name], $arguments);
