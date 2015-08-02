@@ -11,7 +11,7 @@ use Webmozart\PathUtil\Path as BasePath;
  * @license   https://tldrlegal.com/license/mit-license MIT License
  * @package   Caffeinated\Beverage
  */
-class Path extend BasePath
+class Path extends BasePath
 {
 	/**
 	 * Joins a split file system path.
