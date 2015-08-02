@@ -44,7 +44,7 @@ trait MultiSingleton
     public static function getInstance($name = 'default')
     {
         if (isset(static::$instances[$name])) {
-            return static::$instance[$name];
+            return static::$instances[$name];
         }
 
         $instance = new static();
