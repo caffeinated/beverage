@@ -27,9 +27,7 @@ class BeverageServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->publishes([
-			__DIR__.'/../config/beverage.php' => config_path('beverage.php'),
-		], 'config');
+		$this->publishes([__DIR__.'/../config/beverage.php' => config_path('beverage.php')], 'config');
 	}
 
 	/**
@@ -39,8 +37,8 @@ class BeverageServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->mergeConfigFrom(
-			__DIR__.'/../config/beverage.php', 'beverage'
-		);
+		$this->mergeConfigFrom(__DIR__.'/../config/beverage.php', 'beverage');
+
+		require_once(__DIR__.'/helpers.php');
 	}
 }
