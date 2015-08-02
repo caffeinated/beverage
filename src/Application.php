@@ -26,7 +26,9 @@ class Application extends \Illuminate\Foundation\Application
 	 */
 	public function __construct($basePath = null, $configPath = null)
 	{
-		if ($basePath) $this->setBasePath($basePath);
+		if ($basePath) {
+			$this->setBasePath($basePath);
+		}
 
 		$this->beverage = $this->loadConfig($configPath);
 
