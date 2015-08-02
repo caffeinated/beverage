@@ -1,7 +1,6 @@
 <?php
 namespace Caffeinated\Beverage;
 
-use App;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
