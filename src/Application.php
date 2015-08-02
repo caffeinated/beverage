@@ -106,7 +106,7 @@ class Application extends \Illuminate\Foundation\Application
 			$customConfigPath = $this->basePath.'/config';
 		}
 
-		$beverageConfigPath = realpath(__DIR__.'/../../config');
+		$beverageConfigPath = realpath(__DIR__.'/../config');
 		$beverageConfigFile = $beverageConfigPath.'/beverage.php';
 		$customConfigFile   = $customConfigPath.'/beverage.php';
 
