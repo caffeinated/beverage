@@ -33,7 +33,7 @@ trait ValidableService
 	 * Sets the validators
 	 *
 	 * @param  mixed  $validators
-	 * @return mixed
+	 * @return ValidableService
 	 */
 	public function setValidators($validators)
 	{
@@ -46,7 +46,7 @@ trait ValidableService
 	 * Run the validation checks
 	 *
 	 * @param  array  $data
-	 * @return bool
+	 * @return bool|null
 	 * @throws \Exception
 	 */
 	public function runValidationChecks(array $data)

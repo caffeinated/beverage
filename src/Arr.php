@@ -96,8 +96,8 @@ class Arr
     /**
      * Remove one or more array key items from the given array using "dot" notation.
      *
-     * @param  array         $array
-     * @param  array|string  $keys
+     * @param  array   $array
+     * @param  string  $keys
      * @return void
      */
     public static function forget(&$array, $keys)
