@@ -105,7 +105,7 @@ abstract class ServiceProvider extends BaseServiceProvider
 	{
 		if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
 			foreach ($this->configFiles as $filename) {
-				$configPath = $this->dir.'/'.$this->resourcePath.'/config/'.$filename.'.php';
+				$configPath = $this->dir.'/../config/'.$filename.'.php';
 
 				$this->publishes([$configPath => config_path($filename.'.php')], 'config');
 			}
@@ -118,6 +118,7 @@ abstract class ServiceProvider extends BaseServiceProvider
 	 * Register bindings in the container.
 	 *
 	 * @return Application
+     * @todo fix migrations resourcespath thing, should be removed. check all other paths aswell
 	 */
 	public function register()
 	{
@@ -126,13 +127,13 @@ abstract class ServiceProvider extends BaseServiceProvider
 
 		if (isset($this->dir)) {
 			foreach ($this->configFiles as $filename) {
-				$configPath = Path::join($this->dir, $this->resourcesPath, 'config', $filename.'.php');
+				$configPath = Path::join($this->dir, '..', 'config', $filename.'.php');
 
 				$this->mergeConfigFrom($configPath, $filename);
 			}
 
 			foreach ($this->migrationDirs as $migrationDir) {
-				$migrationPath = Path::join($this->dir, $this->resourcesPath, $migrationDir);
+				$migrationPath = Path::join($this->dir, '..', 'database/migrations', $migrationDir);
 
 				$this->publishes([$migrationPath => base_path('/database/migrations')], 'migrations');
 			}
