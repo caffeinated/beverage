@@ -28,10 +28,10 @@ class Path extends BasePath
 		}
 
 		foreach ($arguments as $key => $argument) {
-			$arguments[$key] = String::removeRight($arguments[$key], '/');
+			$arguments[$key] = Str::removeRight($arguments[$key], '/');
 
 			if ($key > 0) {
-				$arguments[$key] = String::removeLeft($arguments[$key], '/');
+				$arguments[$key] = Str::removeLeft($arguments[$key], '/');
 			}
 		}
 
