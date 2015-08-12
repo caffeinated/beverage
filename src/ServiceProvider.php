@@ -214,9 +214,24 @@ abstract class ServiceProvider extends BaseServiceProvider
      *
      * @return array
      */
+
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
     public function provides()
     {
-        return $this->provides;
+        $provides = [];
+
+        foreach ($this->providers as $provider) {
+            $instance = $this->app->resolveProviderClass($provider);
+
+            $provides = array_merge($provides, $instance->provides());
+        }
+
+        return $provides;
     }
 
     /**

@@ -46,21 +46,16 @@ class BeverageServiceProvider extends ServiceProvider
         $config = $app->make('config');
 
         $app->singleton('fs', Filesystem::class);
-
-        if ( $config->get('caffeinated.beverage.register_stubs') )
-        {
-            $this->registerStubs();
-        }
-
-        if ( $config->get('caffeinated.beverage.helpers') )
-        {
-            require_once(realpath(__DIR__ . '/helpers.php'));
-        }
-
-
+        $this->registerStubs();
+        $this->registerHelpers();
     }
 
-    public function registerStubs()
+    protected function registerHelpers()
+    {
+        require_once(realpath(__DIR__ . '/helpers.php'));
+    }
+
+    protected function registerStubs()
     {
         $app = $this->app;
 
