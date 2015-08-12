@@ -57,6 +57,7 @@ class BeverageServiceProvider extends ServiceProvider
             require_once(realpath(__DIR__ . '/helpers.php'));
         }
 
+
     }
 
     public function registerStubs()

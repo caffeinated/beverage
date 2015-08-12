@@ -8,7 +8,6 @@
  * @package   Caffeinated\Beverage
  */
 
-use Caffeinated\Beverage\Path;
 
 if ( ! function_exists('path_join') )
 {
