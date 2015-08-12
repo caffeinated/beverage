@@ -22,7 +22,8 @@
         "illuminate/console": "5.1.*",
         "symfony/filesystem": "~2.7",
         "webmozart/path-util": "~1.0",
-        "anahkiasen/underscore-php": "2.0.*"
+        "anahkiasen/underscore-php": "2.0.*",
+        "vlucas/phpdotenv": "2.0.*"
     },
     "require-dev": {
         "caffeinated/dev": "dev-master@dev"
