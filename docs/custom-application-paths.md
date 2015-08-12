@@ -16,10 +16,12 @@ class Kernel extends HttpKernel {
     // ....
     protected function bootstrappers()
     {
-        $customAppPaths = $this->getApplication()->make(CustomApplicationPaths::class);
         // The init function allows you to set a basePath and a configPath
-        $customAppPaths->init(null, null);
-        $customAppPaths->bootstrap($this->app);
+        $this->getApplication()
+             ->make(CustomApplicationPaths::class)
+             ->init(null, null)
+             ->bootstrap($this->app);
+             
         return parent::bootstrappers();
     }
     // ....
