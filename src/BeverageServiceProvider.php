@@ -1,7 +1,7 @@
 <?php
 namespace Caffeinated\Beverage;
 
-use Illuminate\Support\ServiceProvider;
+
 
 /**
  * Caffeinated Beverage Service Provider
@@ -13,6 +13,9 @@ use Illuminate\Support\ServiceProvider;
  */
 class BeverageServiceProvider extends ServiceProvider
 {
+    protected $dir = __DIR__;
+
+    protected $configFiles = ['caffeinated.beverage'];
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -28,7 +31,7 @@ class BeverageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([__DIR__.'/../config/beverage.php' => config_path('beverage.php')], 'config');
+        #$this->publishes([__DIR__.'/../config/beverage.php' => config_path('beverage.php')], 'config');
     }
 
     /**
@@ -38,7 +41,7 @@ class BeverageServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/beverage.php', 'beverage');
+        #$this->mergeConfigFrom(__DIR__.'/../config/beverage.php', 'beverage');
 
         $this->app->singleton('fs', Filesystem::class);
 

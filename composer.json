@@ -19,12 +19,21 @@
         "illuminate/support": "5.1.*",
         "illuminate/filesystem": "5.1.*",
         "illuminate/config": "5.1.*",
+        "illuminate/console": "5.1.*",
         "symfony/filesystem": "~2.7",
         "webmozart/path-util": "~1.0"
+    },
+    "require-dev": {
+        "caffeinated/dev": "dev-master@dev"
     },
     "autoload": {
         "psr-4": {
             "Caffeinated\\Beverage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Caffeinated\\Tests\\Beverage\\": "tests/"
         }
     }
 }

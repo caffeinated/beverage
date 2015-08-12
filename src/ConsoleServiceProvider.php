@@ -26,14 +26,14 @@ abstract class ConsoleServiceProvider extends BaseServiceProvider
      *
      * @var string
      */
-    protected $namespace;
+    protected $namespace = '';
 
     /**
      * The commands to be registered.
      *
      * @var array
      */
-    protected $commands;
+    protected $commands = [];
 
     /**
      * @var string

@@ -6,28 +6,22 @@
  */
 namespace Caffeinated\Tests\Beverage;
 
-use Caffeinated\Dev\DevServiceProvider;
-use Caffeinated\Dev\Testing\AbstractTestCase;
+use Caffeinated\Dev\Testing\Traits\ServiceProviderTester;
+use Caffeinated\Tests\Beverage\Fixture\ServiceProvider;
 
 /**
- * This is the TestCase.
+ * This is the BeverageServiceProviderTest.
  *
  * @package        Caffeinated\Tests
  * @author         Caffeinated Dev Team
  * @copyright      Copyright (c) 2015, Caffeinated
  * @license        https://tldrlegal.com/license/mit-license MIT License
  */
-abstract class TestCase extends AbstractTestCase
+class ServiceProviderTest extends TestCase
 {
-    /**
-     * Get the service provider class.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
-     * @return string
-     */
+    use ServiceProviderTester;
     protected function getServiceProviderClass($app)
     {
-        return DevServiceProvider::class;
+        return ServiceProvider::class;
     }
 }

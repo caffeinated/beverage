@@ -20,4 +20,20 @@ class BeverageServiceProviderTest extends TestCase
 {
     use ServiceProviderTester;
 
+    public function testFunctionsExists()
+    {
+        $this->app->register($this->getServiceProviderClass($this->app));
+
+        $this->assertTrue(function_exists('path_join'));
+
+        $this->assertTrue(function_exists('path_is_absolute'));
+
+        $this->assertTrue(function_exists('path_is_relative'));
+
+        $this->assertTrue(function_exists('path_get_directory'));
+
+        $this->assertTrue(function_exists('path_get_extension'));
+
+        $this->assertTrue(function_exists('path_get_filename'));
+    }
 }
