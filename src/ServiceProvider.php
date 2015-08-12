@@ -22,16 +22,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $app;
 
     /**
-     * Collection of configuration files.
-     *
-     * @var array
-     */
-    protected $configFiles = [ ];
-
-    /**
      * @var string
      */
     protected $dir;
+
+
+    # RESOURCES
 
     /**
      * Path to resources directory, relative to $dir
@@ -40,15 +36,110 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected $resourcesPath = '../resources';
 
+    /**
+     * Resource destination path, relative to base_path
+     * @var string
+     */
+    protected $resourcesDestinationPath = 'resources';
+
+
+    # VIEWS
+
+    /**
+     * View destination path, relative to base_path
+     * @var string
+     */
+    protected $viewsDestinationPath = 'resources/views/vendor/{namespace}';
+
+    /**
+     * Package views path
+     * @var string
+     */
+    protected $viewsPath = '{resourcesPath}/{dirName}';
+
+    /**
+     * A collection of directories in this package containing views.
+     * ['dirName' => 'namespace']
+     * @var array
+     */
+    protected $viewDirs = [ /* 'dirName' => 'namespace' */ ];
+
+
+    # ASSETS
+
+    /**
+     * Assets destination path, relative to public_path
+     * @var string
+     */
+    protected $assetsDestinationPath = 'vendor/{namespace}';
+
+    /**
+     * Package views path
+     * @var string
+     */
+    protected $assetsPath = '{resourcesPath}/{dirName}';
+
+    /**
+     * A collection of directories in this package containing assets.
+     * ['dirName' => 'namespace']
+     * @var array
+     */
+    protected $assetDirs = [ /* 'dirName' => 'namespace' */ ];
+
+
+    # CONFIG
+
+    /**
+     * Collection of configuration files.
+     *
+     * @var array
+     */
+    protected $configFiles = [ ];
+
+    /**
+     * Path to the config directory, relative to $dir
+     * @var string
+     */
     protected $configPath = '../config';
 
-    protected $seedPath = '../database/seeds';
 
-    protected $migrationPath = '../database/migrations';
+    # DATABASE
 
-    protected $viewPath = '../resources/views';
+    /**
+     * Path to the migration destination directory, relative to database_path
+     * @var string
+     */
+    protected $migrationDestinationPath = 'migrations';
 
-    protected $assetPath = '../resources/assets';
+    /**
+     * Path to the seeds destination directory, relative to database_path
+     * @var string
+     */
+    protected $seedsDestinationPath = 'seeds';
+
+    /**
+     * Path to database directory, relative to $dir
+     *
+     * @var string
+     */
+    protected $databasePath = '../database';
+
+    /**
+     * Array of directory names/paths relative to $databasePath containing seed files.
+     *
+     * @var array
+     */
+    protected $seedDirs = [ /* 'dirName', */ ];
+
+    /**
+     * Array of directory names/paths relative to $databasePath containing migration files.
+     *
+     * @var array
+     */
+    protected $migrationDirs = [ /* 'dirName', */ ];
+
+
+    # MISC
 
     /**
      * Collection of service providers.
@@ -85,20 +176,6 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected $routeMiddleware = [ ];
 
-    protected $seeders = [ ];
-
-    protected $viewDirs = [ ];
-
-    protected $assetDirs = [ ];
-
-    /**
-     * Collection of migration directories.
-     *
-     * @var array
-     */
-    protected $migrationDirs = [ ];
-
-
     /**
      * Collection of bound instances.
      *
@@ -113,48 +190,117 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected $commands = [ ];
 
+
+    # Booting functions
+
     /**
-     * Perform the post-registration booting of services.
+     * Perform the booting of the service.
      *
      * @return Application
      */
     public function boot()
     {
-        if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
-            foreach ($this->configFiles as $filename) {
-                $configPath = Path::join($this->dir, $this->configPath, $filename . '.php');
-
-                $this->publishes([ $configPath => config_path($filename . '.php') ], 'config');
-            }
-        }
+        $this->bootConfigFiles();
+        $this->bootViews();
+        $this->bootAssets();
+        $this->bootMigrations();
+        $this->bootSeeds();
 
         return $this->app;
     }
 
     /**
-     * Register bindings in the container.
+     * Adds the config files defined in $configFiles to the publish procedure.
+     * Can be overriden to adjust default functionality
+     */
+    protected function bootConfigFiles()
+    {
+        if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
+            foreach ($this->configFiles as $filename) {
+                $this->publishes([ $this->getConfigFilePath($filename) => config_path($filename . '.php') ], 'config');
+            }
+        }
+    }
+
+    /**
+     * Adds the view directories defined in $viewDirs to the publish procedure.
+     * Can be overriden to adjust default functionality
+     */
+    protected function bootViews()
+    {
+        if (isset($this->dir) and isset($this->viewDirs) and is_array($this->viewDirs)) {
+            foreach($this->viewDirs as $dirName => $namespace){
+                $viewPath = Str::replace($this->viewsPath, '{dirName}', $dirName);
+                $viewsDestinationPath = Str::replace($this->viewsDestinationPath, '{namespace}', $namespace);
+                $this->loadViewsFrom($viewPath, $namespace);
+                $this->publishes([ $viewPath => base_path($viewsDestinationPath)]);
+            }
+        }
+    }
+
+    /**
+     * Adds the asset directories defined in $assetDirs to the publish procedure.
+     * Can be overriden to adjust default functionality
+     */
+    protected function bootAssets()
+    {
+        if (isset($this->dir) and isset($this->assetDirs) and is_array($this->assetDirs)) {
+            foreach($this->assetDirs as $dirName => $namespace){
+                $assetPath = Str::replace($this->assetsPath, '{dirName}', $dirName);
+                $assetDestinationPath = Str::replace($this->assetsDestinationPath, '{namespace}', $namespace);
+                $this->publishes([ $assetPath => public_path($assetDestinationPath)], 'public');
+            }
+        }
+    }
+
+    /**
+     * Adds the migration directories defined in $migrationDirs to the publish procedure.
+     * Can be overriden to adjust default functionality
+     */
+    protected function bootMigrations()
+    {
+        if (isset($this->dir) and isset($this->migrationDirs) and is_array($this->migrationDirs)) {
+            foreach($this->migrationDirs as $dirPath){
+                $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath)], 'migrations');
+            }
+        }
+    }
+
+    /**
+     * Adds the seed directories defined in $seedDirs to the publish procedure.
+     * Can be overriden to adjust default functionality
+     */
+    protected function bootSeeds()
+    {
+        if (isset($this->dir) and isset($this->seedDirs) and is_array($this->seedDirs)) {
+            foreach($this->seedDirs as $dirPath){
+                $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath)], 'migrations');
+            }
+        }
+    }
+
+
+    # Registration functions
+
+    /**
+     * Registers the server in the container.
      *
      * @return Application
-     * @todo fix migrations resourcespath thing, should be removed. check all other paths aswell
      */
     public function register()
     {
+        if(!get_class($this) == BeverageServiceProvider::class)
+        {
+            $this->app->register(BeverageServiceProvider::class);
+        }
+
+        $this->viewsPath = Str::replace($this->viewsPath, '{resourcesPath}', $this->getResourcesPath());
+        $this->assetsPath = Str::replace($this->assetsPath, '{resourcesPath}', $this->getResourcesPath());
+
         $router = $this->app->make('router');
         $kernel = $this->app->make('Illuminate\Contracts\Http\Kernel');
 
-        if (isset($this->dir)) {
-            foreach ($this->configFiles as $filename) {
-                $configPath = Path::join($this->dir, $this->configPath, $filename . '.php');
-
-                $this->mergeConfigFrom($configPath, $filename);
-            }
-
-            foreach ($this->migrationDirs as $migrationDir) {
-                $migrationPath = Path::join($this->dir, $this->migrationPath, $migrationDir);
-
-                $this->publishes([ $migrationPath => base_path('/database/migrations') ], 'migrations');
-            }
-        }
+        $this->registerConfigFiles();
 
         foreach ($this->prependMiddleware as $middleware) {
             $kernel->prependMiddleware($middleware);
@@ -174,7 +320,7 @@ abstract class ServiceProvider extends BaseServiceProvider
 
         foreach ($this->aliases as $alias => $full) {
             $this->app->booting(function () use ($alias, $full) {
-            
+
                 $this->alias($alias, $full);
             });
         }
@@ -187,6 +333,72 @@ abstract class ServiceProvider extends BaseServiceProvider
     }
 
     /**
+     * Merges all defined config files defined in $configFiles.
+     * Can be overriden to adjust default functionality
+     */
+    protected function registerConfigFiles()
+    {
+        if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
+            foreach ($this->configFiles as $filename) {
+                $this->mergeConfigFrom($this->getConfigFilePath($filename), $filename);
+            }
+        }
+    }
+
+
+    # Path getter convinience functions
+
+    /**
+     * getFilePath
+     *
+     * @param        $relativePath
+     * @param null   $fileName
+     * @param string $ext
+     * @return string
+     */
+    public function getPath($relativePath, $fileName = null, $ext = '.php')
+    {
+        $path = Path::join($this->dir, $relativePath);
+        return is_null($fileName) ? $path : Path::join($path, $fileName . $ext);
+    }
+
+    /**
+     * getConfigFilePath
+     *
+     * @param null $fileName
+     * @return string
+     */
+    public function getConfigFilePath($fileName = null)
+    {
+        return $this->getPath($this->configPath, $fileName);
+    }
+
+    /**
+     * getMigrationFilePath
+     *
+     * @param null $path
+     * @return string
+     */
+    public function getDatabasePath($path = null)
+    {
+        return $this->getPath($this->databasePath, $path, '');
+    }
+
+    /**
+     * getViewFilePath
+     *
+     * @param null $path
+     * @return string
+     */
+    public function getResourcesPath($path = null)
+    {
+        return $this->getPath($this->resourcesPath, $path, '');
+    }
+
+
+    # Misc functions
+
+    /**
      * Register the given alias.
      *
      * @param  string $name
@@ -197,13 +409,6 @@ abstract class ServiceProvider extends BaseServiceProvider
     {
         AliasLoader::getInstance()->alias($name, $fullyQualifiedName);
     }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-
 
     /**
      * Get the services provided by the provider.
@@ -223,72 +428,4 @@ abstract class ServiceProvider extends BaseServiceProvider
         return $provides;
     }
 
-    /**
-     * getFilePath
-     *
-     * @param        $relativePath
-     * @param null   $fileName
-     * @param string $ext
-     * @return string
-     */
-    public function getFilePath($relativePath, $fileName = null, $ext = '.php')
-    {
-        $path = Path::join($this->dir, $relativePath);
-        return is_null($fileName) ? $path : Path::join($path, $fileName . $ext);
-    }
-
-    /**
-     * getConfigFilePath
-     *
-     * @param null $fileName
-     * @return string
-     */
-    public function getConfigFilePath($fileName = null)
-    {
-        return $this->getFilePath($this->configPath, $fileName);
-    }
-
-    /**
-     * getSeedFilePath
-     *
-     * @param null $fileName
-     * @return string
-     */
-    public function getSeedFilePath($fileName = null)
-    {
-        return $this->getFilePath($this->seedPath, $fileName);
-    }
-
-    /**
-     * getMigrationFilePath
-     *
-     * @param null $fileName
-     * @return string
-     */
-    public function getMigrationFilePath($fileName = null)
-    {
-        return $this->getFilePath($this->migrationPath, $fileName);
-    }
-
-    /**
-     * getViewFilePath
-     *
-     * @param null $fileName
-     * @return string
-     */
-    public function getViewFilePath($fileName = null)
-    {
-        return $this->getFilePath($this->viewPath, $fileName);
-    }
-
-    /**
-     * getAssetFilePath
-     *
-     * @param null $fileName
-     * @return string
-     */
-    public function getAssetFilePath($fileName = null)
-    {
-        return $this->getFilePath($this->assetPath, $fileName);
-    }
 }

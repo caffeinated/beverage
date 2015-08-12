@@ -17,12 +17,7 @@ class BeverageServiceProvider extends ServiceProvider
 
     protected $configFiles = [ 'caffeinated.beverage' ];
 
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
+    protected $provides = [ 'beverage.generator', 'fs' ];
 
     /**
      * Boot the service provider.
@@ -62,14 +57,10 @@ class BeverageServiceProvider extends ServiceProvider
         $view     = $app->make('view');
         $resolver = $app->make('view.engine.resolver');
 
-        if (array_key_exists('stub', $view->getExtensions())) {
-            return;
-        }
-
-        $app->singleton('stub.generator', StubGenerator::class);
+        $app->singleton('beverage.generator', StubGenerator::class);
 
         $resolver->register('stub', function () use ($app) {
-        
+
             $compiler = $app->make('blade.compiler');
 
             return new CompilerEngine($compiler);
