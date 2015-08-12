@@ -1,0 +1,24 @@
+menu:
+  - name: Overview
+    icon: fa fa-eye
+    page: index
+
+  - name: Traits
+    icon: fa fa-link
+    page: traits
+
+  - name: Console
+    icon: fa fa-code
+    page: console
+
+  - name: Service provider
+    icon: fa fa-briefcase
+    page: service-provider
+
+  - name: Dependency sorting
+    icon: fa fa-list-ol
+    page: dependency-sorting
+
+  - name: Custom application paths
+    icon: fa fa-opencart
+    page: custom-application-paths
