@@ -134,27 +134,18 @@ class Str
     public function __call($name, $parameters)
     {
         $reflect = null;
-        try
-        {
+        try {
             $reflect = new \ReflectionMethod('Underscore\Methods\StringsMethods', $name);
+        } catch (\Exception $e) {
         }
-        catch(\Exception $e){
-
-        }
-        if ( method_exists('Illuminate\Support\Str', $name) )
-        {
+        if (method_exists('Illuminate\Support\Str', $name)) {
             return forward_static_call_array([ 'Illuminate\Support\Str', $name ], $parameters);
-        }
-        elseif ( method_exists('Underscore\Methods\StringsMethods', $name) && !is_null($reflect) && $reflect->isPublic() )
-        {
+        } elseif (method_exists('Underscore\Methods\StringsMethods', $name) && !is_null($reflect) && $reflect->isPublic()) {
             return forward_static_call_array([ 'Underscore\Types\Strings', $name ], $parameters);
-        }
-        else
-        {
+        } else {
             $object = $this->getStringyString($parameters);
 
-            if ( method_exists($object, $name) )
-            {
+            if (method_exists($object, $name)) {
                 return call_user_func_array([ $object, $name ], array_slice($parameters, 1));
             }
         }

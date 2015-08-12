@@ -20,8 +20,7 @@ class LoadConfiguration extends BaseLoadConfiguration
     {
         $files = [ ];
 
-        foreach ( Finder::create()->files()->name('*.php')->in($app->configPath()) as $file )
-        {
+        foreach (Finder::create()->files()->name('*.php')->in($app->configPath()) as $file) {
             $nesting = $this->getConfigurationNesting($file);
 
             $files[ $nesting . basename($file->getRealPath(), '.php') ] = $file->getRealPath();

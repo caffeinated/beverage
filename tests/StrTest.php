@@ -9,7 +9,6 @@ namespace Caffeinated\Tests\Beverage;
 use Caffeinated\Beverage\Str;
 use Symfony\Component\VarDumper\VarDumper;
 
-
 /**
  * This is the StrTest.
  *

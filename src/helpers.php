@@ -9,48 +9,42 @@
  */
 
 
-if ( ! function_exists('path_join') )
-{
+if (! function_exists('path_join')) {
     function path_join()
     {
         return forward_static_call_array([ 'Caffeinated\Beverage\Path', 'join' ], func_get_args());
     }
 }
 
-if ( ! function_exists('path_is_absolute') )
-{
+if (! function_exists('path_is_absolute')) {
     function path_is_absolute()
     {
         return forward_static_call_array([ 'Caffeinated\Beverage\Path', 'isAbsolute' ], func_get_args());
     }
 }
 
-if ( ! function_exists('path_is_relative') )
-{
+if (! function_exists('path_is_relative')) {
     function path_is_relative()
     {
         return forward_static_call_array([ 'Caffeinated\Beverage\Path', 'isRelative' ], func_get_args());
     }
 }
 
-if ( ! function_exists('path_get_directory') )
-{
+if (! function_exists('path_get_directory')) {
     function path_get_directory()
     {
         return forward_static_call_array([ 'Caffeinated\Beverage\Path', 'getDirectory' ], func_get_args());
     }
 }
 
-if ( ! function_exists('path_get_extension') )
-{
+if (! function_exists('path_get_extension')) {
     function path_get_extension()
     {
         return forward_static_call_array([ 'Caffeinated\Beverage\Path', 'getExtension' ], func_get_args());
     }
 }
 
-if ( ! function_exists('path_get_filename') )
-{
+if (! function_exists('path_get_filename')) {
     function path_get_filename()
     {
         return forward_static_call_array([ 'Caffeinated\Beverage\Path', 'getFilename' ], func_get_args());
@@ -58,9 +52,8 @@ if ( ! function_exists('path_get_filename') )
 }
 
 
-if ( ! function_exists('file_put') )
-{
-    /**
+if (! function_exists('file_put')) {
+/**
      * Write the contents of a file.
      *
      * @param  string $path
@@ -74,9 +67,8 @@ if ( ! function_exists('file_put') )
     }
 }
 
-if ( ! function_exists('file_rglob') )
-{
-    /**
+if (! function_exists('file_rglob')) {
+/**
      * Recursively find pathnames matching the given pattern.
      *
      * @param  string $pattern
@@ -89,9 +81,8 @@ if ( ! function_exists('file_rglob') )
     }
 }
 
-if ( ! function_exists('file_rsearch') )
-{
-    /**
+if (! function_exists('file_rsearch')) {
+/**
      * Search the given folder recursively for files using
      * a regular expression pattern.
      *
@@ -105,9 +96,8 @@ if ( ! function_exists('file_rsearch') )
     }
 }
 
-if ( ! function_exists('file_exists') )
-{
-    /**
+if (! function_exists('file_exists')) {
+/**
      * Determine if a file exists.
      *
      * @param  string  $path
@@ -119,9 +109,8 @@ if ( ! function_exists('file_exists') )
     }
 }
 
-if ( ! function_exists('file_get') )
-{
-    /**
+if (! function_exists('file_get')) {
+/**
      * Get the contents of a file.
      *
      * @param  string  $path
@@ -135,9 +124,8 @@ if ( ! function_exists('file_get') )
     }
 }
 
-if ( ! function_exists('file_getRequire') )
-{
-    /**
+if (! function_exists('file_getRequire')) {
+/**
      * Get the returned value of a file.
      *
      * @param  string  $path
@@ -151,9 +139,8 @@ if ( ! function_exists('file_getRequire') )
     }
 }
 
-if ( ! function_exists('file_requireOnce') )
-{
-    /**
+if (! function_exists('file_requireOnce')) {
+/**
      * Require the given file once.
      *
      * @param  string  $file
@@ -165,9 +152,8 @@ if ( ! function_exists('file_requireOnce') )
     }
 }
 
-if ( ! function_exists('file_prepend') )
-{
-    /**
+if (! function_exists('file_prepend')) {
+/**
      * Prepend to a file.
      *
      * @param  string  $path
@@ -180,9 +166,8 @@ if ( ! function_exists('file_prepend') )
     }
 }
 
-if ( ! function_exists('file_append') )
-{
-    /**
+if (! function_exists('file_append')) {
+/**
      * Append to a file.
      *
      * @param  string  $path
@@ -195,9 +180,8 @@ if ( ! function_exists('file_append') )
     }
 }
 
-if ( ! function_exists('file_delete') )
-{
-    /**
+if (! function_exists('file_delete')) {
+/**
      * Delete the file at a given path.
      *
      * @param  string|array  $paths
@@ -209,9 +193,8 @@ if ( ! function_exists('file_delete') )
     }
 }
 
-if ( ! function_exists('file_move') )
-{
-    /**
+if (! function_exists('file_move')) {
+/**
      * Move a file to a new location.
      *
      * @param  string  $path
@@ -224,9 +207,8 @@ if ( ! function_exists('file_move') )
     }
 }
 
-if ( ! function_exists('file_copy') )
-{
-    /**
+if (! function_exists('file_copy')) {
+/**
      * Copy a file to a new location.
      *
      * @param  string  $path
@@ -239,9 +221,8 @@ if ( ! function_exists('file_copy') )
     }
 }
 
-if ( ! function_exists('file_name') )
-{
-    /**
+if (! function_exists('file_name')) {
+/**
      * Extract the file name from a file path.
      *
      * @param  string  $path
@@ -253,9 +234,8 @@ if ( ! function_exists('file_name') )
     }
 }
 
-if ( ! function_exists('file_extension') )
-{
-    /**
+if (! function_exists('file_extension')) {
+/**
      * Extract the file extension from a file path.
      *
      * @param  string  $path
@@ -267,9 +247,8 @@ if ( ! function_exists('file_extension') )
     }
 }
 
-if ( ! function_exists('file_type') )
-{
-    /**
+if (! function_exists('file_type')) {
+/**
      * Get the file type of a given file.
      *
      * @param  string  $path
@@ -281,9 +260,8 @@ if ( ! function_exists('file_type') )
     }
 }
 
-if ( ! function_exists('file_mimeType') )
-{
-    /**
+if (! function_exists('file_mimeType')) {
+/**
      * Get the mime-type of a given file.
      *
      * @param  string  $path
@@ -295,9 +273,8 @@ if ( ! function_exists('file_mimeType') )
     }
 }
 
-if ( ! function_exists('file_size') )
-{
-    /**
+if (! function_exists('file_size')) {
+/**
      * Get the file size of a given file.
      *
      * @param  string  $path
@@ -309,9 +286,8 @@ if ( ! function_exists('file_size') )
     }
 }
 
-if ( ! function_exists('file_lastModified') )
-{
-    /**
+if (! function_exists('file_lastModified')) {
+/**
      * Get the file's last modification time.
      *
      * @param  string  $path
@@ -323,9 +299,8 @@ if ( ! function_exists('file_lastModified') )
     }
 }
 
-if ( ! function_exists('file_isDirectory') )
-{
-    /**
+if (! function_exists('file_isDirectory')) {
+/**
      * Determine if the given path is a directory.
      *
      * @param  string  $directory
@@ -337,9 +312,8 @@ if ( ! function_exists('file_isDirectory') )
     }
 }
 
-if ( ! function_exists('file_isWriteable') )
-{
-    /**
+if (! function_exists('file_isWriteable')) {
+/**
      * Determine if the given path is writable.
      *
      * @param  string  $path
@@ -351,9 +325,8 @@ if ( ! function_exists('file_isWriteable') )
     }
 }
 
-if ( ! function_exists('file_isFile') )
-{
-    /**
+if (! function_exists('file_isFile')) {
+/**
      * Determine if the given path is a file.
      *
      * @param  string  $file
@@ -365,9 +338,8 @@ if ( ! function_exists('file_isFile') )
     }
 }
 
-if ( ! function_exists('file_glob') )
-{
-    /**
+if (! function_exists('file_glob')) {
+/**
      * Find path names matching a given pattern.
      *
      * @param  string  $pattern
@@ -380,9 +352,8 @@ if ( ! function_exists('file_glob') )
     }
 }
 
-if ( ! function_exists('file_files') )
-{
-    /**
+if (! function_exists('file_files')) {
+/**
      * Get an array of all files in a directory.
      *
      * @param  string  $directory
@@ -394,9 +365,8 @@ if ( ! function_exists('file_files') )
     }
 }
 
-if ( ! function_exists('file_allFiles') )
-{
-    /**
+if (! function_exists('file_allFiles')) {
+/**
      * Get all of the files from the given directory (recursive).
      *
      * @param  string  $directory
@@ -408,9 +378,8 @@ if ( ! function_exists('file_allFiles') )
     }
 }
 
-if ( ! function_exists('file_directories') )
-{
-    /**
+if (! function_exists('file_directories')) {
+/**
      * Get all of the directories within a given directory.
      *
      * @param  string  $directory
@@ -422,9 +391,8 @@ if ( ! function_exists('file_directories') )
     }
 }
 
-if ( ! function_exists('file_makeDirectory') )
-{
-    /**
+if (! function_exists('file_makeDirectory')) {
+/**
      * Create a directory.
      *
      * @param  string  $path
@@ -439,9 +407,8 @@ if ( ! function_exists('file_makeDirectory') )
     }
 }
 
-if ( ! function_exists('file_copyDirectory') )
-{
-    /**
+if (! function_exists('file_copyDirectory')) {
+/**
      * Copy a directory from one location to another.
      *
      * @param  string  $directory
@@ -455,9 +422,8 @@ if ( ! function_exists('file_copyDirectory') )
     }
 }
 
-if ( ! function_exists('file_deleteDirectory') )
-{
-    /**
+if (! function_exists('file_deleteDirectory')) {
+/**
      * Recursively delete a directory.
      *
      * The directory itself may be optionally preserved.
@@ -472,9 +438,8 @@ if ( ! function_exists('file_deleteDirectory') )
     }
 }
 
-if ( ! function_exists('file_cleanDirectory') )
-{
-    /**
+if (! function_exists('file_cleanDirectory')) {
+/**
      * Empty the specified directory of all files and folders.
      *
      * @param  string  $directory
@@ -486,9 +451,8 @@ if ( ! function_exists('file_cleanDirectory') )
     }
 }
 
-if ( ! function_exists('file_touch') )
-{
-    /**
+if (! function_exists('file_touch')) {
+/**
      * Sets access and modification time of file.
      *
      * @param string|array|\Traversable $files A filename, an array of files, or a \Traversable instance to create
@@ -503,9 +467,8 @@ if ( ! function_exists('file_touch') )
     }
 }
 
-if ( ! function_exists('file_chmod') )
-{
-    /**
+if (! function_exists('file_chmod')) {
+/**
      * Change mode for an array of files or directories.
      *
      * @param string|array|\Traversable $files     A filename, an array of files, or a \Traversable instance to change mode
@@ -521,9 +484,8 @@ if ( ! function_exists('file_chmod') )
     }
 }
 
-if ( ! function_exists('file_chown') )
-{
-    /**
+if (! function_exists('file_chown')) {
+/**
      * Change the owner of an array of files or directories.
      *
      * @param string|array|\Traversable $files     A filename, an array of files, or a \Traversable instance to change owner
@@ -538,9 +500,8 @@ if ( ! function_exists('file_chown') )
     }
 }
 
-if ( ! function_exists('file_chgrp') )
-{
-    /**
+if (! function_exists('file_chgrp')) {
+/**
      * Change the group of an array of files or directories.
      *
      * @param string|array|\Traversable $files     A filename, an array of files, or a \Traversable instance to change group
@@ -555,9 +516,8 @@ if ( ! function_exists('file_chgrp') )
     }
 }
 
-if ( ! function_exists('file_rename') )
-{
-    /**
+if (! function_exists('file_rename')) {
+/**
      * Renames a file or a directory.
      *
      * @param string $origin    The origin filename or directory
@@ -573,9 +533,8 @@ if ( ! function_exists('file_rename') )
     }
 }
 
-if ( ! function_exists('file_symlink') )
-{
-    /**
+if (! function_exists('file_symlink')) {
+/**
      * Creates a symbolic link or copy a directory.
      *
      * @param string $originDir     The origin directory path
@@ -590,9 +549,8 @@ if ( ! function_exists('file_symlink') )
     }
 }
 
-if ( ! function_exists('file_mirror') )
-{
-    /**
+if (! function_exists('file_mirror')) {
+/**
      * Mirrors a directory to another.
      *
      * @param string       $originDir The origin directory
@@ -612,9 +570,8 @@ if ( ! function_exists('file_mirror') )
     }
 }
 
-if ( ! function_exists('file_dumpFile') )
-{
-    /**
+if (! function_exists('file_dumpFile')) {
+/**
      * Atomically dumps content into a file.
      *
      * @param string   $filename The file to be written to.
@@ -629,4 +586,3 @@ if ( ! function_exists('file_dumpFile') )
         return call_user_func_array([ app('fs'), 'dumpFile' ], func_get_args());
     }
 }
-

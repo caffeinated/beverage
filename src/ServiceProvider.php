@@ -120,10 +120,8 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     public function boot()
     {
-        if ( isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles) )
-        {
-            foreach ( $this->configFiles as $filename )
-            {
+        if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
+            foreach ($this->configFiles as $filename) {
                 $configPath = Path::join($this->dir, $this->configPath, $filename . '.php');
 
                 $this->publishes([ $configPath => config_path($filename . '.php') ], 'config');
@@ -144,53 +142,44 @@ abstract class ServiceProvider extends BaseServiceProvider
         $router = $this->app->make('router');
         $kernel = $this->app->make('Illuminate\Contracts\Http\Kernel');
 
-        if ( isset($this->dir) )
-        {
-            foreach ( $this->configFiles as $filename )
-            {
+        if (isset($this->dir)) {
+            foreach ($this->configFiles as $filename) {
                 $configPath = Path::join($this->dir, $this->configPath, $filename . '.php');
 
                 $this->mergeConfigFrom($configPath, $filename);
             }
 
-            foreach ( $this->migrationDirs as $migrationDir )
-            {
+            foreach ($this->migrationDirs as $migrationDir) {
                 $migrationPath = Path::join($this->dir, $this->migrationPath, $migrationDir);
 
                 $this->publishes([ $migrationPath => base_path('/database/migrations') ], 'migrations');
             }
         }
 
-        foreach ( $this->prependMiddleware as $middleware )
-        {
+        foreach ($this->prependMiddleware as $middleware) {
             $kernel->prependMiddleware($middleware);
         }
 
-        foreach ( $this->middleware as $middleware )
-        {
+        foreach ($this->middleware as $middleware) {
             $kernel->pushMiddleware($middleware);
         }
 
-        foreach ( $this->routeMiddleware as $key => $middleware )
-        {
+        foreach ($this->routeMiddleware as $key => $middleware) {
             $router->middleware($key, $middleware);
         }
 
-        foreach ( $this->providers as $provider )
-        {
+        foreach ($this->providers as $provider) {
             $this->app->register($provider);
         }
 
-        foreach ( $this->aliases as $alias => $full )
-        {
-            $this->app->booting(function () use ($alias, $full)
-            {
+        foreach ($this->aliases as $alias => $full) {
+            $this->app->booting(function () use ($alias, $full) {
+            
                 $this->alias($alias, $full);
             });
         }
 
-        if ( is_array($this->commands) and count($this->commands) > 0 )
-        {
+        if (is_array($this->commands) and count($this->commands) > 0) {
             $this->commands($this->commands);
         }
 

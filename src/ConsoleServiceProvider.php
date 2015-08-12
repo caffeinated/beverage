@@ -48,18 +48,15 @@ abstract class ConsoleServiceProvider extends BaseServiceProvider
     public function register()
     {
         $errorMsg = "Your ConsoleServiceProvider(AbstractConsoleProvider) requires property";
-        if ( ! isset($this->namespace) or ! is_string($this->namespace) )
-        {
+        if (! isset($this->namespace) or ! is_string($this->namespace)) {
             throw new ErrorException("$errorMsg \$namespace to be an string");
         }
-        if ( ! isset($this->commands) or ! is_array($this->commands) )
-        {
+        if (! isset($this->commands) or ! is_array($this->commands)) {
             throw new ErrorException("$errorMsg \$commands to be an array");
         }
 
         $bindings = [ ];
-        foreach ( $this->commands as $binding => $command )
-        {
+        foreach ($this->commands as $binding => $command) {
             $binding    = $this->prefix . $binding;
             $bindings[] = $binding;
             $this->{"registerCommand"}($binding, $command);
@@ -78,8 +75,7 @@ abstract class ConsoleServiceProvider extends BaseServiceProvider
     protected function registerCommand($binding, $command)
     {
         $class = $this->namespace . '\\' . $command . 'Command';
-        if ( ! class_exists($class) )
-        {
+        if (! class_exists($class)) {
             throw new ErrorException("Your ConsoleServiceProvider(AbstractConsoleProvider)->registerCommand($command, $binding) could not find $class");
         }
         $this->app->singleton($binding, $class);

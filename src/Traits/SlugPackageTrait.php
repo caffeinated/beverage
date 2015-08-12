@@ -30,8 +30,7 @@ trait SlugPackageTrait
      */
     protected function validateSlug($slug)
     {
-        if ( ! preg_match('/([a-z]*)\/([a-z]*)/', $slug, $matches) or count($matches) !== 3 )
-        {
+        if (! preg_match('/([a-z]*)\/([a-z]*)/', $slug, $matches) or count($matches) !== 3) {
             return false;
         }
 

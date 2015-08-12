@@ -56,8 +56,7 @@ class CustomApplicationPaths
      */
     public function init($basePath = null, $configPath = null)
     {
-        if ( $basePath )
-        {
+        if ($basePath) {
             $this->setBasePath($basePath);
         }
         $this->beverage = $this->loadConfig($configPath);
@@ -122,5 +121,4 @@ class CustomApplicationPaths
 
         return $config;
     }
-
 }

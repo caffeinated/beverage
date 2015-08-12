@@ -3,7 +3,6 @@ namespace Caffeinated\Beverage;
 
 use Illuminate\View\Engines\CompilerEngine;
 
-
 /**
  * Caffeinated Beverage Service Provider
  *
@@ -63,15 +62,14 @@ class BeverageServiceProvider extends ServiceProvider
         $view     = $app->make('view');
         $resolver = $app->make('view.engine.resolver');
 
-        if ( array_key_exists('stub', $view->getExtensions()) )
-        {
+        if (array_key_exists('stub', $view->getExtensions())) {
             return;
         }
 
         $app->singleton('stub.generator', StubGenerator::class);
 
-        $resolver->register('stub', function () use ($app)
-        {
+        $resolver->register('stub', function () use ($app) {
+        
             $compiler = $app->make('blade.compiler');
 
             return new CompilerEngine($compiler);
