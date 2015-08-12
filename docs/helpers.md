@@ -1,8 +1,0 @@
-Helpers
--------------
-
-### Arrays
-
-### Strings
-
-### Path

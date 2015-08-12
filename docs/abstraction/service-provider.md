@@ -1,5 +1,6 @@
 <!---
-title: Service Provider
+title: ServiceProvider
+subtitle: Abstraction
 author: Robin Radic and Shea Lewis
 -->
 

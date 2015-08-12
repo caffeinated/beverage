@@ -3,22 +3,70 @@ menu:
     icon: fa fa-eye
     page: index
 
-  - name: Traits
+  - name: Filesystem
+    icon: fa fa-folder
+    page: filesystem
+
+  - name: Utilities
+    icon: fa fa-cubes
+    children:
+
+      - name: Arr
+        page: utilities/arr
+
+      - name: Str
+        page: utilities/str
+
+      - name: Path
+        page: utilities/path
+
+      - name: StubGenerator
+        page: utilities/stubs
+
+      - name: helpers
+        page: utilities/helpers
+
+
+
+  - name: Abstraction
     icon: fa fa-link
-    page: traits
+    children:
 
-  - name: Console
-    icon: fa fa-code
-    page: console
+      - name: Service provider
+        page: abstraction/service-provider
 
-  - name: Service provider
-    icon: fa fa-briefcase
-    page: service-provider
+      - name: Console provider
+        page: abstraction/console-provider
+
+      - name: Command
+        page: abstraction/command
+
+  - name: Traits
+    icon: fa fa-heart
+    children:
+
+      - name: DotArrayAccess
+        page: traits/dot-array-access
+
+      - name: DotArrayObjectAccess
+        page: traits/dot-array-object-access
+
+      - name: EventDispatcher
+        page: traits/event-dispatcher
+
+      - name: MultiSingleton
+        page: traits/multi-singleton
+
+      - name: NamespacedItemResolver
+        page: traits/namespaced-item-resolver
+
+      - name: Singleton
+        page: traits/singleton
 
   - name: Dependency sorting
     icon: fa fa-list-ol
     page: dependency-sorting
 
-  - name: Custom application paths
+  - name: Path customisation
     icon: fa fa-opencart
     page: custom-application-paths

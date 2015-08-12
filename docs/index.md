@@ -18,7 +18,7 @@ Quick Installation
 ------------------
 Begin by installing the package through Composer.
 
-```
+```bash
 composer require caffeinated/beverage=~3.0
 ```
 
