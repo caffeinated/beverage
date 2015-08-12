@@ -1,6 +1,7 @@
 <?php
 namespace Caffeinated\Tests\Beverage;
 
+use Caffeinated\Beverage\Path;
 
 
 /**
