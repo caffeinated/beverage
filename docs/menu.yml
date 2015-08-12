@@ -29,6 +29,9 @@ menu:
       - name: Str
         page: utilities/str
 
+      - name: Dotenv
+        page: utilities/dotenv
+
       - name: Path
         page: utilities/path
 
