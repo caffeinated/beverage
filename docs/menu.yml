@@ -7,6 +7,18 @@ menu:
     icon: fa fa-folder
     page: filesystem
 
+  - name: Dependency sorting
+    icon: fa fa-list-ol
+    page: dependency-sorting
+
+  - name: Path customisation
+    icon: fa fa-opencart
+    page: custom-application-paths
+
+  - name: StubGenerator
+    icon: fa fa-pencil
+    page: stubs
+
   - name: Utilities
     icon: fa fa-cubes
     children:
@@ -20,13 +32,8 @@ menu:
       - name: Path
         page: utilities/path
 
-      - name: StubGenerator
-        page: utilities/stubs
-
       - name: helpers
         page: utilities/helpers
-
-
 
   - name: Abstraction
     icon: fa fa-link
@@ -62,11 +69,3 @@ menu:
 
       - name: Singleton
         page: traits/singleton
-
-  - name: Dependency sorting
-    icon: fa fa-list-ol
-    page: dependency-sorting
-
-  - name: Path customisation
-    icon: fa fa-opencart
-    page: custom-application-paths
