@@ -31,7 +31,7 @@ class BeverageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        #$this->publishes([__DIR__.'/../config/beverage.php' => config_path('beverage.php')], 'config');
+        $app = parent::register();
     }
 
     /**
@@ -41,9 +41,9 @@ class BeverageServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        #$this->mergeConfigFrom(__DIR__.'/../config/beverage.php', 'beverage');
+        $app = parent::register();
 
-        $this->app->singleton('fs', Filesystem::class);
+        $app->singleton('fs', Filesystem::class);
 
         require_once(__DIR__.'/helpers.php');
     }

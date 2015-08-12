@@ -5,8 +5,7 @@
 namespace Caffeinated\Beverage;
 
 use Illuminate\Console\Command as BaseCommand;
-
-use Laradic\Console\ConsoleColor;
+use Caffeinated\Beverage\Vendor\ConsoleColor;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\VarDumper\VarDumper;
@@ -46,13 +45,6 @@ abstract class Command extends BaseCommand
         parent::__construct();
         $this->colors = new ConsoleColor();
     }
-
-    /**
-     * The fire method will be called when the command is invoked
-     *
-     * @return void
-     */
-    abstract public function fire();
 
     /**
      * @param $styles
@@ -98,7 +90,8 @@ abstract class Command extends BaseCommand
     {
         $path = '/root/.' . md5('_radic-cli-perm-test' . time());
         $root = (@file_put_contents($path, '1') === false ? false : true);
-        if ($root !== false) {
+        if ( $root !== false )
+        {
             $this->getLaravel()->make('files')->delete($path);
         }
 
@@ -114,21 +107,30 @@ abstract class Command extends BaseCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $method = method_exists($this, 'handle') ? 'handle' : 'fire';
-        if (! $this->allowSudo and ! $this->requireSudo and $this->hasRootAccess()) {
+        if ( ! $this->allowSudo and ! $this->requireSudo and $this->hasRootAccess() )
+        {
             $this->error('Cannot execute this command with root privileges');
             exit;
         }
 
-        if ($this->requireSudo and ! $this->hasRootAccess()) {
+        if ( $this->requireSudo and ! $this->hasRootAccess() )
+        {
             $this->error('This command requires root privileges');
             exit;
         }
         $this->getLaravel()->make('events')->fire('command.firing', $this->name);
-        $fire = $this->fire();
+        $return = null;
+        if ( method_exists($this, 'handle') )
+        {
+            $return = $this->handle();
+        }
+        if ( method_exists($this, 'fire') )
+        {
+            $return = $this->fire();
+        }
         $this->getLaravel()->make('events')->fire('command.fired', $this->name);
 
-        return $fire;
+        return $return;
     }
 
     /**
@@ -145,16 +147,43 @@ abstract class Command extends BaseCommand
      * @param       $arr
      * @param array $header
      */
-    protected function arrayTable($arr, array $header = ['Key', 'Value'])
+    protected function arrayTable($arr, array $header = [ 'Key', 'Value' ])
     {
 
         $rows = [ ];
-        foreach ($arr as $key => $val) {
-            if (is_array($val)) {
+        foreach ( $arr as $key => $val )
+        {
+            if ( is_array($val) )
+            {
                 $val = print_r(array_slice($val, 0, 5), true);
             }
-            $rows[ ] = [ (string)$key, (string)$val ];
+            $rows[] = [ (string)$key, (string)$val ];
         }
         $this->table($header, $rows);
     }
+
+    /**
+     * get colors value
+     *
+     * @return Vendor\ConsoleColor
+     */
+    public function getColors()
+    {
+        return $this->colors;
+    }
+
+    /**
+     * Set the colors value
+     *
+     * @param Vendor\ConsoleColor $colors
+     * @return Command
+     */
+    public function setColors($colors)
+    {
+        $this->colors = $colors;
+
+        return $this;
+    }
+
+
 }

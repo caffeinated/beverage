@@ -84,7 +84,7 @@ use Caffeinated\Beverage\Vendor\Stringy;
  * @method static int countSubstr(string $subject,string $substring,bool $caseSensitive) Returns the number of occurrences of $substring in the given string.
  * @method static string replace(string $subject,string $search,string $replacement) Replaces all occurrences of $search in $str by $replacement.
  * @method static string regexReplace(string $subject,string $pattern,string $replacement,string $options = 'msr') Replaces all occurrences of $pattern in $str by $replacement. An alias for mb_ereg_replace(). Note that the 'i' option with multibyte patterns in mb_ereg_replace() requires PHP 5.4+. This is due to a lack of support in the bundled version of Oniguruma in PHP 5.3.
- * @mixin \Underscore\Methods\StringMethods
+ * @mixin \Underscore\Methods\StringsMethods
  */
 class Str
 {
@@ -109,14 +109,14 @@ class Str
      */
     public static function from($string)
     {
-        return \Underscore\Types\String::from($string);
+        return \Underscore\Types\Strings::from($string);
     }
 
     /**
      * Create a new Stringy string instance.
      *
      * @param  string  $string
-     * @return \Caffeinated\Beverage\Stringy\Stringy
+     * @return \Caffeinated\Beverage\Vendor\Stringy
      */
     public static function create($string)
     {
