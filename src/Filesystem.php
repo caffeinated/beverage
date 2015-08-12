@@ -17,71 +17,71 @@ use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
  */
 class Filesystem extends IlluminateFilesystem
 {
-	/**
-	 * @var \Symfony\Component\Filesystem\Filesystem
-	 */
-	protected $SymfonyFilesystem;
+    /**
+     * @var \Symfony\Component\Filesystem\Filesystem
+     */
+    protected $SymfonyFilesystem;
 
-	/**
-	 * Create a new filesystem instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->SymfonyFilesystem = new SymfonyFilesystem;
-	}
+    /**
+     * Create a new filesystem instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->SymfonyFilesystem = new SymfonyFilesystem;
+    }
 
-	/**
-	 * Recursively find pathnames matching the given pattern.
-	 *
-	 * @param  string  $pattern
-	 * @param  int     $flags
-	 * @return array
-	 */
-	public function rglob($pattern, $flags = 0)
-	{
-		$files = glob($pattern, $flags);
+    /**
+     * Recursively find pathnames matching the given pattern.
+     *
+     * @param  string  $pattern
+     * @param  int     $flags
+     * @return array
+     */
+    public function rglob($pattern, $flags = 0)
+    {
+        $files = glob($pattern, $flags);
 
-		foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
-			$files = array_merge($files, $this->rglob($dir.'/'.basename($pattern), $flags));
-		}
+        foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
+            $files = array_merge($files, $this->rglob($dir.'/'.basename($pattern), $flags));
+        }
 
-		return $files;
-	}
+        return $files;
+    }
 
-	/**
-	 * Search the given folder recursively for files using
-	 * a regular expression pattern.
-	 *
-	 * @param  string  $folder
-	 * @param  string  $pattern
-	 * @return array
-	 */
-	public function rsearch($folder, $pattern)
-	{
-		$dir      = new RecursiveDirectoryIterator($folder);
-		$iterator = new RecursiveIteratorIterator($dir);
-		$files    = new RegexIterator($iterator, $pattern, RegexIterator::GET_MATCH);
-		$fileList = [];
+    /**
+     * Search the given folder recursively for files using
+     * a regular expression pattern.
+     *
+     * @param  string  $folder
+     * @param  string  $pattern
+     * @return array
+     */
+    public function rsearch($folder, $pattern)
+    {
+        $dir      = new RecursiveDirectoryIterator($folder);
+        $iterator = new RecursiveIteratorIterator($dir);
+        $files    = new RegexIterator($iterator, $pattern, RegexIterator::GET_MATCH);
+        $fileList = [];
 
-		foreach ($files as $file) {
-			$fileList = array_merge($fileList, $file);
-		}
+        foreach ($files as $file) {
+            $fileList = array_merge($fileList, $file);
+        }
 
-		return $fileList;
-	}
+        return $fileList;
+    }
 
-	/**
-	 * Magic call method.
-	 *
-	 * @param  string  $method
-	 * @param  mixed   $parameters
-	 */
-	public function __call($method, $parameters)
-	{
-		if (method_exists($this->SymfonyFilesystem, $method)) {
-			return call_user_func_array([$this->SymfonyFilesystem, $method], $parameters);
-		}
-	}
+    /**
+     * Magic call method.
+     *
+     * @param  string  $method
+     * @param  mixed   $parameters
+     */
+    public function __call($method, $parameters)
+    {
+        if (method_exists($this->SymfonyFilesystem, $method)) {
+            return call_user_func_array([$this->SymfonyFilesystem, $method], $parameters);
+        }
+    }
 }

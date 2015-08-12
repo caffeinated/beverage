@@ -62,12 +62,12 @@ trait BindIlluminate
      */
     public function ensureIlluminateBase(Container $app = null)
     {
-        if(! $app->bound('events')) {
+        if (! $app->bound('events')) {
             $app->singleton('events', $this->illuminateClasses['events']);
             $app['events']->fire('booting');
         }
 
-        if(! $app->bound('files')) {
+        if (! $app->bound('files')) {
             $app->bindIf('files', $this->illuminateClasses['files']);
         }
     }
@@ -80,7 +80,7 @@ trait BindIlluminate
      */
     public function bindIlluminateCore(Container $app = null)
     {
-        if (! $app ) {
+        if (! $app) {
             $app = new Container();
         }
 
@@ -90,11 +90,11 @@ trait BindIlluminate
         $app->bindIf('url', $this->illuminateClasses[ 'url' ]);
 
         // Session and request
-        $app->bindIf('session.manager', function($app) {
+        $app->bindIf('session.manager', function ($app) {
             return new SessionManager($app);
         });
 
-        $app->bindIf('session', function($app) {
+        $app->bindIf('session', function ($app) {
             return $app['session.manager']->driver('array');
         }, true);
 
@@ -111,11 +111,11 @@ trait BindIlluminate
         }, true);
 
         // Config
-        $app->bindIf('path.config', function($app) {
+        $app->bindIf('path.config', function ($app) {
             return $this->illuminateConfigPath;
         }, true);
 
-        $app->bindIf('config', function($app) {
+        $app->bindIf('config', function ($app) {
             $config = new Repository;
             $this->loadIlluminateConfig($app, $config);
 
@@ -123,11 +123,11 @@ trait BindIlluminate
         }, true);
 
         // Localization
-        $app->bindIf('translation.loader', function($app) {
+        $app->bindIf('translation.loader', function ($app) {
             return new FileLoader($app['files'], 'src/config');
         });
 
-        $app->bindIf('translator', function($app) {
+        $app->bindIf('translator', function ($app) {
             $loader = new FileLoader($app['files'], 'lang');
 
             return new Translator($loader, 'en');
@@ -152,33 +152,33 @@ trait BindIlluminate
 
         $this->ensureIlluminateBase($app);
 
-        $app->bindShared('view.engine.resolver', function(Container $app) {
+        $app->bindShared('view.engine.resolver', function (Container $app) {
             $resolver = new EngineResolver;
 
-            $resolver->register('php', function() {
+            $resolver->register('php', function () {
                 return new PhpEngine;
             });
 
-            $app->bindShared('blade.compiler', function(Container $app) {
+            $app->bindShared('blade.compiler', function (Container $app) {
                 $cache = $this->illuminateCachePath;
 
                 return new BladeCompiler($app['files'], $cache);
             });
 
-            $resolver->register('blade', function() use ($app) {
+            $resolver->register('blade', function () use ($app) {
                 return new CompilerEngine($app['blade.compiler'], $app['files']);
             });
 
             return $resolver;
         });
 
-        $app->bindShared('view.finder', function(Container $app) {
+        $app->bindShared('view.finder', function (Container $app) {
             $paths = $this->illuminateViewPaths;
 
             return new FileViewFinder($app['files'], $paths);
         });
 
-        $app->bindShared('view', function(Container $app) {
+        $app->bindShared('view', function (Container $app) {
             $env = new ViewFactory($app['view.engine.resolver'], $app['view.finder'], $app['events']);
 
             $env->setContainer($app);

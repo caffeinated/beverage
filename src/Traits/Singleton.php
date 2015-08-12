@@ -11,46 +11,46 @@ namespace Caffeinated\Beverage\Traits;
  */
 trait Singleton
 {
-	/**
-	 * @var mixed
-	 */
-	private static $instance;
+    /**
+     * @var mixed
+     */
+    private static $instance;
 
-	/**
-	 * Create a new singleton instance.
-	 *
-	 * @return void
-	 */
-	protected function __construct()
-	{
-		if (method_exists($this, 'init')) {
-			call_user_func_array([$this, 'init'], func_get_args());
-		}
-	}
+    /**
+     * Create a new singleton instance.
+     *
+     * @return void
+     */
+    protected function __construct()
+    {
+        if (method_exists($this, 'init')) {
+            call_user_func_array([$this, 'init'], func_get_args());
+        }
+    }
 
-	/**
-	 * Initialize a new instance.
-	 *
-	 * @return mixed
-	 */
-	abstract protected function init();
+    /**
+     * Initialize a new instance.
+     *
+     * @return mixed
+     */
+    abstract protected function init();
 
-	/**
-	 * Get the current instance.
-	 *
-	 * @param  string  $name
-	 * @return static
-	 */
-	public static function getInstance($name = 'default')
-	{
-	    if (isset(static::$instance)) {
-	        return static::$instance;
-	    }
+    /**
+     * Get the current instance.
+     *
+     * @param  string  $name
+     * @return static
+     */
+    public static function getInstance($name = 'default')
+    {
+        if (isset(static::$instance)) {
+            return static::$instance;
+        }
 
-	    $instance = new static();
+        $instance = new static();
 
-	    static::$instance = $instance;
+        static::$instance = $instance;
 
-	    return $instance;
-	}
+        return $instance;
+    }
 }

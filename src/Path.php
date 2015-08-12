@@ -13,28 +13,28 @@ use Webmozart\PathUtil\Path as BasePath;
  */
 class Path extends BasePath
 {
-	/**
-	 * Joins a split file system path.
-	 *
-	 * @param  array|string  $path
-	 * @return string
-	 */
-	public static function join()
-	{
-		$arguments = func_get_args();
+    /**
+     * Joins a split file system path.
+     *
+     * @param  array|string  $path
+     * @return string
+     */
+    public static function join()
+    {
+        $arguments = func_get_args();
 
-		if (func_get_args() === 1 and is_array($arguments[0])) {
-			$arguments = $arguments[0];
-		}
+        if (func_get_args() === 1 and is_array($arguments[0])) {
+            $arguments = $arguments[0];
+        }
 
-		foreach ($arguments as $key => $argument) {
-			$arguments[$key] = Str::removeRight($arguments[$key], '/');
+        foreach ($arguments as $key => $argument) {
+            $arguments[$key] = Str::removeRight($arguments[$key], '/');
 
-			if ($key > 0) {
-				$arguments[$key] = Str::removeLeft($arguments[$key], '/');
-			}
-		}
+            if ($key > 0) {
+                $arguments[$key] = Str::removeLeft($arguments[$key], '/');
+            }
+        }
 
-		return implode(DIRECTORY_SEPARATOR, $arguments);
-	}
+        return implode(DIRECTORY_SEPARATOR, $arguments);
+    }
 }
