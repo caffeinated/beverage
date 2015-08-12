@@ -10,7 +10,8 @@ namespace Caffeinated\Beverage;
 class Dotenv extends \Dotenv
 {
 
-    public static function getEnvFile($path, $file = '.env'){
+    public static function getEnvFile($path, $file = '.env')
+    {
 
         if (!is_string($file)) {
             $file = '.env';
