@@ -2,6 +2,7 @@
 
 return [
     'register_stubs' => env('CAFFEINATED_BEVERAGE_REGISTER_STUBS', false),
+    'helpers' => true,
     'custom_paths'   => [
         /*
         |--------------------------------------------------------------------------

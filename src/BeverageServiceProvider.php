@@ -1,6 +1,8 @@
 <?php
 namespace Caffeinated\Beverage;
 
+use Illuminate\View\Engines\CompilerEngine;
+
 
 /**
  * Caffeinated Beverage Service Provider
@@ -50,12 +52,15 @@ class BeverageServiceProvider extends ServiceProvider
             $this->registerStubs();
         }
 
-        require_once(__DIR__ . '/helpers.php');
+        if ( $config->get('caffeinated.beverage.helpers') )
+        {
+            require_once(realpath(__DIR__ . '/helpers.php'));
+        }
+
     }
 
     public function registerStubs()
     {
-
         $app = $this->app;
 
         /** @var \Illuminate\View\Factory $view */
@@ -66,12 +71,15 @@ class BeverageServiceProvider extends ServiceProvider
         {
             return;
         }
-        #$view->addNamespace('laradicWorkbench', $config[ 'stubs_path' ]);
+
+        $app->singleton('stub.generator', StubGenerator::class);
+
         $resolver->register('stub', function () use ($app)
         {
             $compiler = $app->make('blade.compiler');
 
             return new CompilerEngine($compiler);
+
         });
         $view->addExtension('stub', 'stub');
     }

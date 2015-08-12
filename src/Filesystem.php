@@ -14,6 +14,7 @@ use Symfony\Component\Filesystem\Filesystem as SymfonyFilesystem;
  * @copyright Copyright (c) 2015, Caffeinated
  * @license   https://tldrlegal.com/license/mit-license MIT License
  * @package   Caffeinated\Beverage
+ * @mixin \Symfony\Component\Filesystem\Filesystem
  */
 class Filesystem extends IlluminateFilesystem
 {

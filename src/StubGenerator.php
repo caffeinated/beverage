@@ -31,10 +31,10 @@ class StubGenerator
      *
      * @param \Illuminate\View\Compilers\BladeCompiler $compiler
      */
-    public function __construct(BladeCompiler $compiler)
+    public function __construct(BladeCompiler $compiler, Filesystem $files)
     {
         $this->compiler = $compiler;
-        $this->files = new Filesystem();
+        $this->files = $files;
     }
 
     public function render($string, array $vars = array())
