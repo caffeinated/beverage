@@ -229,7 +229,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected function bootViews()
     {
         if (isset($this->dir) and isset($this->viewDirs) and is_array($this->viewDirs)) {
-            foreach($this->viewDirs as $dirName => $namespace){
+            foreach ($this->viewDirs as $dirName => $namespace) {
                 $viewPath = Str::replace($this->viewsPath, '{dirName}', $dirName);
                 $viewsDestinationPath = Str::replace($this->viewsDestinationPath, '{namespace}', $namespace);
                 $this->loadViewsFrom($viewPath, $namespace);
@@ -245,7 +245,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected function bootAssets()
     {
         if (isset($this->dir) and isset($this->assetDirs) and is_array($this->assetDirs)) {
-            foreach($this->assetDirs as $dirName => $namespace){
+            foreach ($this->assetDirs as $dirName => $namespace) {
                 $assetPath = Str::replace($this->assetsPath, '{dirName}', $dirName);
                 $assetDestinationPath = Str::replace($this->assetsDestinationPath, '{namespace}', $namespace);
                 $this->publishes([ $assetPath => public_path($assetDestinationPath)], 'public');
@@ -260,7 +260,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected function bootMigrations()
     {
         if (isset($this->dir) and isset($this->migrationDirs) and is_array($this->migrationDirs)) {
-            foreach($this->migrationDirs as $dirPath){
+            foreach ($this->migrationDirs as $dirPath) {
                 $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath)], 'migrations');
             }
         }
@@ -273,7 +273,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected function bootSeeds()
     {
         if (isset($this->dir) and isset($this->seedDirs) and is_array($this->seedDirs)) {
-            foreach($this->seedDirs as $dirPath){
+            foreach ($this->seedDirs as $dirPath) {
                 $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath)], 'migrations');
             }
         }
@@ -289,8 +289,7 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        if(!get_class($this) == BeverageServiceProvider::class)
-        {
+        if (!get_class($this) == BeverageServiceProvider::class) {
             $this->app->register(BeverageServiceProvider::class);
         }
 
@@ -427,5 +426,4 @@ abstract class ServiceProvider extends BaseServiceProvider
 
         return $provides;
     }
-
 }
