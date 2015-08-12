@@ -54,6 +54,5 @@ class StubGenerator
 
         $this->files->delete($path);
         return $var;
-
     }
 }

@@ -2,7 +2,6 @@
 namespace Caffeinated\Beverage;
 
 
-
 /**
  * Caffeinated Beverage Service Provider
  *
@@ -15,7 +14,7 @@ class BeverageServiceProvider extends ServiceProvider
 {
     protected $dir = __DIR__;
 
-    protected $configFiles = ['caffeinated.beverage'];
+    protected $configFiles = [ 'caffeinated.beverage' ];
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -41,10 +40,39 @@ class BeverageServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $app = parent::register();
+        $app    = parent::register();
+        $config = $app->make('config');
 
         $app->singleton('fs', Filesystem::class);
 
-        require_once(__DIR__.'/helpers.php');
+        if ( $config->get('caffeinated.beverage.register_stubs') )
+        {
+            $this->registerStubs();
+        }
+
+        require_once(__DIR__ . '/helpers.php');
+    }
+
+    public function registerStubs()
+    {
+
+        $app = $this->app;
+
+        /** @var \Illuminate\View\Factory $view */
+        $view     = $app->make('view');
+        $resolver = $app->make('view.engine.resolver');
+
+        if ( array_key_exists('stub', $view->getExtensions()) )
+        {
+            return;
+        }
+        #$view->addNamespace('laradicWorkbench', $config[ 'stubs_path' ]);
+        $resolver->register('stub', function () use ($app)
+        {
+            $compiler = $app->make('blade.compiler');
+
+            return new CompilerEngine($compiler);
+        });
+        $view->addExtension('stub', 'stub');
     }
 }

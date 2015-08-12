@@ -17,7 +17,7 @@ class CustomApplicationPaths
     /**
      * The application instance.
      *
-     * @var \Illuminate\Contracts\Foundation\Application
+     * @var \Illuminate\Foundation\Application
      */
     protected $app;
 
@@ -40,6 +40,11 @@ class CustomApplicationPaths
     public function bootstrap(Application $app)
     {
         $this->app = $app;
+        $envPath = isset($this->beverage['environment_path']) ? $this->beverage['environment_path'] : $this->basePath;
+
+        foreach ([ 'config', 'database', 'lang', 'public', 'storage'] as $path) {
+            $this->app->instance('path.'.$path, $this->beverage['custom_paths'][$path.'_path']);
+        }
     }
 
     /**

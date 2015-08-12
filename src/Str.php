@@ -107,7 +107,7 @@ class Str
      * @param  string  $string
      * @return static
      */
-    public static function from($string)
+    public static function from($string = null)
     {
         return \Underscore\Types\Strings::from($string);
     }
@@ -132,8 +132,8 @@ class Str
      */
     public function __call($name, $parameters)
     {
-        if (method_exists('Underscore\Methods\StringMethods', $name)) {
-            return forward_static_call_array(['Underscore\Types\String', $name], $parameters);
+        if (method_exists('Underscore\Methods\StringsMethods', $name)) {
+            return forward_static_call_array(['Underscore\Types\Strings', $name], $parameters);
         } else {
             $object = $this->getStringyString($parameters);
 
