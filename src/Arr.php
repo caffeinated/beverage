@@ -123,6 +123,11 @@ class Arr
         }
     }
 
+    public static function from($arr = [])
+    {
+        return \Underscore\Types\Arrays::from($arr);
+    }
+
     public static function __callStatic($name, $arguments)
     {
         return call_user_func_array([ new static(), $name ], $arguments);
@@ -130,10 +135,10 @@ class Arr
 
     public function __call($name, $arguments)
     {
-        if (method_exists('Illuminate\Support\Arr', $name)) {
-            return forward_static_call_array([ 'Illuminate\Support\Arr', $name ], $arguments);
-        } elseif (method_exists('Underscore\Methods\ArraysMethods', $name)) {
+        if (method_exists('Underscore\Methods\ArraysMethods', $name)) {
             return forward_static_call_array([ 'Underscore\Types\Arrays', $name ], $arguments);
+        } elseif (method_exists('Illuminate\Support\Arr', $name)) {
+            return forward_static_call_array([ 'Illuminate\Support\Arr', $name ], $arguments);
         }
     }
 }

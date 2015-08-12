@@ -18,6 +18,27 @@ use Caffeinated\Beverage\Arr;
  */
 class ArrTest extends TestCase
 {
+    public $array = ['foo' => 'bar', 'bis' => 'ter'];
+    public $arrayNumbers = [1, 2, 3];
+    public $arrayMulti = [
+        ['foo' => 'bar', 'bis' => 'ter'],
+        ['foo' => 'bar', 'bis' => 'ter'],
+        ['bar' => 'foo', 'bis' => 'ter'],
+    ];
+    public $object;
+
+    /**
+     * Restore data just in case.
+     */
+    public function setUp()
+    {
+        $this->object = (object) $this->array;
+        $this->objectMulti = (object) [
+            (object) $this->arrayMulti[0],
+            (object) $this->arrayMulti[1],
+            (object) $this->arrayMulti[2],
+        ];
+    }
     public function testIsAssoc()
     {
         $this->assertTrue(Arr::isAssoc(['a' => 'a', 0 => 'b']));
@@ -85,28 +106,12 @@ class ArrTest extends TestCase
 
     // Tests --------------------------------------------------------- /
 
-    public function testCanCreateArray()
-    {
-        $array = Arr::create();
-
-        $this->assertEquals([], $array->obtain());
-    }
-
     public function testCanUseClassDirectly()
     {
         $under = Arr::get($this->array, 'foo');
 
         $this->assertEquals('bar', $under);
     }
-
-    public function testCanCreateChainableObject()
-    {
-        $under = Underscore::from($this->arrayNumbers);
-        $under = $under->get(1);
-
-        $this->assertEquals(2, $under);
-    }
-
     public function testCanGetKeys()
     {
         $array = Arr::keys($this->array);
@@ -121,14 +126,6 @@ class ArrTest extends TestCase
         $this->assertEquals(['bar', 'ter'], $array);
     }
 
-    public function testCanSetValues()
-    {
-        $array = ['foo' => ['foo' => 'bar'], 'bar' => 'bis'];
-        $array = Arr::set($array, 'foo.bar.bis', 'ter');
-
-        $this->assertEquals('ter', $array['foo']['bar']['bis']);
-        $this->assertArrayHasKey('bar', $array);
-    }
 
     public function testCanRemoveValues()
     {
@@ -161,13 +158,6 @@ class ArrTest extends TestCase
         $exclusion = ['foo', 'bar'];
         $this->assertNotContains('foo', Arr::without($array, $exclusion));
         $this->assertNotContains('bar', Arr::without($array, $exclusion));
-    }
-
-    public function testCanGetSumOfArray()
-    {
-        $array = Arr::sum([1, 2, 3]);
-
-        $this->assertEquals(6, $array);
     }
 
     public function testCanGetcountArray()
@@ -475,12 +465,6 @@ class ArrTest extends TestCase
         $this->assertEquals(['foo', 'foo', 'foo'], $repeat);
     }
 
-    public function testCanMergeArrays()
-    {
-        $array = Arr::merge($this->array, ['foo' => 3], ['kal' => 'mon']);
-
-        $this->assertEquals(['foo' => 3, 'bis' => 'ter', 'kal' => 'mon'], $array);
-    }
 
     public function testCanGetRandomValue()
     {
@@ -502,15 +486,6 @@ class ArrTest extends TestCase
         $array = Arr::search($this->array, 'ter');
 
         $this->assertEquals('bis', $array);
-    }
-
-    public function testCanDiffBetweenArrays()
-    {
-        $array = Arr::diff($this->array, ['foo' => 'bar', 'ter' => 'kal']);
-        $chain = Arr::from($this->array)->diff(['foo' => 'bar', 'ter' => 'kal']);
-
-        $this->assertEquals(['bis' => 'ter'], $array);
-        $this->assertEquals(['bis' => 'ter'], $chain->obtain());
     }
 
     public function testCanRemoveFirstValueFromAnArray()
