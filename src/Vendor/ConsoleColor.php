@@ -84,7 +84,7 @@ class ConsoleColor
      * @param string|array $style
      * @param string       $text
      * @return string
-     * @throws Exceptions\InvalidStyleException
+     * @throws \Caffeinated\Beverage\Exceptions\InvalidStyleException
      * @throws \InvalidArgumentException
      */
     public function apply($style, $text)
@@ -109,13 +109,13 @@ class ConsoleColor
                 if ($this->isValidStyle($s)) {
                     $sequences[ ] = $this->styleSequence($s);
                 } else {
-                    throw new Exceptions\InvalidStyleException($s);
+                    throw new \Caffeinated\Beverage\Exceptions\InvalidStyleException($s);
                 }
             }
         }
 
         $sequences = array_filter($sequences, function ($val) {
-        
+
             return $val !== null;
         });
 

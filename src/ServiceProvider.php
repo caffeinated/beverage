@@ -1,7 +1,6 @@
 <?php
 namespace Caffeinated\Beverage;
 
-use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
@@ -38,6 +37,7 @@ abstract class ServiceProvider extends BaseServiceProvider
 
     /**
      * Resource destination path, relative to base_path
+     *
      * @var string
      */
     protected $resourcesDestinationPath = 'resources';
@@ -47,12 +47,14 @@ abstract class ServiceProvider extends BaseServiceProvider
 
     /**
      * View destination path, relative to base_path
+     *
      * @var string
      */
     protected $viewsDestinationPath = 'resources/views/vendor/{namespace}';
 
     /**
      * Package views path
+     *
      * @var string
      */
     protected $viewsPath = '{resourcesPath}/{dirName}';
@@ -60,6 +62,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     /**
      * A collection of directories in this package containing views.
      * ['dirName' => 'namespace']
+     *
      * @var array
      */
     protected $viewDirs = [ /* 'dirName' => 'namespace' */ ];
@@ -69,12 +72,14 @@ abstract class ServiceProvider extends BaseServiceProvider
 
     /**
      * Assets destination path, relative to public_path
+     *
      * @var string
      */
     protected $assetsDestinationPath = 'vendor/{namespace}';
 
     /**
      * Package views path
+     *
      * @var string
      */
     protected $assetsPath = '{resourcesPath}/{dirName}';
@@ -82,6 +87,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     /**
      * A collection of directories in this package containing assets.
      * ['dirName' => 'namespace']
+     *
      * @var array
      */
     protected $assetDirs = [ /* 'dirName' => 'namespace' */ ];
@@ -98,6 +104,7 @@ abstract class ServiceProvider extends BaseServiceProvider
 
     /**
      * Path to the config directory, relative to $dir
+     *
      * @var string
      */
     protected $configPath = '../config';
@@ -107,12 +114,14 @@ abstract class ServiceProvider extends BaseServiceProvider
 
     /**
      * Path to the migration destination directory, relative to database_path
+     *
      * @var string
      */
     protected $migrationDestinationPath = 'migrations';
 
     /**
      * Path to the seeds destination directory, relative to database_path
+     *
      * @var string
      */
     protected $seedsDestinationPath = 'seeds';
@@ -147,6 +156,11 @@ abstract class ServiceProvider extends BaseServiceProvider
      * @var array
      */
     protected $providers = [ ];
+
+    protected $bindings = [ ];
+
+    protected $singletons = [ ];
+
 
     /**
      * Collection of aliases.
@@ -215,8 +229,10 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected function bootConfigFiles()
     {
-        if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
-            foreach ($this->configFiles as $filename) {
+        if ( isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles) )
+        {
+            foreach ( $this->configFiles as $filename )
+            {
                 $this->publishes([ $this->getConfigFilePath($filename) => config_path($filename . '.php') ], 'config');
             }
         }
@@ -228,12 +244,14 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected function bootViews()
     {
-        if (isset($this->dir) and isset($this->viewDirs) and is_array($this->viewDirs)) {
-            foreach ($this->viewDirs as $dirName => $namespace) {
-                $viewPath = Str::replace($this->viewsPath, '{dirName}', $dirName);
+        if ( isset($this->dir) and isset($this->viewDirs) and is_array($this->viewDirs) )
+        {
+            foreach ( $this->viewDirs as $dirName => $namespace )
+            {
+                $viewPath             = Str::replace($this->viewsPath, '{dirName}', $dirName);
                 $viewsDestinationPath = Str::replace($this->viewsDestinationPath, '{namespace}', $namespace);
                 $this->loadViewsFrom($viewPath, $namespace);
-                $this->publishes([ $viewPath => base_path($viewsDestinationPath)]);
+                $this->publishes([ $viewPath => base_path($viewsDestinationPath) ]);
             }
         }
     }
@@ -244,11 +262,13 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected function bootAssets()
     {
-        if (isset($this->dir) and isset($this->assetDirs) and is_array($this->assetDirs)) {
-            foreach ($this->assetDirs as $dirName => $namespace) {
-                $assetPath = Str::replace($this->assetsPath, '{dirName}', $dirName);
+        if ( isset($this->dir) and isset($this->assetDirs) and is_array($this->assetDirs) )
+        {
+            foreach ( $this->assetDirs as $dirName => $namespace )
+            {
+                $assetPath            = Str::replace($this->assetsPath, '{dirName}', $dirName);
                 $assetDestinationPath = Str::replace($this->assetsDestinationPath, '{namespace}', $namespace);
-                $this->publishes([ $assetPath => public_path($assetDestinationPath)], 'public');
+                $this->publishes([ $assetPath => public_path($assetDestinationPath) ], 'public');
             }
         }
     }
@@ -259,9 +279,11 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected function bootMigrations()
     {
-        if (isset($this->dir) and isset($this->migrationDirs) and is_array($this->migrationDirs)) {
-            foreach ($this->migrationDirs as $dirPath) {
-                $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath)], 'migrations');
+        if ( isset($this->dir) and isset($this->migrationDirs) and is_array($this->migrationDirs) )
+        {
+            foreach ( $this->migrationDirs as $dirPath )
+            {
+                $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath) ], 'migrations');
             }
         }
     }
@@ -272,9 +294,11 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected function bootSeeds()
     {
-        if (isset($this->dir) and isset($this->seedDirs) and is_array($this->seedDirs)) {
-            foreach ($this->seedDirs as $dirPath) {
-                $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath)], 'migrations');
+        if ( isset($this->dir) and isset($this->seedDirs) and is_array($this->seedDirs) )
+        {
+            foreach ( $this->seedDirs as $dirPath )
+            {
+                $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath) ], 'migrations');
             }
         }
     }
@@ -289,11 +313,12 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        if (!get_class($this) == BeverageServiceProvider::class) {
+        if ( ! get_class($this) == BeverageServiceProvider::class )
+        {
             $this->app->register(BeverageServiceProvider::class);
         }
 
-        $this->viewsPath = Str::replace($this->viewsPath, '{resourcesPath}', $this->getResourcesPath());
+        $this->viewsPath  = Str::replace($this->viewsPath, '{resourcesPath}', $this->getResourcesPath());
         $this->assetsPath = Str::replace($this->assetsPath, '{resourcesPath}', $this->getResourcesPath());
 
         $router = $this->app->make('router');
@@ -301,30 +326,43 @@ abstract class ServiceProvider extends BaseServiceProvider
 
         $this->registerConfigFiles();
 
-        foreach ($this->prependMiddleware as $middleware) {
+        foreach ( $this->prependMiddleware as $middleware )
+        {
             $kernel->prependMiddleware($middleware);
         }
 
-        foreach ($this->middleware as $middleware) {
+        foreach ( $this->middleware as $middleware )
+        {
             $kernel->pushMiddleware($middleware);
         }
 
-        foreach ($this->routeMiddleware as $key => $middleware) {
+        foreach ( $this->routeMiddleware as $key => $middleware )
+        {
             $router->middleware($key, $middleware);
         }
 
-        foreach ($this->providers as $provider) {
+        foreach ( $this->providers as $provider )
+        {
             $this->app->register($provider);
         }
 
-        foreach ($this->aliases as $alias => $full) {
-            $this->app->booting(function () use ($alias, $full) {
-
-                $this->alias($alias, $full);
-            });
+        foreach ( $this->bindings as $binding => $class )
+        {
+            $this->app->bind($binding, $class);
         }
 
-        if (is_array($this->commands) and count($this->commands) > 0) {
+        foreach ( $this->singletons as $binding => $class )
+        {
+            $this->app->singleton($binding, $class);
+        }
+
+        foreach ( $this->aliases as $alias => $full )
+        {
+            $this->app->alias($alias, $full);
+        }
+
+        if ( is_array($this->commands) and count($this->commands) > 0 )
+        {
             $this->commands($this->commands);
         }
 
@@ -337,8 +375,10 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     protected function registerConfigFiles()
     {
-        if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
-            foreach ($this->configFiles as $filename) {
+        if ( isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles) )
+        {
+            foreach ( $this->configFiles as $filename )
+            {
                 $this->mergeConfigFrom($this->getConfigFilePath($filename), $filename);
             }
         }
@@ -358,6 +398,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     public function getPath($relativePath, $fileName = null, $ext = '.php')
     {
         $path = Path::join($this->dir, $relativePath);
+
         return is_null($fileName) ? $path : Path::join($path, $fileName . $ext);
     }
 
@@ -394,21 +435,6 @@ abstract class ServiceProvider extends BaseServiceProvider
         return $this->getPath($this->resourcesPath, $path, '');
     }
 
-
-    # Misc functions
-
-    /**
-     * Register the given alias.
-     *
-     * @param  string $name
-     * @param  string $fullyQualifiedName
-     * @return void
-     */
-    protected function alias($name, $fullyQualifiedName)
-    {
-        AliasLoader::getInstance()->alias($name, $fullyQualifiedName);
-    }
-
     /**
      * Get the services provided by the provider.
      *
@@ -416,9 +442,10 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     public function provides()
     {
-        $provides = [];
+        $provides = [ ];
 
-        foreach ($this->providers as $provider) {
+        foreach ( $this->providers as $provider )
+        {
             $instance = $this->app->resolveProviderClass($provider);
 
             $provides = array_merge($provides, $instance->provides());

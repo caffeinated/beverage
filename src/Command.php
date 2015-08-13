@@ -4,6 +4,8 @@
  */
 namespace Caffeinated\Beverage;
 
+use Caffeinated\Beverage\Vendor\Console\Dots;
+use Caffeinated\Beverage\Vendor\Console\Spinner;
 use Illuminate\Console\Command as BaseCommand;
 use Caffeinated\Beverage\Vendor\ConsoleColor;
 use Symfony\Component\Console\Input\InputInterface;
@@ -176,5 +178,30 @@ abstract class Command extends BaseCommand
         $this->colors = $colors;
 
         return $this;
+    }
+
+    /**
+     * dots
+     *
+     * @param     $message
+     * @param int $dots
+     * @param int $interval
+     * @return Dots
+     */
+    public function dots($message, $dots = 3, $interval = 100)
+    {
+        return new Dots($message, $dots, $interval);
+    }
+
+    /**
+     * spinner
+     *
+     * @param     $message
+     * @param int $interval
+     * @return Spinner
+     */
+    public function spinner($message, $interval = 100)
+    {
+        return new Spinner($message, $interval);
     }
 }
