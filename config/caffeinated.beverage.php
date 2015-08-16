@@ -49,8 +49,6 @@ return [
         |
         | Path to the storage directory.
         */
-        'storage_path'  => 'storage',
-
-        'environment_path' => null
+        'storage_path'  => 'storage'
     ]
 ];

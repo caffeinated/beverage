@@ -22,6 +22,7 @@ class ServiceProviderTest extends TestCase
     use ServiceProviderTester;
     protected function getServiceProviderClass($app)
     {
+        #ServiceProvider::pathsToPublish()
         return ServiceProvider::class;
     }
 }

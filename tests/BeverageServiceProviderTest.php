@@ -36,4 +36,12 @@ class BeverageServiceProviderTest extends TestCase
 
         $this->assertTrue(function_exists('path_get_filename'));
     }
+
+
+
+    public function testConfigFiles()
+    {
+       # $this->registerBeverageServiceProvider();
+       # $this->runServiceProviderPublishesConfigTest([ 'caffeinated.beverage']);
+    }
 }

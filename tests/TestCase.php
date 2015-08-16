@@ -6,7 +6,7 @@
  */
 namespace Caffeinated\Tests\Beverage;
 
-use Caffeinated\Dev\DevServiceProvider;
+use Caffeinated\Beverage\BeverageServiceProvider;
 use Caffeinated\Dev\Testing\AbstractTestCase;
 
 /**
@@ -28,6 +28,11 @@ abstract class TestCase extends AbstractTestCase
      */
     protected function getServiceProviderClass($app)
     {
-        return DevServiceProvider::class;
+        return BeverageServiceProvider::class;
+    }
+
+    protected function registerBeverageServiceProvider()
+    {
+        $this->app->register($this->getServiceProviderClass($this->app));
     }
 }

@@ -17,4 +17,40 @@ namespace Caffeinated\Tests\Beverage\Fixture;
 class ServiceProvider extends \Caffeinated\Beverage\ServiceProvider
 {
 
+    protected $dir = __DIR__;
+
+    protected $configFiles = ['a', 'b'];
+
+    /**
+     * A collection of directories in this package containing views.
+     * ['dirName' => 'namespace']
+     *
+     * @var array
+     */
+    protected $viewDirs = [ /* 'dirName' => 'namespace' */ ];
+
+    /**
+     * A collection of directories in this package containing assets.
+     * ['dirName' => 'namespace']
+     *
+     * @var array
+     */
+    protected $assetDirs = [ /* 'dirName' => 'namespace' */ ];
+
+    /**
+     * Array of directory names/paths relative to $databasePath containing seed files.
+     *
+     * @var array
+     */
+    protected $seedDirs = [ /* 'dirName', */ ];
+
+    /**
+     * Array of directory names/paths relative to $databasePath containing migration files.
+     *
+     * @var array
+     */
+    protected $migrationDirs = [ /* 'dirName', */ ];
+
+
+
 }

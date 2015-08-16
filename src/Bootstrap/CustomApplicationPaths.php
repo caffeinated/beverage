@@ -21,15 +21,9 @@ class CustomApplicationPaths
      */
     protected $app;
 
-    /**
-     * The array of Beverage config items.
-     *
-     * @var array
-     */
-    protected $beverage;
+    protected $paths;
 
     protected $basePath;
-
 
     /**
      * Bootstrap the given application.
@@ -40,10 +34,30 @@ class CustomApplicationPaths
     public function bootstrap(Application $app)
     {
         $this->app = $app;
-        $envPath = isset($this->beverage['environment_path']) ? $this->beverage['environment_path'] : $this->basePath;
 
-        foreach ([ 'config', 'database', 'lang', 'public', 'storage'] as $path) {
-            $this->app->instance('path.'.$path, $this->beverage['custom_paths'][$path.'_path']);
+        $this->app->setBasePath($this->basePath);
+
+        $this->app->instance('path', $this->getPath());
+
+        foreach ( [ 'config', 'database', 'lang', 'public', 'storage' ] as $path )
+        {
+            $this->app->instance('path.' . $path, $this->getPath($path));
+        }
+    }
+
+    protected function getPath($name = null)
+    {
+        if ( is_null($name) )
+        {
+            return $this->basePath . DIRECTORY_SEPARATOR . $this->paths[ 'app_path' ];
+        }
+        elseif ( $name === 'base' )
+        {
+            return $this->basePath;
+        }
+        elseif ( array_key_exists($name . '_path', $this->paths) )
+        {
+            return $this->basePath . DIRECTORY_SEPARATOR . $this->paths[ $name . '_path' ];
         }
     }
 
@@ -54,35 +68,14 @@ class CustomApplicationPaths
      * @param null $configPath
      * @return $this
      */
-    public function init($basePath = null, $configPath = null)
+    public function loadPaths($basePath = null, $configPath = null)
     {
-        if ($basePath) {
-            $this->setBasePath($basePath);
+        if ( $basePath )
+        {
+            $this->basePath = realpath($basePath);
         }
-        $this->beverage = $this->loadConfig($configPath);
 
-        return $this;
-    }
-
-    /**
-     * get basePath value
-     *
-     * @return mixed
-     */
-    public function getBasePath()
-    {
-        return $this->basePath;
-    }
-
-    /**
-     * Set the basePath value
-     *
-     * @param mixed $basePath
-     * @return CustomApplicationPaths
-     */
-    public function setBasePath($basePath)
-    {
-        $this->basePath = $basePath;
+        $this->paths = $this->loadConfig($configPath);
 
         return $this;
     }
@@ -96,29 +89,26 @@ class CustomApplicationPaths
      */
     protected function loadConfig($customConfigPath = null)
     {
-        if (is_null($customConfigPath)) {
-            $customConfigPath = $this->basePath.'/config';
+        if ( is_null($customConfigPath) )
+        {
+            $customConfigPath = $this->basePath . DIRECTORY_SEPARATOR . 'config';
         }
 
-        $beverageConfigPath = realpath(__DIR__.'/../../config');
-        $beverageConfigFile = $beverageConfigPath.'/caffeinated.beverage.php';
-        $customConfigFile   = $customConfigPath.'/caffeinated.beverage.php';
+        $beverageConfigPath = realpath(__DIR__ . '/../../config');
+        $beverageConfigFile = $beverageConfigPath . DIRECTORY_SEPARATOR . 'caffeinated.beverage.php';
+        $customConfigFile   = realpath($customConfigPath) . DIRECTORY_SEPARATOR . 'caffeinated.beverage.php';
 
-        $customConfig   = [];
-        $beverageConfig = include($beverageConfigFile);
+        $customConfig   = [ ];
+        $beverageConfig = require($beverageConfigFile);
 
-        if (file_exists($customConfigFile)) {
-            $customConfig = include($customConfigFile);
+        if ( file_exists($customConfigFile) )
+        {
+            $customConfig = require($customConfigFile);
         }
 
         $config = array_replace_recursive($beverageConfig, $customConfig);
 
-        if ($customConfigPath) {
-            $config['config'] = str_replace($this->basePath.'/', '', $customConfigPath);
-        } else {
-            $config['config'] = 'config';
-        }
-
-        return $config;
+        return $config[ 'custom_paths' ];
     }
+
 }
