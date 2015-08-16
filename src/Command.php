@@ -1,6 +1,8 @@
 <?php
 /**
- * Part of the Radic packages.
+ * Part of the Caffeinated PHP packages.
+ *
+ * MIT License and copyright information bundled with this package in the LICENSE file
  */
 namespace Caffeinated\Beverage;
 

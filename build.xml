@@ -61,8 +61,6 @@
             <arg path="${project.basedir}/phpunit.xml"/>
             <arg value="--bootstrap"/>
             <arg path="${vendordir}/autoload.php"/>
-            <arg value="--markers"/>
-            <arg path="PPC:ERR-50000"/>
         </exec>
     </target>
 
