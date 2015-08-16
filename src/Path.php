@@ -23,17 +23,14 @@ class Path extends BasePath
     {
         $arguments = func_get_args();
 
-        if ( func_get_args() === 1 and is_array($arguments[ 0 ]) )
-        {
+        if (func_get_args() === 1 and is_array($arguments[ 0 ])) {
             $arguments = $arguments[ 0 ];
         }
 
-        foreach ( $arguments as $key => $argument )
-        {
+        foreach ($arguments as $key => $argument) {
             $arguments[ $key ] = Str::removeRight($arguments[ $key ], '/');
 
-            if ( $key > 0 )
-            {
+            if ($key > 0) {
                 $arguments[ $key ] = Str::removeLeft($arguments[ $key ], '/');
             }
         }
@@ -44,12 +41,9 @@ class Path extends BasePath
     public static function getDirectoryName($path)
     {
         $path = realpath($path);
-        if ( is_dir($path) )
-        {
+        if (is_dir($path)) {
             return last(explode(DIRECTORY_SEPARATOR, $path));
-        }
-        else
-        {
+        } else {
             return static::getDirectory($path);
         }
     }
