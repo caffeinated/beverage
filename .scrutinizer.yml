@@ -3,7 +3,7 @@ tools:
     php_pdepend: true
     php_analyzer: true
     external_code_coverage:
-        timeout: 3000    # Timeout in seconds.
+        timeout: 1200
     php_code_sniffer:
         config:
             standard: "PSR2"
