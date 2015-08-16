@@ -12,17 +12,6 @@
     </parse_markers>
     <source>eJytVdtq20AQfddXTCAg2cRWk9IXp05DU1oKTTGJ6Uvsho00kraRVmJ3ZOKW/HtnV/I1cS6li8HS7pkzM+eM1+8/VFnleUoUaCoRIZyJJEGpBGE8+Ygz1CLFyVgLSebY82qzA3FJmo/DbteDLowzaYA/lCF8XzDHIxHdMtRx9RlmkadVswnteozb4URNWanhERx8whmMURQOF5XVXMs0oxa3fA2iDhy9OXx3sB7rQnIZoTLLEjKiygzCkPJY55iKvB+VRdiCwkJSbxFw/nUM35pnJgo9sp3taNj741lyJ5BdXbhAqrVqRNKY4h1QCTORy5grA6FiqITmLAuFnEVt8ILjVDsSMKSlStvd0H1XuiSMrD5JrSKSpYIU6UFxFzZz0HEhTYl27XNqgiH4wZXo/Z7Evetpt+MfL8/btH740+87bN+fhMvH/bCF3nvbTZ9lGN3ybCSu7VTOUNlkrhRbm50ap8F2o8wsig3otgY3ZZk/p4A0Pyz5aMUSrFNuy8BlBnvMg+l1ISjKgn3iye6dPCHkwUaN/OYC0XSApzcqa0XBamtvOIS3nbWEa9omIje4UryVcg1AusZdMo/s5BgQG8MDAaYDriHGux5r84u1CVNJWX3TS2SOZm4Ii86Cwg6gbkdUKBDGlJEUxI6B0FrMmUiRkIrnznnJTsbcYjO3q6Sv99GxP2ek+2m81Mb/Y+DxAweuwG+69mF4sgRewSFMD8BvWbbOjmAK01228U2hTFLq4t+sA6n4ChGwusxd2JkNGzVRky8u6vMDv19h0IsvmzV/XDlPmtSS8//IYLBsIL6kOs7nm4EL9e69v6M/DTk=</source>
   </file>
-  <file path="Traits/ValidableService.php" generated-path="Traits.ValidableService.html" hash="29cb3c95a71b97bebc649e8502ff4ee7" package="Default">
-    <docblock line="0">
-      <description></description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-    </parse_markers>
-    <source>eJyFlM2O0zAUhfd5istoFmlFCSCxoVAQZYSQYMNUXXXjujeNNYkd2TftVEPeHdtJEzfpDN409f0733HiT1/KrIwkK9CUjCMsWZqikIxwt/mGB9Rsj5uVZoLMPIoqg3D3yLEkoeTc/71asFSSNONkNmuWix3b5mirk+k0gil0W3CP+iDsUN/fhlz0K6soUxrsClrDdzzAClnhU7gqT1rsM4Jl9xTzCbx/++7D67DMZ+d2hLRKATKi0nxMEsp3Osc9y99wVSRtPCkEzc65v3+u4Ffz7HtYbx4s2KWojtemJBE5iB6uZYueIofi0d2yvQ5MA9OandqdxP+WWhFyh3p78D1IaWf5oPoHElCG0Oe0ka69Rqq0hEI8Ov5wQrW1eJBWkrvjgz3SuusST3xOo9atts0tZcLMFqEkF61Hwu6RzH+UlUyzAhplEGIOtY9MfAnDXGAEXYdEIxT4fMXrIftzvH8qGeI6JTxD/vActT9xK8LmsiHvVqn8r6zyvAtQptXRwKb72F60QFdy3clYehVxM8+PGxqRKo2MZxCPHWEmsGQS1LglUgj8BSENMclRpf2BDUvOZa+CtrPFUVAWN9Jmi5IZg/b9u1YaHBtqPTyy82Y8mY8q64udGjC3X/V4gPcZJB77ay2+eepH1CAMSEXAZMcLFji8BfprL7j3+ovvZqCuV1b3b5y3NgSdLYS5K0o6jY1pXxrSFc6jy651VEf/AIzOtLc=</source>
-  </file>
   <file path="Traits/NamespacedItemResolver.php" generated-path="Traits.NamespacedItemResolver.html" hash="4e291609ee082e402bf551542136d6bd" package="Default">
     <docblock line="0">
       <description></description>
@@ -55,15 +44,6 @@
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
     <source>eJyFU8GO00AMvecrfKjUpCobQOLSBYEoEqoEJ3pjV5F36iQjkkk044RdUP8dz6QNaboIH1pr5vnZ73ny9n1btpHBmlyLimCLeU7aINPh7iP1ZLGgu71Fze42itLVKoIVfNOmqIgbA+FGjvzpB+y4bCxITFjgE/WwJ6wDRDXtk9VFybAds1gl8PrlqzfraVlAV1qRcSSEJXPrNmnK1cFWVGB1o5o6Pd2nteYXZ+zX3R6+DHngEFU/RMPlUKM0gaQRexF/RUW/I68haPUhJD1aqPWjHyucpOG/tboXNnCMrBUstJHMKBKjZgRbSx6IYOgnuNG9c8HNCTf2s8SdNdA3et6xYVLe1bwzirVwZJlqhMZ2iuMkgIbxfegc4ppkKYeMHrVjFy+41G4NS200L5NkgvWhsKqyzpHNPH2G1uJT/P2i5n4dWmcFsdwXLk6S25HjGA2/c/k7qdRY6V9nC/4n/NprfBCNqPg5C/xgcXLt+mdi4JJAddaS4X93bdFiDbJHK6sBWPjPYT7SsOTLbXQP8urO6x/HEWt2p05xoIJ3sDxQjl0lnj+zIu0ccTzQbDbjM7paz8UkE+B0AWM63kr38OpC1WiTjysigc4f8aTvrN8xOkZ/ADMKPIY=</source>
-  </file>
-  <file path="Traits/SlugPackageTrait.php" generated-path="Traits.SlugPackageTrait.html" hash="28dace7f42447bdda76ac2a073af2d1b" package="Default">
-    <docblock line="0">
-      <description>Part of the Robin Radic's PHP packages.</description>
-      <long-description>MIT License and copyright information bundled with this package
-in the LICENSE file or visit http://radic.mit-license.com</long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <source>eJyNk1Fv2jAQx9/9Ka7SJAgCAp32AqvGhiqtEptQQXspVWViJ7Ga2JF9YWIV3322cYAN0HaKlMh397+7ny8fP1V5ReJOh0AH5lQjqBQw5/Co1kLCI2UiaRmYf51DRZNXmnHTt6Eu+tvDEmYi4dJwoJJBoqqtFlmOIGSqdElRKAnrWrKCM/gpMLfCwjQ6TsJWcLVmD9P774t7SEXBQWnYCCMQcsRqFMfatdAvBfaKfbF+okqbHBNJS26sGocpTVMuJEXOVl/4hmurv1pqKtCMCanNlYgFausOwy9db/ZxDS2KOpvv24SkoOYw8yQ0D8Fm1Le3mippVOFnmlhx4yYPNuwP+gPvoDXmdrrGTgh7dxivcZ/g9e4jXm+3g+GH7gUN+QpHcwiNZZhZ+PXagYu1y9AhISboIJ3O66mRN0JcvkfjrAMbWghm8bnQcNa4LBRNS3hnji6YaI61ttevVBHOYv+utEKe2GuAtJaJX5FT6bZXiXzoG2nmECm0b2wqz17sWiV5uxW3n2jv13MnWh2+4lZ334N9+ShuIrdNiaolto9HN3d38D46UXcW2k1pYfj44NkR8lcA6jr4d2eIMo5uhB9cMqU/SzZvFv2/aRnUQmZPz/8idqXSZXjn2Fa9Izj/fQnd+Gx2qjXdvhi3pwecXRh24Tb6A8mVhrFmxfb6HYci9p8cjQ5/NttnhYymyo78BioaYfI=</source>
   </file>
   <file path="Traits/DotArrayAccess.php" generated-path="Traits.DotArrayAccess.html" hash="00e895b1606f107a79b393ac5866ede6" package="Default">
     <docblock line="0">
@@ -208,7 +188,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
     </parse_markers>
     <source>eJx9kU1PwzAMhu/5FT5MWjuNFZC4FCYQHwck4MSNocm0bhuRpiFJEQjtv+Om61ou5GQ5jz/e1xeXpjJCY03OYEZwg0VBUqOnfHNNn2SxpM1jk5Ny50K0jolGF7I8D/G9Um0d6M0tenxDR5s71Xy0pH1fBehgyHCDZLEQsIBrBqEO/5lC5zjXpa+w9VVjgd9kD7ilT3gmrAOSNebbyrLyvMgQRVkMp8cnZ8tpWaCVzEjzLIDKe+PSJPEqt4pKVKusqZP9f1JLfzSwj/fP8NDHoQf78s4u/F3qYA4jiQgioBdMX550PqoWP6ITZNo3HgBFqzMvGw3bbYZKRbOaWHK+hJlBy1fwZF0cCvqy7s1C+yf+hXXv17ZzujtaNPOVdDE7O8LhPkzK2ijeKJqv5kt4mVtS2E12lTScGJty3C/xOu0jC4j6U6dphS7a943jyWJh3kHRGga+JH/gJy27Z8m3Vo9VBwEDsBv5PcvGsI1p+p9jff1O7MQvjAvhSg==</source>
   </file>
-  <file path="Dotenv.php" generated-path="Dotenv.html" hash="c2ec07112c3b28dabefbca1014c4c1da" package="Default">
+  <file path="Dotenv.php" generated-path="Dotenv.html" hash="9079b411df26ac9a13a83e9e6a2b6218" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -217,7 +197,7 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
-    <source>eJyVVG1P2zAQ/p5fcWidkqDSbl/pommDMFXjTTBtmgAFk1xai9SObKdQDf77zna7Ji0g7T4ksX1+7rm75/Lpcz2tg0CwGeqa5QgHrCyRC2awuP6Kc1RsgqMgGO7uBrALh9KgmA/o066OJSs0MLgd0OYtlLxC4ALMFGHC5yig4ApzI9UCmChAo9HukLy5kmKGwsCcKW3xhkFeMa2XEQAf6UXg134d/AkCIKubu4rnoA0z9CobkRsuBUzQpGJ+RPGjXs3MtA89RyaB0FILY3d5iWGNlxDtcJ1po7iYRM47jskDWtbFGP07e17jOJdzikhuirBmq/jhMIwH9Bg4j9FWYIWsYHeW7wohhqcnsEcl72xvsjJTJR9A4ANcj8WcVbz4oiaNrWX6mGNt6xF1LljTNeVpyu0Da6Gv8T6krb643N9rEJK+ZUPtk8otVswHVJeX4Q7IxaBHeOBUm4VsVKfppARDdSftGIoR9l/EcSV448hWZ+s07uzELzZtOIQLSmKlVyNJncCUYguQJVRcoPa8WWPkXoGGNIyFO6AsCkt8LQDr411IAlzwjLQYhXY389uZvZct74UtRtZZv+lMMvrYvtHz3BLoSqQPR+PjNBt/Oz27SLPT9Fd2PD5NL+HJ719+H59n6cn5j99+/z8ptDKkm2sudnCJytXNGq6U1Pl8CtGSKNOe8qaEqQGHXCucMFVALmdWE7rjYceEZrOWOvJT5WCoHu/CGJIkgQ+bmNZyKUhWTWvcfOc3Yp+JagGNRpKz2MNZbRbLppsp6bGS8p7W9+hUiupVYo4TUUqI0g5RKlmlt1K1VnFtop79xfZt2aqGvJLlP2x/X0g1oynW2Jq+n0xx/3fwMURTVfFoC9j14AocNNwQpkd/Lf31l0LTKOHve+/n4Dn4C9vEr04=</source>
+    <source>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</source>
   </file>
   <file path="ConsoleServiceProvider.php" generated-path="ConsoleServiceProvider.html" hash="97c119c6fad47c264da44399f3ea7ad7" package="Default">
     <docblock line="0">
@@ -343,17 +323,6 @@ in the LICENSE file or visit http://radic.mit-license.com</long-description>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
     <source>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</source>
-  </file>
-  <file path="Contracts/Validable.php" generated-path="Contracts.Validable.html" hash="fb894867e975aa0c888d461321970b12" package="Default">
-    <docblock line="0">
-      <description></description>
-      <long-description></long-description>
-      <tag name="package" line="0" description="Default"/>
-    </docblock>
-    <parse_markers>
-      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-    </parse_markers>
-    <source>eJx9j71Ow0AMx/d7Cg8dSgb6ACCB2omhEgKJKYuTOMlJF9/JdooQ4t25XItAQOvFkvX/+Pn2Lo3JMU6kCVuCHfY9eUajrt7SgQQHqneRTbA1vXHOs5H0i/QFg++wCeTeHeTZVFXZUMET2Sys4HuwkeBQlOYjQ0JV6iAKcLTrk/7Ldi/FB02M4XTblJ3mJvgW+pnb7xRdX2WeM80Yws9aEomi5/rqhxDmqXxdP88pRbF6T6r59y0OF0mOwf+RPBbGDBJ5gIyB8OptBM9qyC39YUkoOAGgCL4BrBbHb86VjV4v4iwV62NESchcH+4TW5aPfg==</source>
   </file>
   <file path="Contracts/Dependable.php" generated-path="Contracts.Dependable.html" hash="cdf6640645da5388076e1c1e0469dfc4" package="Default">
     <docblock line="0">
