@@ -26,5 +26,4 @@ class Spinner extends \cli\notify\Spinner
     protected $_format = '{:msg} {:char}  ({:elapsed}, {:speed}/s)';
 
     protected $_iteration = 0;
-
 }

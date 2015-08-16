@@ -32,8 +32,7 @@ class Dots extends \cli\notify\Dots
     public function start(&$started)
     {
         $this->started = true;
-        while ( $started === true )
-        {
+        while ($started === true) {
             $this->tick();
         }
     }

@@ -6,8 +6,8 @@ namespace Caffeinated\Beverage;
 
 use Caffeinated\Beverage\Vendor\Console\Dots;
 use Caffeinated\Beverage\Vendor\Console\Spinner;
-use Illuminate\Console\Command as BaseCommand;
 use Caffeinated\Beverage\Vendor\ConsoleColor;
+use Illuminate\Console\Command as BaseCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\VarDumper\VarDumper;
@@ -40,7 +40,7 @@ abstract class Command extends BaseCommand
     protected $colors;
 
     /**
-     * Instanciates the class
+     *
      */
     public function __construct()
     {
@@ -92,7 +92,8 @@ abstract class Command extends BaseCommand
     {
         $path = '/root/.' . md5('_radic-cli-perm-test' . time());
         $root = (@file_put_contents($path, '1') === false ? false : true);
-        if ($root !== false) {
+        if ( $root !== false )
+        {
             $this->getLaravel()->make('files')->delete($path);
         }
 
@@ -108,21 +109,25 @@ abstract class Command extends BaseCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if (! $this->allowSudo and ! $this->requireSudo and $this->hasRootAccess()) {
+        if ( ! $this->allowSudo and ! $this->requireSudo and $this->hasRootAccess() )
+        {
             $this->error('Cannot execute this command with root privileges');
             exit;
         }
 
-        if ($this->requireSudo and ! $this->hasRootAccess()) {
+        if ( $this->requireSudo and ! $this->hasRootAccess() )
+        {
             $this->error('This command requires root privileges');
             exit;
         }
         $this->getLaravel()->make('events')->fire('command.firing', $this->name);
         $return = null;
-        if (method_exists($this, 'handle')) {
+        if ( method_exists($this, 'handle') )
+        {
             $return = $this->handle();
         }
-        if (method_exists($this, 'fire')) {
+        if ( method_exists($this, 'fire') )
+        {
             $return = $this->fire();
         }
         $this->getLaravel()->make('events')->fire('command.fired', $this->name);
@@ -148,8 +153,10 @@ abstract class Command extends BaseCommand
     {
 
         $rows = [ ];
-        foreach ($arr as $key => $val) {
-            if (is_array($val)) {
+        foreach ( $arr as $key => $val )
+        {
+            if ( is_array($val) )
+            {
                 $val = print_r(array_slice($val, 0, 5), true);
             }
             $rows[] = [ (string)$key, (string)$val ];
