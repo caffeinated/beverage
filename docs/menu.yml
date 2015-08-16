@@ -1,74 +1,74 @@
 menu:
   - name: Overview
     icon: fa fa-eye
-    page: index
+    document: index
 
   - name: Filesystem
     icon: fa fa-folder
-    page: filesystem
+    document: filesystem
 
   - name: Dependency sorting
     icon: fa fa-list-ol
-    page: dependency-sorting
+    document: dependency-sorting
 
   - name: Path customisation
     icon: fa fa-opencart
-    page: custom-application-paths
+    document: custom-application-paths
 
   - name: StubGenerator
     icon: fa fa-pencil
-    page: stubs
+    document: stubs
 
   - name: Utilities
     icon: fa fa-cubes
     children:
 
       - name: Arr
-        page: utilities/arr
+        document: utilities/arr
 
       - name: Str
-        page: utilities/str
+        document: utilities/str
 
       - name: Dotenv
-        page: utilities/dotenv
+        document: utilities/dotenv
 
       - name: Path
-        page: utilities/path
+        document: utilities/path
 
       - name: helpers
-        page: utilities/helpers
+        document: utilities/helpers
 
   - name: Abstraction
     icon: fa fa-link
     children:
 
       - name: Service provider
-        page: abstraction/service-provider
+        document: abstraction/service-provider
 
       - name: Console provider
-        page: abstraction/console-provider
+        document: abstraction/console-provider
 
       - name: Command
-        page: abstraction/command
+        document: abstraction/command
 
   - name: Traits
     icon: fa fa-heart
     children:
 
       - name: DotArrayAccess
-        page: traits/dot-array-access
+        document: traits/dot-array-access
 
       - name: DotArrayObjectAccess
-        page: traits/dot-array-object-access
+        document: traits/dot-array-object-access
 
       - name: EventDispatcher
-        page: traits/event-dispatcher
+        document: traits/event-dispatcher
 
       - name: MultiSingleton
-        page: traits/multi-singleton
+        document: traits/multi-singleton
 
       - name: NamespacedItemResolver
-        page: traits/namespaced-item-resolver
+        document: traits/namespaced-item-resolver
 
       - name: Singleton
-        page: traits/singleton
+        document: traits/singleton
