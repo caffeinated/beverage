@@ -50,7 +50,4 @@ class ServiceProvider extends \Caffeinated\Beverage\ServiceProvider
      * @var array
      */
     protected $migrationDirs = [ /* 'dirName', */ ];
-
-
-
 }

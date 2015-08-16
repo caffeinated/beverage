@@ -29,7 +29,8 @@ class DotenvTest extends TestCase
         $this->arrayTest($arr);
     }
 
-    protected function arrayTest($array){
+    protected function arrayTest($array)
+    {
         $this->assertTrue(is_array($array));
         $this->assertArrayHasKey('FIRST', $array);
         $this->assertArrayHasKey('SECOND', $array);

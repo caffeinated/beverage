@@ -39,24 +39,18 @@ class CustomApplicationPaths
 
         $this->app->instance('path', $this->getPath());
 
-        foreach ( [ 'config', 'database', 'lang', 'public', 'storage' ] as $path )
-        {
+        foreach ([ 'config', 'database', 'lang', 'public', 'storage' ] as $path) {
             $this->app->instance('path.' . $path, $this->getPath($path));
         }
     }
 
     protected function getPath($name = null)
     {
-        if ( is_null($name) )
-        {
+        if (is_null($name)) {
             return $this->basePath . DIRECTORY_SEPARATOR . $this->paths[ 'app_path' ];
-        }
-        elseif ( $name === 'base' )
-        {
+        } elseif ($name === 'base') {
             return $this->basePath;
-        }
-        elseif ( array_key_exists($name . '_path', $this->paths) )
-        {
+        } elseif (array_key_exists($name . '_path', $this->paths)) {
             return $this->basePath . DIRECTORY_SEPARATOR . $this->paths[ $name . '_path' ];
         }
     }
@@ -70,8 +64,7 @@ class CustomApplicationPaths
      */
     public function loadPaths($basePath = null, $configPath = null)
     {
-        if ( $basePath )
-        {
+        if ($basePath) {
             $this->basePath = realpath($basePath);
         }
 
@@ -89,8 +82,7 @@ class CustomApplicationPaths
      */
     protected function loadConfig($customConfigPath = null)
     {
-        if ( is_null($customConfigPath) )
-        {
+        if (is_null($customConfigPath)) {
             $customConfigPath = $this->basePath . DIRECTORY_SEPARATOR . 'config';
         }
 
@@ -101,8 +93,7 @@ class CustomApplicationPaths
         $customConfig   = [ ];
         $beverageConfig = require($beverageConfigFile);
 
-        if ( file_exists($customConfigFile) )
-        {
+        if (file_exists($customConfigFile)) {
             $customConfig = require($customConfigFile);
         }
 
@@ -110,5 +101,4 @@ class CustomApplicationPaths
 
         return $config[ 'custom_paths' ];
     }
-
 }

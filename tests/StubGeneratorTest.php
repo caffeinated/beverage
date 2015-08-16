@@ -46,12 +46,13 @@ class StubGeneratorTest extends TestCase
     public function testDirectoryGeneration()
     {
         $baseDir = base_path('test');
-        foreach(['src', 'src2', 'src/make/this/happen'] as $dir){
+        foreach (['src', 'src2', 'src/make/this/happen'] as $dir) {
             $this->createDirGenTest($baseDir, $dir);
         }
     }
 
-    protected function createDirGenTest($baseDir, $dir){
+    protected function createDirGenTest($baseDir, $dir)
+    {
 
         $this->fs->shouldReceive('exists')->once()->with(m::mustBe(Path::join($baseDir, $dir)))->andReturn(false);
         $this->fs->shouldReceive('makeDirectory')->once()->with(

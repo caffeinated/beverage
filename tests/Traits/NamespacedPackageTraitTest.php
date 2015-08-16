@@ -40,6 +40,4 @@ class NamespacedPackageTraitTest extends TestCase
         $this->runValidatePackageName(false, 'robin-radic super-package_!@#A45');
         $this->runValidatePackageName(false, 'robin-radic');
     }
-
-
 }
