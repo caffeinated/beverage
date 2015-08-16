@@ -1,6 +1,6 @@
 <project name="beverage" default="pre-commit">
     <property name="vendordir" value="${project.basedir}/../../../vendor"/>
-    <property name="toolsdir" value="${vendordir}/bin"/>
+    <property name="toolsdir" value="/usr/local/bin"/>
     <property name="gitremote.url" value="https://github.com"/>
     <property name="gitremote.owner" value="caffeinated"/>
     <property name="gitremote.repo" value="${phing.project.name}"/>
@@ -66,8 +66,9 @@
 
     <target name="phpdoc" description="Generate phpdoc structure xml and move into docs folder">
         <exec executable="${toolsdir}/phpdoc" dir="${project.basedir}" logoutput="true">
-            <arg line="-t ./phpdoc"/>
-            <arg line="-d ./src"/>
+            <arg value="run"/>
+            <arg line="-t ${project.basedir}/phpdoc"/>
+            <arg line="-d ${project.basedir}/src"/>
             <arg line="--template=xml"/>
         </exec>
         <move file="${project.basedir}/phpdoc/structure.xml" tofile="${phpdocfile}"/>
