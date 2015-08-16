@@ -33,8 +33,7 @@ trait NamespacedPackageTrait
      */
     protected function isValidPackageName($packageName)
     {
-        if ( ! preg_match($this->getNamespacedPackageRegex(), $packageName, $matches) or count($matches) !== 3 )
-        {
+        if (! preg_match($this->getNamespacedPackageRegex(), $packageName, $matches) or count($matches) !== 3) {
             return false;
         }
 

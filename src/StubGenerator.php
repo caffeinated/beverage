@@ -49,8 +49,7 @@ class StubGenerator
         $path = storage_path("caffeinated/stubs/{$fileName}");
         $this->files->put($path, $this->compiler->compileString($string));
 
-        if ( is_array($vars) && ! empty($vars) )
-        {
+        if (is_array($vars) && ! empty($vars)) {
             extract($vars);
         }
 
@@ -76,10 +75,8 @@ class StubGenerator
      */
     public function generate($stubDir, $destDir, array $files = [ ], array $vars = [ ])
     {
-        foreach ( $files as $stubFile => $destFile )
-        {
-            foreach ( array_dot($vars) as $key => $val )
-            {
+        foreach ($files as $stubFile => $destFile) {
+            foreach (array_dot($vars) as $key => $val) {
                 $destFile = Str::replace($destFile, '{{' . $key . '}}', $val);
             }
 
@@ -87,8 +84,7 @@ class StubGenerator
             $destPath    = Path::join($destDir, $destFile);
             $destDirPath = Path::getDirectory($destPath);
 
-            if ( ! $this->files->exists($destDirPath) )
-            {
+            if (! $this->files->exists($destDirPath)) {
                 $this->files->makeDirectory($destDirPath, 0755, true);
             }
 
@@ -107,16 +103,12 @@ class StubGenerator
      */
     public function generateDirectoryStructure($destDir, array $dirs = [ ])
     {
-        foreach ( $dirs as $dirPath )
-        {
+        foreach ($dirs as $dirPath) {
             $dirPath = Path::join($destDir, $dirPath);
-            if ( ! $this->files->exists($dirPath) )
-            {
+            if (! $this->files->exists($dirPath)) {
                 $this->files->makeDirectory($dirPath, 0755, true);
             }
         }
         return $this;
     }
-
-
 }

@@ -1,10 +1,10 @@
-<project name="beverage" default="fix">
-    <property name="toolsdir" value="${project.basedir}/../../../vendor/bin/"/>
+<project name="beverage" default="pre-commit">
+    <property name="vendordir" value="${project.basedir}/../../../vendor"/>
+    <property name="toolsdir" value="${vendordir}/bin"/>
     <property name="gitremote.url" value="https://github.com"/>
     <property name="gitremote.owner" value="caffeinated"/>
     <property name="gitremote.repo" value="${phing.project.name}"/>
-
-    <target name="fix" depends="phpcs" description=""/>
+    <property name="phpdocfile" value="${project.basedir}/docs/structure.xml"/>
 
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
         <delete dir="${project.basedir}/vendor"/>
@@ -12,19 +12,13 @@
         <property name="clean.done" value="true"/>
     </target>
 
-    <target name="vendor" depends="clean" unless="vendor.done" description="Cleanup composer and vendor">
-        <exec executable="composer" logoutput="true">
-            <arg line="install"/>
-        </exec>
-        <property name="vendor.done" value="true"/>
+    <target name="pre-commit" unless="pre-commit.done" depends="clean" description="Prepare for build">
+        <phingcall target="lint"/>
+        <phingcall target="phpcs"/>
+        <phingcall target="phpunit"/>
+        <phingcall target="phpdoc"/>
+        <property name="pre-commit.done" value="true"/>
     </target>
-
-
-    <target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build">
-
-        <property name="prepare.done" value="true"/>
-    </target>
-
 
     <target name="lint" description="Perform syntax check of sourcecode files">
         <apply executable="php" failonerror="true">
@@ -41,8 +35,7 @@
     </target>
 
     <target name="phpcbf" description="Fixes coding standard violations using PHP_CodeSniffer Fixer">
-
-        <exec executable="${toolsdir}phpcbf" logoutput="true">
+        <exec executable="${toolsdir}/phpcbf" logoutput="true">
             <arg value="--tabWidth=4"/>
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
@@ -53,7 +46,7 @@
     </target>
 
     <target name="phpcs" depends="phpcbf" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-        <exec executable="${toolsdir}phpcs" logoutput="true">
+        <exec executable="${toolsdir}/phpcs" logoutput="true">
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg value="--ignore=autoload.php"/>
@@ -62,19 +55,23 @@
         </exec>
     </target>
 
-    <target name="phpunit" depends="prepare" description="Run unit tests with PHPUnit">
-        <exec executable="${toolsdir}phpunit" logoutput="true">
+    <target name="phpunit" description="Run unit tests with PHPUnit">
+        <exec executable="${toolsdir}/phpunit" logoutput="true">
             <arg value="--configuration"/>
             <arg path="${project.basedir}/phpunit.xml"/>
+            <arg value="--bootstrap"/>
+            <arg path="${vendordir}/autoload.php"/>
         </exec>
     </target>
 
-    <target name="phpdoc" depends="prepare" description="Generate project documentation using phpDocumentator">
-        <exec executable="${toolsdir}phpdoc" dir="${project.basedir}/build" logoutput="true">
+    <target name="phpdoc" description="Generate phpdoc structure xml and move into docs folder">
+        <exec executable="${toolsdir}/phpdoc" dir="${project.basedir}" logoutput="true">
             <arg line="-t ./phpdoc"/>
-            <arg line="-d src"/>
+            <arg line="-d ./src"/>
             <arg line="--template=xml"/>
         </exec>
+        <move file="${project.basedir}/phpdoc/structure.xml" tofile="${phpdocfile}"/>
+        <delete dir="${project.basedir}/phpdoc"/>
     </target>
 
 </project>
