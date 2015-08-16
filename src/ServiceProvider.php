@@ -27,7 +27,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $dir;
 
 
-    # RESOURCES
+    /*
+     |---------------------------------------------------------------------
+     | Resources properties
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Path to resources directory, relative to $dir
@@ -44,7 +49,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $resourcesDestinationPath = 'resources';
 
 
-    # VIEWS
+    /*
+     |---------------------------------------------------------------------
+     | Views properties
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * View destination path, relative to base_path
@@ -69,7 +79,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $viewDirs = [ /* 'dirName' => 'namespace' */ ];
 
 
-    # ASSETS
+    /*
+     |---------------------------------------------------------------------
+     | Assets properties
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Assets destination path, relative to public_path
@@ -94,7 +109,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $assetDirs = [ /* 'dirName' => 'namespace' */ ];
 
 
-    # CONFIG
+    /*
+     |---------------------------------------------------------------------
+     | Configuration properties
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Collection of configuration files.
@@ -111,7 +131,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $configPath = '../config';
 
 
-    # DATABASE
+    /*
+     |---------------------------------------------------------------------
+     | Database properties
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Path to the migration destination directory, relative to database_path
@@ -149,7 +174,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $migrationDirs = [ /* 'dirName', */ ];
 
 
-    # MISC
+    /*
+     |---------------------------------------------------------------------
+     | Miscelanious properties
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Collection of service providers.
@@ -206,7 +236,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected $commands = [ ];
 
 
-    # Booting functions
+    /*
+     |---------------------------------------------------------------------
+     | Booting functions
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Perform the booting of the service.
@@ -295,7 +330,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     }
 
 
-    # Registration functions
+    /*
+     |---------------------------------------------------------------------
+     | Registration functions
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * Registers the server in the container.
@@ -365,7 +405,12 @@ abstract class ServiceProvider extends BaseServiceProvider
     }
 
 
-    # Path getter convinience functions
+    /*
+     |---------------------------------------------------------------------
+     | Path getter convinience functions
+     |---------------------------------------------------------------------
+     |
+     */
 
     /**
      * getFilePath
