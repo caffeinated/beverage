@@ -289,7 +289,7 @@ abstract class ServiceProvider extends BaseServiceProvider
                 $viewPath             = $this->getViewsPath($dirName);
                 $viewsDestinationPath = Str::replace($this->viewsDestinationPath, '{namespace}', $namespace);
                 $this->loadViewsFrom($viewPath, $namespace);
-                $this->publishes([ $viewPath => base_path($viewsDestinationPath) ]);
+                $this->publishes([ $viewPath => base_path($viewsDestinationPath) ], 'views');
             }
         }
     }
