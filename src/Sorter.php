@@ -20,18 +20,39 @@ use Caffeinated\Beverage\Contracts\Sortable;
 class Sorter implements Sortable
 {
 
+    /**
+     * @var array
+     */
     protected $items = [];
 
+    /**
+     * @var array
+     */
     protected $dependencies = [];
 
+    /**
+     * @var array
+     */
     protected $dependsOn = [];
 
+    /**
+     * @var array
+     */
     protected $missing = [];
 
+    /**
+     * @var array
+     */
     protected $circular = [];
 
+    /**
+     * @var array
+     */
     protected $hits = [];
 
+    /**
+     * @var array
+     */
     protected $sorted = [];
 
     /**
