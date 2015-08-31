@@ -26,40 +26,41 @@ trait DotArrayAccess
     /**
      * Determine if an item exists at an offset.
      *
-     * @param  mixed  $key
+     * @param  mixed $offset
      * @return bool
      */
-    public function offsetExists($key)
+    public function offsetExists($offset)
     {
-        return array_has($this{$this->getArrayAccessor()}, $key);
+        return array_has($this{$this->getArrayAccessor()}, $offset);
     }
 
     /**
      * Get an item at a given offset.
      *
-     * @param  mixed  $key
+     * @param  mixed $offset
      * @return mixed
      */
-    public function offsetGet($key)
+    public function offsetGet($offset)
     {
-        return array_get($this->{$this->getArrayAccessor()}, $key);
+        return array_get($this->{$this->getArrayAccessor()}, $offset);
     }
 
     /**
      * Set the item at a given offset.
      *
-     * @param  mixed  $key
-     * @param  mixed  $value
+     * @param        $offset
+     * @param  mixed $value
      * @return $this
+     * @internal param mixed $key
      */
-    public function offsetSet($key, $value = null)
+    public function offsetSet($offset, $value = null)
     {
-        if (is_array($key)) {
-            foreach ($key as $innerKey => $innerValue) {
+        if (is_array($offset)) {
+            foreach ($offset as $innerKey => $innerValue) {
                 array_set($this->{$this->getArrayAccessor()}, $innerKey, $innerValue);
             }
         } else {
-            array_set($this->{$this->getArrayAccessor()}, $key, $value);
+            array_set($this->{$this->getArrayAccessor()}, $offset, $value);
         }
 
         return $this;
@@ -76,5 +77,15 @@ trait DotArrayAccess
         array_set($this->{$this->getArrayAccessor()}, $key, null);
 
         return $this;
+    }
+
+    /**
+     * getIterator
+     *
+     * @return \ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->{$this->getArrayAccessor()});
     }
 }

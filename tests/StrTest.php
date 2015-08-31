@@ -1,22 +1,8 @@
 <?php
-/**
- * Part of the Caffeinated PHP packages.
- *
- * MIT License and copyright information bundled with this package in the LICENSE file
- */
 namespace Caffeinated\Tests\Beverage;
 
 use Caffeinated\Beverage\Str;
-use Symfony\Component\VarDumper\VarDumper;
 
-/**
- * This is the StrTest.
- *
- * @package        Caffeinated\Tests
- * @author         Caffeinated Dev Team
- * @copyright      Copyright (c) 2015, Caffeinated
- * @license        https://tldrlegal.com/license/mit-license MIT License
- */
 class StrTest extends TestCase
 {
 
@@ -116,12 +102,12 @@ class StrTest extends TestCase
     }
     public function testStartsWith()
     {
-        $this->assertTrue(Str::startsWith('jason', 'jas'));
-        $this->assertTrue(Str::startsWith('jason', 'jason'));
-        $this->assertTrue(Str::startsWith('jason', ['jas']));
-        $this->assertFalse(Str::startsWith('jason', 'day'));
-        $this->assertFalse(Str::startsWith('jason', ['day']));
-        $this->assertFalse(Str::startsWith('jason', ''));
+        $this->assertTrue(Str::startsWith('jason', 'jas', true));
+        $this->assertTrue(Str::startsWith('jason', 'jason', true));
+        $this->assertTrue(Str::startsWith('jason', ['jas'], true));
+        $this->assertFalse(Str::startsWith('jason ', 'day', true));
+        $this->assertFalse(Str::startsWith('jason', ['day'], true));
+        $this->assertFalse(Str::startsWith('jason', '', true));
     }
     public function testEndsWith()
     {
