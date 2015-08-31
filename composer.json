@@ -26,7 +26,6 @@
         "webmozart/path-util": "~1.0",
         "anahkiasen/underscore-php": "2.0.*",
         "vlucas/phpdotenv": "1.0.*"
-
     },
     "require-dev": {
         "caffeinated/dev": "dev-master@dev"

@@ -149,7 +149,7 @@ class Str
             return forward_static_call_array([ 'Underscore\Types\Strings', $name ], $parameters);
         } else {
             $object = $this->getStringyString($parameters);
-
+            #return call_user_func_array([ 'Caffeinated\Beverage\Vendor\Stringy', $name ], $parameters);
             if (method_exists($object, $name)) {
                 return (string) call_user_func_array([ $object, $name ], array_slice($parameters, 1));
             }
@@ -165,6 +165,6 @@ class Str
      */
     public static function __callStatic($name, $parameters)
     {
-        return (string) call_user_func_array([ new static(), $name ], $parameters);
+        return call_user_func_array([ new static(), $name ], $parameters);
     }
 }

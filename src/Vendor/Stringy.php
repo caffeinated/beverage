@@ -14,6 +14,18 @@ use Stringy\Stringy as BaseStringy;
 class Stringy extends BaseStringy
 {
     /**
+     * Magic call static method.
+     *
+     * @param  string $name
+     * @param  mixed  $parameters
+     * @return mixed
+     */
+    public static function __callStatic($name, $parameters)
+    {
+        return call_user_func_array([ static::create(head($parameters)) , $name ], array_slice($parameters, 1));
+    }
+
+    /**
      * Studly Namespace
      *
      * Transforms "vendor-name/package-name" into "VendorName/PackageName".
@@ -38,4 +50,14 @@ class Stringy extends BaseStringy
     {
         return explode($delimiter, $this->str, $limit);
     }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function startsWith($substring, $caseSensitive = true)
+    {
+        return (bool) parent::startsWith($substring, $caseSensitive);
+    }
+
 }

@@ -1096,7 +1096,7 @@ and returns an associative array containing the vendor and package name</descrip
     </parse_markers>
     <source>eJydVm1r40YQ/u5fMXeEsxSU+Fo4Ck6dlsvlroFrMCT0S32YjTS2t9Fbd1dJTPB/7+yuVu92TEUgknbmmZlnnhn519/yTT6anJ6O4BTmTCjIVqA2CFdstUKeMoURzP+YQ87CR7ZGeU6G2vbPm3v4zkNMJQJLIwizfCv4eqOAp6tMJEzxLIWHIo1iQnjmakOwXDocsjJhvt9cXd/eXcOKx0iwk1HKEpRk1Mpg8RmfUJDbxWhUUMCbOC4Sc7T4i+Pz4ipLcgIQcvE5ZhG6R7IuK7vXoelPh7xTxcM3TAlPZcKV87vLq7yGghs7VqhNJmDADr7gE9wjS4xdzYe1qx690IefP/70KWj6Gpe4pLO8NkrlcjqZqDgSMa5ZfB5myaQ0miRcnTmHRi8Mh2HMpGzXOXodaUxDh74o3BMTsDiSydJpYv7nIlMY6opPwprpQfghGhdfyUNupcJkH6xWg6wx4SaViqWKE47toamw9K4i5kyw5OiS6uS7AG8kXfXeptmuoXigpsCqSEOj/+UyzCh3UYTK2xM9gAa0hfQNlu2YCaQn5+zSecCsSXzHyADo51lFo37a9RokMI2q2jsUlIiUOE/XnTMmBNvCCbVXVicCVSFSaNkPE2KjeiV00ESjjM2T5/fq14Xc0mIgkyLl//LIUzxBzw9gxWKJfo+FtdU9fuGCJJWJ7Z3pQSHQk/RIDV3mTG00wt8wDuuGTyRNjRzDjyamNqXQLc/3PafJa5Xn7n0/JdOMs8u8UJ4BDLptre7uDDeOI98vB0FffAUel0vLk2HNhw8f4B1gkiv3xm9Qpy98UYKRAO1pndiuxs0eljRhQnmNY56GcRGhzbZZj57smXZZo9L6Vpgq2fSkI2rzMoyRpV4z/TYVEcaoavzKqlSTjrNPvK6/w/K1xGn9Fg+kgD2nEUrVP7WCbM9292xI+6a06qXaiOxZtnbRFRGl2yAbq8Tc3mbqa0bfyeuXEHM9JAcHyFXuueqCqpJqmuwOmJG0f3QnjF51p4u+1sjCDXilH5OWOZ0bzC4tvH7o6qpyNCGWUeYkZiAecWu8n1jcdTRScKiUFAl+OhWYx/TZ96qDAMavr2M4t1DnMN7txoHFu2jBNXRskHXycz2yoLegvptO/8l42qTMFdiBMsGHfSuSaz4GfMlibreF9aURqXaQV6E31a4vPdbvOtOBL1zSWDVRe5Ntwra8EvaInYClcwAff/lEvzpoEXYz7xJolzR9iGcO3a3tViyqzavI9gPo7pd+dmb5ORKCOlBrKbm75mC9tQf6e/7gh+3Q6J9E/PB0H57LgS9Obz51hLdm0djoOYrK3nda797vV2npd3G80v63yo5Q2HH93Y3+A/gwq0I=</source>
   </file>
-  <file path="ServiceProvider.php" generated-path="ServiceProvider.html" hash="319ea874bdadb180ca0293088f8e4df0" package="Default">
+  <file path="ServiceProvider.php" generated-path="ServiceProvider.html" hash="8084f3b1a1b955ab12d9a81ce3787778" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -1484,39 +1484,42 @@ and returns an associative array containing the vendor and package name</descrip
           <long-description>Can be overriden to adjust default functionality</long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="356" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="357" package="Caffeinated\Beverage">
         <name>register</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::register()</full_name>
-        <docblock line="356">
+        <docblock line="357">
           <description>Registers the server in the container.</description>
           <long-description></long-description>
-          <tag name="return" line="356" description="" type="\Caffeinated\Beverage\Application">
+          <tag name="return" line="357" description="" type="\Caffeinated\Beverage\Application">
             <type>\Caffeinated\Beverage\Application</type>
+          </tag>
+          <tag name="throws" line="357" description="" type="\Exception">
+            <type>\Exception</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Caffeinated\Beverage" line="415" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Caffeinated\Beverage" line="417" package="Caffeinated\Beverage">
         <name>registerConfigFiles</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::registerConfigFiles()</full_name>
-        <docblock line="415">
+        <docblock line="417">
           <description>Merges all defined config files defined in $configFiles.</description>
           <long-description>Can be overriden to adjust default functionality</long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="440" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="442" package="Caffeinated\Beverage">
         <name>getPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getPath()</full_name>
-        <docblock line="440">
+        <docblock line="442">
           <description>getFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="440" description="" type="" variable="$relativePath"/>
-          <tag name="param" line="440" description="" type="null" variable="$fileName">
+          <tag name="param" line="442" description="" type="" variable="$relativePath"/>
+          <tag name="param" line="442" description="" type="null" variable="$fileName">
             <type>null</type>
           </tag>
-          <tag name="param" line="440" description="" type="string" variable="$ext">
+          <tag name="param" line="442" description="" type="string" variable="$ext">
             <type>string</type>
           </tag>
-          <tag name="return" line="440" description="" type="string">
+          <tag name="return" line="442" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1536,16 +1539,16 @@ and returns an associative array containing the vendor and package name</descrip
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="453" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="455" package="Caffeinated\Beverage">
         <name>getConfigFilePath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getConfigFilePath()</full_name>
-        <docblock line="453">
+        <docblock line="455">
           <description>getConfigFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="453" description="" type="null" variable="$fileName">
+          <tag name="param" line="455" description="" type="null" variable="$fileName">
             <type>null</type>
           </tag>
-          <tag name="return" line="453" description="" type="string">
+          <tag name="return" line="455" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1555,16 +1558,16 @@ and returns an associative array containing the vendor and package name</descrip
           <type>null</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="464" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="466" package="Caffeinated\Beverage">
         <name>getDatabasePath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getDatabasePath()</full_name>
-        <docblock line="464">
+        <docblock line="466">
           <description>getMigrationFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="464" description="" type="null" variable="$path">
+          <tag name="param" line="466" description="" type="null" variable="$path">
             <type>null</type>
           </tag>
-          <tag name="return" line="464" description="" type="string">
+          <tag name="return" line="466" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1574,16 +1577,16 @@ and returns an associative array containing the vendor and package name</descrip
           <type>null</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="475" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="477" package="Caffeinated\Beverage">
         <name>getResourcesPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getResourcesPath()</full_name>
-        <docblock line="475">
+        <docblock line="477">
           <description>getViewFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="475" description="" type="null" variable="$path">
+          <tag name="param" line="477" description="" type="null" variable="$path">
             <type>null</type>
           </tag>
-          <tag name="return" line="475" description="" type="string">
+          <tag name="return" line="477" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1593,16 +1596,16 @@ and returns an associative array containing the vendor and package name</descrip
           <type>null</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="486" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="488" package="Caffeinated\Beverage">
         <name>getAssetsPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getAssetsPath()</full_name>
-        <docblock line="486">
+        <docblock line="488">
           <description>getAssetsPath</description>
           <long-description></long-description>
-          <tag name="param" line="486" description="" type="null" variable="$dirName">
+          <tag name="param" line="488" description="" type="null" variable="$dirName">
             <type>null</type>
           </tag>
-          <tag name="return" line="486" description="" type="string">
+          <tag name="return" line="488" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1612,16 +1615,16 @@ and returns an associative array containing the vendor and package name</descrip
           <type>null</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="497" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="499" package="Caffeinated\Beverage">
         <name>getViewsPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getViewsPath()</full_name>
-        <docblock line="497">
+        <docblock line="499">
           <description>getViewsPath</description>
           <long-description></long-description>
-          <tag name="param" line="497" description="" type="null" variable="$path">
+          <tag name="param" line="499" description="" type="null" variable="$path">
             <type>null</type>
           </tag>
-          <tag name="return" line="497" description="" type="string">
+          <tag name="return" line="499" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -1631,13 +1634,13 @@ and returns an associative array containing the vendor and package name</descrip
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="507" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="509" package="Caffeinated\Beverage">
         <name>provides</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::provides()</full_name>
-        <docblock line="507">
+        <docblock line="509">
           <description>Get the services provided by the provider.</description>
           <long-description></long-description>
-          <tag name="return" line="507" description="" type="array">
+          <tag name="return" line="509" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
@@ -1647,7 +1650,7 @@ and returns an associative array containing the vendor and package name</descrip
       <error line="203" code="PPC:ERR-50007">No summary for property $bindings</error>
       <error line="205" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
   </file>
   <file path="helpers.php" generated-path="helpers.html" hash="486cc4012dc76296e81f09265a922da8" package="Caffeinated\Beverage">
     <docblock line="0">
@@ -5680,41 +5683,44 @@ a regular expression pattern.</description>
         </docblock>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="356" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="357" package="Caffeinated\Beverage">
         <name>register</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::register()</full_name>
-        <docblock line="356">
+        <docblock line="357">
           <description>Registers the server in the container.</description>
           <long-description></long-description>
-          <tag name="return" line="356" description="" type="\Caffeinated\Beverage\Application">
+          <tag name="return" line="357" description="" type="\Caffeinated\Beverage\Application">
             <type>\Caffeinated\Beverage\Application</type>
+          </tag>
+          <tag name="throws" line="357" description="" type="\Exception">
+            <type>\Exception</type>
           </tag>
         </docblock>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Caffeinated\Beverage" line="415" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Caffeinated\Beverage" line="417" package="Caffeinated\Beverage">
         <name>registerConfigFiles</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::registerConfigFiles()</full_name>
-        <docblock line="415">
+        <docblock line="417">
           <description>Merges all defined config files defined in $configFiles.</description>
           <long-description>Can be overriden to adjust default functionality</long-description>
         </docblock>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="440" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="442" package="Caffeinated\Beverage">
         <name>getPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getPath()</full_name>
-        <docblock line="440">
+        <docblock line="442">
           <description>getFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="440" description="" type="" variable="$relativePath"/>
-          <tag name="param" line="440" description="" type="null" variable="$fileName">
+          <tag name="param" line="442" description="" type="" variable="$relativePath"/>
+          <tag name="param" line="442" description="" type="null" variable="$fileName">
             <type>null</type>
           </tag>
-          <tag name="param" line="440" description="" type="string" variable="$ext">
+          <tag name="param" line="442" description="" type="string" variable="$ext">
             <type>string</type>
           </tag>
-          <tag name="return" line="440" description="" type="string">
+          <tag name="return" line="442" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -5735,16 +5741,16 @@ a regular expression pattern.</description>
         </argument>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="453" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="455" package="Caffeinated\Beverage">
         <name>getConfigFilePath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getConfigFilePath()</full_name>
-        <docblock line="453">
+        <docblock line="455">
           <description>getConfigFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="453" description="" type="null" variable="$fileName">
+          <tag name="param" line="455" description="" type="null" variable="$fileName">
             <type>null</type>
           </tag>
-          <tag name="return" line="453" description="" type="string">
+          <tag name="return" line="455" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -5755,16 +5761,16 @@ a regular expression pattern.</description>
         </argument>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="464" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="466" package="Caffeinated\Beverage">
         <name>getDatabasePath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getDatabasePath()</full_name>
-        <docblock line="464">
+        <docblock line="466">
           <description>getMigrationFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="464" description="" type="null" variable="$path">
+          <tag name="param" line="466" description="" type="null" variable="$path">
             <type>null</type>
           </tag>
-          <tag name="return" line="464" description="" type="string">
+          <tag name="return" line="466" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -5775,16 +5781,16 @@ a regular expression pattern.</description>
         </argument>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="475" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="477" package="Caffeinated\Beverage">
         <name>getResourcesPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getResourcesPath()</full_name>
-        <docblock line="475">
+        <docblock line="477">
           <description>getViewFilePath</description>
           <long-description></long-description>
-          <tag name="param" line="475" description="" type="null" variable="$path">
+          <tag name="param" line="477" description="" type="null" variable="$path">
             <type>null</type>
           </tag>
-          <tag name="return" line="475" description="" type="string">
+          <tag name="return" line="477" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -5795,16 +5801,16 @@ a regular expression pattern.</description>
         </argument>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="486" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="488" package="Caffeinated\Beverage">
         <name>getAssetsPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getAssetsPath()</full_name>
-        <docblock line="486">
+        <docblock line="488">
           <description>getAssetsPath</description>
           <long-description></long-description>
-          <tag name="param" line="486" description="" type="null" variable="$dirName">
+          <tag name="param" line="488" description="" type="null" variable="$dirName">
             <type>null</type>
           </tag>
-          <tag name="return" line="486" description="" type="string">
+          <tag name="return" line="488" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -5815,16 +5821,16 @@ a regular expression pattern.</description>
         </argument>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="497" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="499" package="Caffeinated\Beverage">
         <name>getViewsPath</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::getViewsPath()</full_name>
-        <docblock line="497">
+        <docblock line="499">
           <description>getViewsPath</description>
           <long-description></long-description>
-          <tag name="param" line="497" description="" type="null" variable="$path">
+          <tag name="param" line="499" description="" type="null" variable="$path">
             <type>null</type>
           </tag>
-          <tag name="return" line="497" description="" type="string">
+          <tag name="return" line="499" description="" type="string">
             <type>string</type>
           </tag>
         </docblock>
@@ -5835,13 +5841,13 @@ a regular expression pattern.</description>
         </argument>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="507" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="509" package="Caffeinated\Beverage">
         <name>provides</name>
         <full_name>\Caffeinated\Beverage\ServiceProvider::provides()</full_name>
-        <docblock line="507">
+        <docblock line="509">
           <description>Get the services provided by the provider.</description>
           <long-description></long-description>
-          <tag name="return" line="507" description="" type="array">
+          <tag name="return" line="509" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
