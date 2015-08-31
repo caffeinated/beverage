@@ -206,4 +206,25 @@ abstract class Command extends BaseCommand
     {
         return new Spinner($message, $interval);
     }
+
+    /**
+     * Write a string as error output.
+     *
+     * @param  string  $string
+     * @return string
+     */
+    public function error($string)
+    {
+        $this->output->writeln("<error>$string</error>");
+        return $string;
+    }
+
+    /**
+     * @inheritDoc
+     * @return string
+     */
+    public function choice($question, array $choices, $default = null, $attempts = null, $multiple = null)
+    {
+        return parent::choice($question, $choices, $default, $attempts, $multiple);
+    }
 }
