@@ -3141,7 +3141,7 @@ a regular expression pattern.</description>
     </parse_markers>
     <source>eJy9VE1P3DAQPZNfMYdIm10tpEXiUooKuyB1JUARHzcuQzxJLBzbtZ1FUct/ZxI2sJXY5ULrQxTFz2/eezPO9x+2slE6mUQwgQxdAFNAqAjmWBQkNQYSkP3MwGL+gCX5PQZ22IvFDZzLnLQnQC0gN7Z1sqwCSF0YV2OQRsN9o4VihkcZKqaVfuBhVF/mfDE/u7w+g0IqYto00liTZ9BfCu5mtCTHx+6uyBovg3GS/GE0CJ8hq3jdalmMDg7zsNJ6jE2ojANe67ZOaQk3hHUPedM/f31L8jHsf/l6MF0/1qPVyjlAFYL139I0KOEUlaj2clOnq/20lmF3wK4l1nMMScC7TvswpA7kii6MN3OL4Vv0O+ocpZNo58/upy0m4wTqmps3v7o9hZo4OuE/u0a0w/Z6/ba554SgaHTej4wgRYGSWIrx4buAQmrxwfasvVZNmcSenxtgJYUTpZLYOEFu1sIRoHPYJiMpRlMYoc9H461HMyxfWradYwqxJZd1jT6C/YMNlJ47y54d/WrIhw2gxgp8SYZJt0O7+9bRqf4a+kpaz8h/NS8nQsiuDioeZS1auPjvQ+OMFeZRJ3H3/+B4lqgaYstP0TNxSGZR</source>
   </file>
-  <file path="Str.php" generated-path="Str.html" hash="bc096a955cbb73b19d50b2ae7af4963b" package="Default">
+  <file path="Str.php" generated-path="Str.html" hash="2ae38e41f6d295452515ddb5ee41c67b" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -4150,7 +4150,7 @@ a regular expression pattern.</description>
         </docblock>
       </method>
     </class>
-    <source>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</source>
+    <source>eJzVW1tz28YVftev2LqaknQpKdcXp0kjK26ijC8ay64fqo5mCSzJrXFhsIAlteP/3u+c3QUWJACSlhMnmtGQBM6e2547Fn/7+2q5Ojh5+PBAPBQXsihFPhflUokzOZ8rnclSxeLipwuxktFbuVDmGIAE++z8lXiqI5UZJWQWiyhf3RV6sSyFzuZ5kcpS55mYVVmcAMONLpdAq43HAygm8/T87MnzyydirhMFtCcHmUyVAVCLg6vH6p0qsOybg4PKdN+6+qfK4ry4uiwLnS3uAOmkshfEUiUrVYhUlcs8Nk6K72WFn4XAXyjwD+qdeKVkyiCNZGf1t3E0EV989vnX03AZQydOJ0Isy3JlHp2clElcJGohk+MoT0/c/ZNUl0ceNtAl4/A6Ep2CetatJMKUUHWED5ayVl98WVZxcjd21w9NNfuPisqJeFXIzNAOGfHgHavsiBadOKL84wG2p8zFA6vS57hydWFv0/cHHeRlUcg7YVaJLtdJTsVhrBINgVUxJcTikH+Jb0VWJclEqNtVkseqX6iFKp9kUR7j+6Y8L1VZFZlha1IOSsBIYjG744vOIETOC447yBBPUV5lG6y3sScqW8CMnYNYUAiUrhKVqqykhXSDMclZQjYOkefYjC6iV6eksnNAyBIWCBn9934upMjUjWgtnIJmZTa58PdPF4sCxleG3IhXAGhhGRmwnYFuFREz7KeGdCgzt7WQOlrKwnjHTauk1LO70iuCkGKZykhyqy/yVCyDrSkZLW0M0CAiswgQuON2xrtsl5ZmeZ4oMJHP5wZWcKtNaTYNLNW34PXQAjXqulkCF3weEmV5Ce2RBDKCzLA5wiRkSRLqLFa3x+IFLzcihbgzBVVDbfqdEvAE3lMxL/LUWoI0ZYDMqcQr4tzvBWmxiais8NMIspthy7DSWGF+VB3+1CMuG1/NFESjCwtI8EklnHJ6KJdFfmNI2S+q8sX8MajF5sltpFacJ7RFwGyKOId50IbxJm3T0OVWDdU/38mkUpM9uZ9VZcC9qlmGcWUikgnSm7P9VGIZ/u1O6DStEAY0IuJdYOwuDJltYr1GMti+9b9bUWzQ4IgxEM58cKHYg60mKCdBbXpmzfb6s0S1Qn4/k0b9QxemI5Sf5RkSaGlFmhNMYOA+qANJolXsccIxGC20Yzp91cEl+c39adckGds2khEycaL/q4ayBcMQWwLUDW11ixY2u9CoA0xVFOSQhIaLBzPF0pUuJREwSHwl78Q8T8AaQcV6oUtAeehYmqUy7OnAA9gIQd9Y1y9Umr/DzTYs7iFAqyShz2DN9g3eKnYmXteQncK3NxnhDG7xCRWxm/QMXWzZcLYcMhwbdCFU2hizUYgRXN+iMrLEj8UPjuGCoq+BjdJtRTnb6puRBd44dqW8CuKH0+ugXU+sDuDMq4Sqe9y0evgAO6ih4o+ji93ISljN3Q++kt0Mzf5CXex+GDNN0q4RDTBlbuSKbHw4CoAsAa5AoTsQ9BModZmoDqubutB9qBcZGYsv5huya0LWdmPNxLoSsWGLw7yIA1eLBzhaVqnMOv3gLHDVhhKjXivaC8VW2LI4y6F3Ttomgl4ZMbrW8WhQRXFHn9UoIlSASSlN/1LlJRGB2YMA8m3jYJayCyNcjr1BVYSUffT5F19/gcYzT9M8S+5siwN3ekPixXlUcRkw8aJ5W9KFOL08Oz8X6pdKowAioKGsgsgmV0a9WcLwWBddHSTFyiBl2eDmNEq5XEUV15U3NZYwhLAioBYsRZPEt13ZobMoqWLaPTmzQRT9TqIz1VZQEzCaLiQgZSoYlLQclkuoyF7m8BOrfFHI1ZIkXvXU33UiPjWR1puGTz2JOLTRHGUawmROYbOVgazOe7LuKTyea7Usz44sZKAeCsX1JnqvwTZGSW4U7NktoHpdFVT1GV9i0zoAWATEHSWhxBaBtrej8pJaohvdXVsEZRvXkMMNsePS1p9IGVbjTm0TN2oZ0PBKbgRwPyDgVruJqYBE0YkgMxKj1tVXdyuKPSMey4wm4kLGZq2aki6cuvadNeoQIvXP/XVN6d3QYmo3C/IXmdD6/tY/y0kErhZK+RZma13A9texmktYZ520yF1JR36F5tCwCjqkZk1JUo3zjNPkKFHzElI7GfFlhj2ErMDgrhFFX9afZ/ByHZ8WC44IrR6r1pg22QgWaAlgZ5AgvhTcHg0FB6x+Cl4+YM/WRxgOBsTXdod9F1tgm9eZWugsC9oCt47nE3FM7cppoqXxioXRueBSS1orcFiul6TH304wlcX3E8nt+6BMj2Emv41IZJCI57Ed64SZAaFoH7HYsrfVYBfWg3pFm/uvrKQ+IU9jHylWKtJz6gdkykOQnGLCvLRpjce9tZfnQXnWXzpxgsB3hOY3umsPggs+ltikQqXapUIzTOkzCLZFpfyMxK1l13C5NMQzlwmN3eogLx7f+bAydePJFElDG4oIhmvDI+Mp2hFBhCgyUyKVse0J3E0qKJC3uEtvM0p6Ybq9yoC9/3qqIOR/AEXUGemSS8we80Xl85TdKxgacIWMG+1RCBEzeapQeKczW0rXxashUVE3cRXY4GwroUHLVds72/wB61etIs4iHZToFcq1feXJowjdtspcL0iChFR3F2pqkzx+d4jXJQpHpZbAdvWghNQGdTda22Y7TX+zsX11hz1I+6kfLg3QlqiH+2Zm9UiJKYnTDNA+FF/8dDFCGT27BmiZM9R4MsjNaz9muwc3jdxD3DDUIDcmqRZ6vlGlNlElqFAp7h+N1rbLJ1962kVzo5dPGed6O2LREGRnxd5bpAc919SW5IQDX6TO2ti418EvmaxQf6JyKyDlelfYsBF0OzbwBYLa8jOU3LmEsabu+i5qMZvKs6lCEL7ytnc0ttMX3gHO0+L+jciUihO1f2z3mBsMA3H90+U3z+Zp1mGMblBiBTD30IHMQjS/b0Ukya+pCMSX368ifHByw+Qdap6JuHTAMHRcaoZlrtT0gAPk7PR2pwKLEzM/a5ugXTQcDZv7NhqGRbxVo10hVgWiWDw4ocPWZZEsO2aGnc1HQxkhekTzJbt8uJHn3j3k2tSsubBm0XDvQrWGma5FunlV8ONhzy7EyJsWrcHsnpbS/BQasDOZvCp5AK5sX8C9u9EF7jruBuxCztWr30JDU0oTCTWbMEXLJmTTZfOAlc9rcG1i/rDqLOhYzPAA3IE0D3xOg8FhMKPDbYAOVxzLaj5POqidtk9EXHvACfSSRTSA4edMRedUWJdmrV4qoPI8FdiZwfE/zdiHZ3TtKXxnvcVIAj6HHnNmC1Q3ZzyDvihQjd/2BxwOyGi41w7RWBTCzrFhY4QE9lDeKNUqE8nmahy78nQJpd+bJ8NIPiJPzvLvzZb3oA/hjOKK9aX9DzkNVOkA3810LPc98Y5nJa3Yt/E8qR1DmsGg9MubnNkMdA63Rg/ZN/Rz6bH3bI0FmPpTTfhOT3aJEcfVZwNU512nBBzhrE3UNpSHWRgfdn12R4d4dqPCx30+jAhnF9U9F+4odJ4wuAkSw9A8i7OSy1jZiJgvR5SYlM0dW9nqGev+Snz5lDaYrei5zM7a6pzE1obugmeQtd1jnykVzrhrqB3cxszuOhrmxoXN/bnhNiCVZbRU5kLSY+Gsn52VBdjsE7hudljaxzzcks1GoY+XpTQDM5edGpTgDA871V7EB0Ysu7WJwaGlPalrdG6rpfwwwvxcmicYyFBuftHRn22h7aYfH4cFnqsE45S92PlJ3aIjjHQqN5rZPbhZNlj2Z+FxIrO39yC+9gR+L9o/o2PeizSagJ8vXzzfh8Y9/YxlXHO1vWS8p6vdm/4lLNOeeNlX06ZeuRO9+oz7ZU8h1jEnGJ7PLMMhfTPN58qhNU3Y6ZlZnTJ4bDnAnpJFtOyc8BJv7hAKDYg2WOKVxA+nCnqGEE5Nh3haqNuX2xirs0wHZ0Glz8/iDfXxqSlGW1h2OHt5btflqMgVeL32Opwci+d5qZqSZqRHIndHfilrNx2rI8St5wYaKOCXSlNxRC8CfX381V/9fNyIuFJ28ADQt9xD2+Mwftv9C0BBl/0i04uqqFJJMBbjl077+haXrl7XZ7Kuntm3ddwbAuZZ/fJODXyeJFXKb8hcXVrSBMyvEkWoag0dVj743wG94cPvA9HfQ/GjKt2Bc/s6QnCq+djBeNDv6WxeKvzwUrpzFaa+b1t6v9xdPuHPVTVLYEe+PaKXPByY/Rg36Ca8wDJKf7zf3yJ5yDiE+uaghmjTffQoKhRNlGghwAji/cG63GcM4wo40n2j62COyCrp00PtAPy5rgXrOV1KcD5V64LOto0P67EWd3trOnA4Q4OgkwK1OTx6FCLZTWinro8j7dUOL6Ltootg60iQbjV0bfSQ2M/kgooeiiv1SaxBGenNr/V79n0DikT4qagxXNcBQwxa/fU1MTFm/NMQ1YbNo59JEFSdOXxT3yiLuwBsHRS7evXS/gQ5GyPGo61RZDS1Ik8aOu+hLjQQYnzVHJs6RM5raL+vvyEhj61er+3LRONRdyyq6UzWZHAKROi+kUV8bY2CdXXNwWb8L7EFpfh3W5+hJAolQQePu6tF/OUv4k/aXNNWjL2++ar/cfSdNhe82eMPEq7Pr3cVb90m7PsoMIlDetX06LvNcNuJjP7+7PhlBivUVtdkvg2rOzj6dq67zcax3WclgTLHvhHv4bKNifjgO9eGXjQNhZ+KzydrfL1fM/HBeOLfV/oUYWU9dtrocslXd4gxw/ts5xqMajK4ne8P3h/8H750cgw=</source>
   </file>
   <file path="Models/Model.php" generated-path="Models.Model.html" hash="4629031b11828d6fb16342a9e7e0a3c0" package="Default">
     <docblock line="0">
@@ -6055,7 +6055,7 @@ a regular expression pattern.</description>
     </parse_markers>
     <source>eJylVG1r2zAQ/u5fcYNA7dDU3aAM0q0rSzsW6EZg/RgIqnKORW3JSHJfGPnvk2T5LbE3ykQgiXT3PPc8d9KnL0VaBPF0GsAUVkRqEAnoFGFBkgQZJxq3sPq+goLQR7JDdWYCbeyP5T3cMYpcIRC+BSqKV8l2qQbGEyFzopng8FDybWYQnplODSxTNY6JcjR3y8Xtz1+3kLAMDWwccJKjMkG9CtZf8QmlSbsMgtIQLrOszN3ReiG4JoyjbH+ZIC/o3jKaj2ValQ8ZUynKWsF1XYpfQ3wujpQ6FRIG4uAGn+AeSe7iWguquOZvSCP4cP7+4rSb61Iy76BfqdaFmsexzrYywx3JzqjIYx8U50zP6oSO/c42mhGlWo3B78DiORvsslZg4731GEJ8mQNt64mNScb6qE64fiISlJaM7/xW7L4LKTRSK37i8Yzfg2S25cJ5r0QpTUdtkxU8p4ymQCTa0wcT6IvevoG5AlwZipa8ylt3ZuOb5XtVGvPOzwE0V5cH6mxvUWkLZAa5z9QUWhBJclgPTU6XsSIY0ZKUnLq7stlQwY3skurwKLlqS9VVuyb2Ms2uKkc/NxLs0f6oTu9wvwC7R1t2HxMeEXVcMESmxITtNra54Un9JsQncFZX5PeiywaBJRC+6xU8u8IXprQK/WbbzSjqUNslUZeSt2D7N8Ae9O8Iu5+bk0e8YdI0RcjXsCv7FM4/XpjLa1rT1bUfbMbsyj4DHaBDiac9S6Oxni0kmnkCAhyfmysizbOpNOEUfdh/TSJcV+6au2ZqoUPjUZ20U0JdVf8eTw/cPMnz+Q710tceRpXbYYU+n7vHa9QJP1HDiif900aSs/2vA69FeHjDRy7ZQZS9bsNPQ0e5Sx1TlEiRj8hp5+Ttiixs2EEYkdMGWCVHL+mYiH3wBzJgbgc=</source>
   </file>
-  <file path="Vendor/Stringy.php" generated-path="Vendor.Stringy.html" hash="bf48eafad5244a59c6d2a63301ebfd60" package="Default">
+  <file path="Vendor/Stringy.php" generated-path="Vendor.Stringy.html" hash="0f79ef806294cb7dba7b0565c72f8e33" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -6074,31 +6074,58 @@ a regular expression pattern.</description>
         <tag name="license" line="14" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
         <tag name="package" line="14" description="Caffeinated\Beverage"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage\Vendor" line="23" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Caffeinated\Beverage\Vendor" line="23" package="Caffeinated\Beverage">
+        <name>__callStatic</name>
+        <full_name>\Caffeinated\Beverage\Vendor\Stringy::__callStatic()</full_name>
+        <docblock line="23">
+          <description>Magic call static method.</description>
+          <long-description></long-description>
+          <tag name="param" line="23" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="23" description="" type="mixed" variable="$parameters">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="23" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$parameters</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage\Vendor" line="35" package="Caffeinated\Beverage">
         <name>namespacedStudly</name>
         <full_name>\Caffeinated\Beverage\Vendor\Stringy::namespacedStudly()</full_name>
-        <docblock line="23">
+        <docblock line="35">
           <description>Studly Namespace</description>
           <long-description>Transforms "vendor-name/package-name" into "VendorName/PackageName".</long-description>
-          <tag name="return" line="23" description="" type="\Caffeinated\Beverage\Vendor\Stringy">
+          <tag name="return" line="35" description="" type="\Caffeinated\Beverage\Vendor\Stringy">
             <type>\Caffeinated\Beverage\Vendor\Stringy</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage\Vendor" line="37" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage\Vendor" line="49" package="Caffeinated\Beverage">
         <name>split</name>
         <full_name>\Caffeinated\Beverage\Vendor\Stringy::split()</full_name>
-        <docblock line="37">
+        <docblock line="49">
           <description>Explode a string into an array</description>
           <long-description></long-description>
-          <tag name="param" line="37" description="" type="string" variable="$delimiter">
+          <tag name="param" line="49" description="" type="string" variable="$delimiter">
             <type>string</type>
           </tag>
-          <tag name="param" line="37" description="" type="integer|null" variable="$limit">
+          <tag name="param" line="49" description="" type="integer|null" variable="$limit">
             <type>integer</type>
             <type>null</type>
           </tag>
-          <tag name="return" line="37" description="" type="array">
+          <tag name="return" line="49" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
@@ -6113,11 +6140,31 @@ a regular expression pattern.</description>
           <type>integer|null</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage\Vendor" line="58" package="Caffeinated\Beverage">
+        <name>startsWith</name>
+        <full_name>\Caffeinated\Beverage\Vendor\Stringy::startsWith()</full_name>
+        <docblock line="58">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$substring</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$caseSensitive</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="58" code="PPC:ERR-50015">Argument $substring is missing from the Docblock of startsWith</error>
+      <error line="58" code="PPC:ERR-50015">Argument $caseSensitive is missing from the Docblock of startsWith</error>
     </parse_markers>
-    <source>eJxtkluP0zAQhd/zK0bVSk2qdg1IvJQFVrvwgAQIiYqnSKtZZ9pYOI5lO9VWsP+dsXPZNsIvvp05nvMlNx9tbTODDXmLkuAe93tSBgNV5R0dyeGByl9kqta9y7LOE/wMTpnDqRxmQA936GnYskisVhmsRh0v4+4Wu1C3DnicPQGf6Ag7wiZJZGtPTh3qAPfTKpcFvHn1+u36vCyptZJkuB+AOgTrt0IEXTlNB9TXsm3EcC8aFTaj9tuXHXzt18mDI//mgJdNTblZIjKp0fsxDNBTYBYXibM/WUyVUscRk3eVPsH3EepwPl7vHBq/b13jYXFMZDeRvxiaSZsFKBNaWPTko5P40V/H9eJ6ZnnrKHTOvDBPxyLNtnvk+LDvjAyqNTB966rvMy+SrE8Rx5UPDt6DaqxuK8qXZblcAzqHp4cGbb70qexBMgK+oKdBJnhzFWrlNx/YoCgK/hVGy6E9HzAoud1KRww6jw9NNWRkW3HzXBYrnrM51c/9Q4BsE1P2hND0rc2BWHTYwCiNqSrSiv8FcnMN+/w1ndasSYo51HP//yP1VquQv7ywHpyYYjSeAx58R3IXdRPA0WPi8Zz9A80IILU=</source>
+    <source>eJyNVE2L2zAQvftXDCEQOzjrbqGXbD+W3fZQ6JZCQntoSlDsSSxqy0Yah4Rt/ntH8sc63mapLpasN2/mvRn77YcyLT0lcjSliBHuxXaLUgnCZHWHe9Rih6vvqJJC33heZRAWpKXaHVfNE4SBO2GwOTIomk49mLY43trTragoLTTw6qWAj7iHJYrcQeKiPGq5Swnuu50fB/D61fWbsB/m0JmMUXE9AClRaeZRRFmiM9yJ7Cou8qi5j3JJsxb78HkJX+q942DJv1ngeVGdboZEXpwJY1oxgAdiL84Ue4+eVeVU2zWFB7GTMcQiy8CQIN7nyOKTqwbQ4ji9FjkwyBLB2HZheJfLA9sEY3dEQm06hEaqtKoRzcvIPctqw4Lb3NtKxSQLBeu1LWnh3vouWdjnDVxsLcauht7GrLnvem2J1kJrcfR/NuTzeayRPfNTFInfJwsgrAXBrxBc0NrYLvRBIVwHwY1LePKGJi6oSrIjfG0nc+DdUgtltoXODYz2bjxnNlvUdNQdRiAVFTCqx9cyRd/qa7sfPWtHo7gb3OeWdl52H0xS1+kP3RtzU+EdyLzMigT9yWo1aX3IRelPjAvjjhjkCzw0sIgPY0qlmb1ngsDaM2zIwHmbqItBFRcJF3/R1U91IhDt0DmHhKpLe3k+raoEM8kfFOohhnn+qIonHsYOMTS1z/9vS02ZSfKfMoQNE7toiS+MZ+vcWVxnYMvx5MfQkMdbqVLUkpIiPr1cHwlN5oeklD2vNrUpnMC2cMF/FElyj1ws6QovFOtviiILgC1DRfP5fzF2pZ+8vxsFu8s=</source>
   </file>
   <file path="Vendor/Console/Dots.php" generated-path="Vendor.Console.Dots.html" hash="fbff9803047c912f0c8621509c10c939" package="Default">
     <docblock line="0">

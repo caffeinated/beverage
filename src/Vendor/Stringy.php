@@ -59,5 +59,4 @@ class Stringy extends BaseStringy
     {
         return (bool) parent::startsWith($substring, $caseSensitive);
     }
-
 }
