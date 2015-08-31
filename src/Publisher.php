@@ -49,12 +49,10 @@ class Publisher
     public function publish()
     {
         $destination = config_path('packages/' . $this->package);
-        if ( ! $this->files->exists($this->sourcePath) )
-        {
+        if (! $this->files->exists($this->sourcePath)) {
             return;
         }
-        if ( ! $this->files->exists($this->destinationPath) )
-        {
+        if (! $this->files->exists($this->destinationPath)) {
             $this->files->makeDirectory($destination, 0755, true);
         }
         $this->files->copyDirectory($this->sourcePath, $destination);
