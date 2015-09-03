@@ -35,6 +35,4 @@ abstract class TestCase extends AbstractTestCase
     {
         return realpath(__DIR__ . '/..');
     }
-
-
 }

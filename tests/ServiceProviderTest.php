@@ -29,6 +29,4 @@ class ServiceProviderTest extends TestCase
     {
         return realpath(__DIR__ . '/..');
     }
-
-
 }

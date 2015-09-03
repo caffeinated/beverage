@@ -4743,7 +4743,7 @@ file is loaded before the config service provider is kicked in.</description>
     </parse_markers>
     <source>eJytVttu2zAMffdXEEMBJ0EWbwP20u6e3QpsQ7EV2MNaGIrNJEJl2ZDkdMXWfx8lW4kSe92Q1C++iDzkOaREP3tZLasoGY2iEZwxZaCcg1kiTNl8jlwygzmcfTyDimVXbIF6ElnLz6fn8IlnKDUCkzlkZXWj+GJpgMt5qQpmeClhVstckP81N0sC5dqjkJUL8ul0+u7Lt3cw5wIjGCWRZAVqMtqKf/EGV6jI7SRyicJoKzu/Cq+rSvDMhSYba/aK1WZZKqAr9HiLKzhHVjiTTerT9dMgG8KTR4+fjkM3Zy1a0gBLYyp9nCRG5ErggolJVhZJu54U3Dz0toFYDsOLAL0knQ6ZYFqHhAB/GpS5hotTIerC+Vy8L0lgt3wRcv8VWcJOKXuN4JykZkqxG1vctVxZKed8AdxgQVVtTL3HqxVTjUv7JXH3SpUGMyvh0WxTk51oU4WUHDCQeN1fKBbw4lIbJjPsZFAxxQoAbRSXi9+yFgIoKtN4xsxybaXQ1ErCquT5dqb1jELAvJaZC5OmRJew6swM1ijwHCzuGI4aLYJvQ4fSKGkvPoeN3zBYsNeR7e2HLzSaN61FYHuyNr2Noh0PLyIFbb+IkuVTl8wgSGp4snElXVCa4+NeRm20205RPqBxO66yFE3pnsMyPKCXB5BzReUt1U2nGq3OTTXuVNpGGOzK17p72m22kziJJztS/Igpk9SCxJf7kmmEq1XzZg+XboP/P6FNGQ6i1cDswYx2OLPQ91IdD3YwHQ+0ByHB5KK2XX9oZSzQwUQsyB4k2lwSuMbZ/ewb934wnQZmD0Ka8rdFuQ8uLdYWmb3YtED/oPOZyZoJcQP29ISyVjDbGXK20ybwHWkm0SAixnnZ/JBoTrPHPXowawq0YrHIdob0P4NOoRZLo1rRNLfDcMVzVNb4imdXZMzl30S7a5Zu+jk8/GviXkz/Zy5xndqlrs+wM6h6ULt1aHjG/YPLK7uFQRNfuHM/Td+efk1TAplMPE4wAXe831upn/dhEoD/OKH/0yCXLQoOACzELrEuQD+C8/5x+dcUaZU6RNQ5DnqSD+eyrYTtnRR/cm30oJPo3dUIA3U8+0uReUfXXKnCStCfM92zWmm+6mQ83o64m3y3fTr5uiU/yuJLCk2HgQ886NnRY4jjcbc6ISFAQbPt35Hiu9rSnymNjT8nbqM/eCTWLg==</source>
   </file>
-  <file path="Filesystem.php" generated-path="Filesystem.html" hash="1c3ab1d2c3075747e0010373cae66e0c" package="Default">
+  <file path="Filesystem.php" generated-path="Filesystem.html" hash="da1830d6f992b9db8f26a9d494ed0dcc" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -4754,53 +4754,52 @@ file is loaded before the config service provider is kicked in.</description>
     <namespace-alias name="RegexIterator">\RegexIterator</namespace-alias>
     <namespace-alias name="IlluminateFilesystem">\Illuminate\Filesystem\Filesystem</namespace-alias>
     <namespace-alias name="SymfonyFilesystem">\Symfony\Component\Filesystem\Filesystem</namespace-alias>
-    <class final="false" abstract="false" namespace="Caffeinated\Beverage" line="25" package="Caffeinated\Beverage">
+    <class final="false" abstract="false" namespace="Caffeinated\Beverage" line="24" package="Caffeinated\Beverage">
       <extends>\Illuminate\Filesystem\Filesystem</extends>
       <name>Filesystem</name>
       <full_name>\Caffeinated\Beverage\Filesystem</full_name>
-      <docblock line="25">
+      <docblock line="24">
         <description>Caffeinated Beverage Filesystem</description>
         <long-description></long-description>
-        <tag name="author" line="25" description="Caffeinated Dev Team"/>
-        <tag name="copyright" line="25" description="Copyright (c) 2015, Caffeinated"/>
-        <tag name="license" line="25" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
-        <tag name="package" line="25" description="Caffeinated\Beverage"/>
-        <tag name="mixin" line="25" description="\Symfony\Component\Filesystem\Filesystem"/>
-        <tag name="see" line="25" description="" link="\Symfony\Component\Filesystem\Filesystem"/>
+        <tag name="author" line="24" description="Caffeinated Dev Team"/>
+        <tag name="copyright" line="24" description="Copyright (c) 2015, Caffeinated"/>
+        <tag name="license" line="24" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
+        <tag name="package" line="24" description="Caffeinated\Beverage"/>
+        <tag name="mixin" line="24" description="\Symfony\Component\Filesystem\Filesystem"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Caffeinated\Beverage" line="30" package="Caffeinated\Beverage">
+      <property static="false" visibility="protected" namespace="Caffeinated\Beverage" line="29" package="Caffeinated\Beverage">
         <name>$SymfonyFilesystem</name>
         <full_name>\Caffeinated\Beverage\Filesystem::SymfonyFilesystem</full_name>
         <default></default>
-        <docblock line="30">
+        <docblock line="29">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="30" description="" type="\Symfony\Component\Filesystem\Filesystem" variable="">
+          <tag name="var" line="29" description="" type="\Symfony\Component\Filesystem\Filesystem" variable="">
             <type>\Symfony\Component\Filesystem\Filesystem</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="36" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="35" package="Caffeinated\Beverage">
         <name>__construct</name>
         <full_name>\Caffeinated\Beverage\Filesystem::__construct()</full_name>
-        <docblock line="36">
+        <docblock line="35">
           <description>Create a new filesystem instance.</description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="48" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="47" package="Caffeinated\Beverage">
         <name>rglob</name>
         <full_name>\Caffeinated\Beverage\Filesystem::rglob()</full_name>
-        <docblock line="48">
+        <docblock line="47">
           <description>Recursively find pathnames matching the given pattern.</description>
           <long-description></long-description>
-          <tag name="param" line="48" description="" type="string" variable="$pattern">
+          <tag name="param" line="47" description="" type="string" variable="$pattern">
             <type>string</type>
           </tag>
-          <tag name="param" line="48" description="" type="integer" variable="$flags">
+          <tag name="param" line="47" description="" type="integer" variable="$flags">
             <type>integer</type>
           </tag>
-          <tag name="return" line="48" description="" type="array">
+          <tag name="return" line="47" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
@@ -4815,20 +4814,20 @@ file is loaded before the config service provider is kicked in.</description>
           <type>integer</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="67" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="66" package="Caffeinated\Beverage">
         <name>rsearch</name>
         <full_name>\Caffeinated\Beverage\Filesystem::rsearch()</full_name>
-        <docblock line="67">
+        <docblock line="66">
           <description>Search the given folder recursively for files using
 a regular expression pattern.</description>
           <long-description></long-description>
-          <tag name="param" line="67" description="" type="string" variable="$folder">
+          <tag name="param" line="66" description="" type="string" variable="$folder">
             <type>string</type>
           </tag>
-          <tag name="param" line="67" description="" type="string" variable="$pattern">
+          <tag name="param" line="66" description="" type="string" variable="$pattern">
             <type>string</type>
           </tag>
-          <tag name="return" line="67" description="" type="array">
+          <tag name="return" line="66" description="" type="array">
             <type>array</type>
           </tag>
         </docblock>
@@ -4843,16 +4842,16 @@ a regular expression pattern.</description>
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="87" package="Caffeinated\Beverage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="86" package="Caffeinated\Beverage">
         <name>__call</name>
         <full_name>\Caffeinated\Beverage\Filesystem::__call()</full_name>
-        <docblock line="87">
+        <docblock line="86">
           <description>Magic call method.</description>
           <long-description></long-description>
-          <tag name="param" line="87" description="" type="string" variable="$method">
+          <tag name="param" line="86" description="" type="string" variable="$method">
             <type>string</type>
           </tag>
-          <tag name="param" line="87" description="" type="mixed" variable="$parameters">
+          <tag name="param" line="86" description="" type="mixed" variable="$parameters">
             <type>mixed</type>
           </tag>
         </docblock>
@@ -4869,9 +4868,9 @@ a regular expression pattern.</description>
       </method>
     </class>
     <parse_markers>
-      <error line="30" code="PPC:ERR-50007">No summary for property $SymfonyFilesystem</error>
+      <error line="29" code="PPC:ERR-50007">No summary for property $SymfonyFilesystem</error>
     </parse_markers>
-    <source>eJyVVk1v2zgQvetXzMFA5EC1ugvsJdmv1sm2BpwPJL4smkJg5JFEVKIEkkpttPnvHVKUTct2k+pg05o3b4ZvZkj/+U9TNEF8ehrAKdwyqaHOQBcIU5ZlyAXTuITbj7fQsPQLy1FNCGiwV7MFzHmKQiEwsYS0btaS54UGLrJaVkzzWsBjK5YlMXzluiBarnoeQtkw89n08vr+EjJeItHGgWAVKgLtZPDwHp9Qktt5ELQU8A7TVir+hBdcYqpruZ5pstPifNfevx6ac1ztvpqVZVvZYA//USpqrTRW3hKY8jDb9533/brKarF+mNZVUwsU+jiJg/oMvfy+5P2GYQt0wv/LWl3UEujxHS7wCRbIKgvZFmO6WYXpGH5/+9sfke9m0aUrI0ChdaPO4liXS1lizspJWlexs8cV1296rFd+y9GXFQ6WzUIqvqKiP7xSK+uiEH/FIQ7SkinlaQa40iiWh2sXfAuMilZ981DAJyZ/IaB1iu13I2tNnUiFGB2q8CDOVCJlAgwEfrWt77LlQmkmUpw44G6I9pHUh6wVqZ2tJElrwss21eHYIrr9mGdkZu3N33upwF825IEUjdfzXqKbQSrXlCeNecN0YUcUaMLTgovcjnFOEGGMNFRikL1pDskqAMrV4GHkcEM7F7pLPitZrjZWibqVApiUbP1TQWRe1o9hzx45Htry2z15rOZkOegxdgUzDx1lyNICQotccmk2v/EYT07i05MIPsxv3ic31/P/L2Z38L37eX1zf3O3GJuZH5Hf2Au/k4LdV1KhzInXvoz68rkNkTfFOZk8MoW74TcZj8835M/b5J1yHeuxEt8jk2nhVTGryyVKcvZKT+dNl2+rqIS9KyNQ3pY0M7hqJCplqvDaJujCvLpHXt8Fym4odAGiDdVeE5Cu3aobiuOXSs/lqTzizjZ0Ht44tny+Y6ejF9W7i8IN7TbtaBdydvbhcpFcvVtMPw5Z51xpYv30+VD/urimG83qYDs6gr2ONO8j5/dioxnwsV67YjmVKmVlCRXSLbZ8sUs62NBMVwmdtLZL6DeSNOqnPUFHJcUMHVvk+w27gmcQdrAEV7QVFR47S6M+u/FQTCeHiZnQ3wOZmEQSK2v46UW6z7v5+YJ3n8/BD7hzB7A=</source>
+    <source>eJyVVU1v2zAMvedX8BCgTuEl24Bd2n2n3RYg/UCby7AWhurQtjBbNiS5TbD1v4+S5URxkrbzoVXEx0fqkZTef6qyqjc6POzBIVwyqaFMQGcIY5YkyAXTOIfLH5dQsfg3S1ENCWiwZ5MZTHmMQiEwMYe4rJaSp5kGLpJSFkzzUsBdLeY5MTxwnREtVy0PoWyY6WR8en59CgnPkWhHPcEKVATayODmK96jJLfjXq+mgFcY11LxezzhEmNdyuVEk50Wx5v2drtrTnGxuTXJ87qwwW6+USpqqTQW3hKY8jDr/cb7elkkpVjejMuiKgUKvZ/EQX2GVn5f8vbAsAY64T+zWmelBPp8hxO8hxmywkLWxRivVkE8gLev37wLfTeLzl0ZATKtK3U0Gul8LnNMWT6My2Lk7KOC61ct1iu/5WjLCjvLZiEFX1DRb16olW2GOGdKeRIALjSK+e5S9P70jChWTPNRyHsm/yOgdRrZ/5UsNTUW6drfVbBOnLFEygQYCHywneyy5UJpJmIcOuBmiPqOxISkFrEdlSiKS8LLOtbBwCKa85ivb0bn1cetVOCDDbkjReP1uJXoai7yJeVJU1sxndmJAxrYOOMitVOZEkQYI82I6GRvai1ZAUC5Gjz0Ha5r50I3ySc5S9XKKlHXUgCTki2fFESmeXkXtOyh46Ejv96Sx2pOlp0eA1cw89HNhCzOILDIOZfm8CuPwfBgdHgQwvfpxdfo4nz682RyBX+bn+cX1xdXs4EZ4T75DbzwGynYc0UFypR47WbYls8diLwpzsHwjincDL/KeHC8In9cJ++Ua1j3lfgamYwzr4pJmc9RkrNXero+mnxrRSVsXRmB0jqnmcFFJVEpU4WXNkET5sU98vIuUPZAgQsQrqi2moB0bVbNUOx/I1ouT+U+d7auc/cBseXzHRsdvaje0xKsaNdph5uQo6Pvp7Po7Mts/KPLOuVKE+uv21396+KabjSrne3oCLY60uyHzu/ZRjPgfb12xlIqVczyHAqkR2n+bJc0sK6ZXga6aW2X0G8kadSTPUFXJcUMHFvo+3W7gicQNLAIF3QUFey7S8M2u0FXTCeHiRnRay8jk0hkZQ1+PUt3u5mfL3jz97H3D6z39S4=</source>
   </file>
   <file path="Command.php" generated-path="Command.html" hash="24fc8532ce78f52dcf5451424e9e4d95" package="Default">
     <docblock line="0">
