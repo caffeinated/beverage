@@ -971,4 +971,5 @@ class FilesystemTest extends TestCase
         $this->assertFileExists($filename);
         $this->assertSame('bar', file_get_contents($filename));
     }
+
 }

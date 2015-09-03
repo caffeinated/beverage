@@ -20,7 +20,7 @@ use Caffeinated\Tests\Beverage\Fixture\ConsoleServiceProvider;
 class ConsoleServiceProviderTest extends TestCase
 {
     use ServiceProviderTester;
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass()
     {
         return ConsoleServiceProvider::class;
     }

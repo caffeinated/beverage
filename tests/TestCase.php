@@ -26,13 +26,15 @@ abstract class TestCase extends AbstractTestCase
      *
      * @return string
      */
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass()
     {
         return BeverageServiceProvider::class;
     }
 
-    protected function registerBeverageServiceProvider()
+    protected function getPackageRootPath()
     {
-        $this->app->register($this->getServiceProviderClass($this->app));
+        return realpath(__DIR__ . '/..');
     }
+
+
 }

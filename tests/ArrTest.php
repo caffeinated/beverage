@@ -714,4 +714,5 @@ class ArrTest extends TestCase
         $this->assertContains('ter', array_values(Arr::removeValue($a, 'bar')));
         $this->assertContains('two', array_values(Arr::removeValue($a, 'bar')));
     }
+
 }

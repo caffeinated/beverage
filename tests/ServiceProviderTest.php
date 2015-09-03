@@ -20,9 +20,15 @@ use Caffeinated\Tests\Beverage\Fixture\ServiceProvider;
 class ServiceProviderTest extends TestCase
 {
     use ServiceProviderTester;
-    protected function getServiceProviderClass($app)
+
+    protected function getServiceProviderClass()
     {
-        #ServiceProvider::pathsToPublish()
         return ServiceProvider::class;
     }
+    protected function getPackageRootPath()
+    {
+        return realpath(__DIR__ . '/..');
+    }
+
+
 }

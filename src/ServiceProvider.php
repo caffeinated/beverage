@@ -258,7 +258,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     /**
      * Perform the booting of the service.
      *
-     * @return Application
+     * @return \Illuminate\Foundation\Application
      */
     public function boot()
     {
@@ -351,7 +351,7 @@ abstract class ServiceProvider extends BaseServiceProvider
     /**
      * Registers the server in the container.
      *
-     * @return \Caffeinated\Beverage\Application
+     * @return \Illuminate\Foundation\Application
      * @throws \Exception
      */
     public function register()

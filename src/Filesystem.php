@@ -31,7 +31,6 @@ class Filesystem extends IlluminateFilesystem
     /**
      * Create a new filesystem instance.
      *
-     * @return void
      */
     public function __construct()
     {

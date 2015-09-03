@@ -20,9 +20,15 @@ class BeverageServiceProviderTest extends TestCase
 {
     use ServiceProviderTester;
 
+    protected function getPackageRootPath()
+    {
+        return realpath(__DIR__ . '/..');
+    }
+
+
     public function testFunctionsExists()
     {
-        $this->app->register($this->getServiceProviderClass($this->app));
+        $this->app->register($this->getServiceProviderClass());
 
         $this->assertTrue(function_exists('path_join'));
 
@@ -41,7 +47,7 @@ class BeverageServiceProviderTest extends TestCase
 
     public function testConfigFiles()
     {
-       # $this->registerBeverageServiceProvider();
-       # $this->runServiceProviderPublishesConfigTest([ 'caffeinated.beverage']);
+        # $this->registerBeverageServiceProvider();
+        # $this->runServiceProviderPublishesConfigTest([ 'caffeinated.beverage']);
     }
 }

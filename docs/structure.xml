@@ -1096,7 +1096,7 @@ and returns an associative array containing the vendor and package name</descrip
     </parse_markers>
     <source>eJydVm1r40YQ/u5fMXeEsxSU+Fo4Ck6dlsvlroFrMCT0S32YjTS2t9Fbd1dJTPB/7+yuVu92TEUgknbmmZlnnhn519/yTT6anJ6O4BTmTCjIVqA2CFdstUKeMoURzP+YQ87CR7ZGeU6G2vbPm3v4zkNMJQJLIwizfCv4eqOAp6tMJEzxLIWHIo1iQnjmakOwXDocsjJhvt9cXd/eXcOKx0iwk1HKEpRk1Mpg8RmfUJDbxWhUUMCbOC4Sc7T4i+Pz4ipLcgIQcvE5ZhG6R7IuK7vXoelPh7xTxcM3TAlPZcKV87vLq7yGghs7VqhNJmDADr7gE9wjS4xdzYe1qx690IefP/70KWj6Gpe4pLO8NkrlcjqZqDgSMa5ZfB5myaQ0miRcnTmHRi8Mh2HMpGzXOXodaUxDh74o3BMTsDiSydJpYv7nIlMY6opPwprpQfghGhdfyUNupcJkH6xWg6wx4SaViqWKE47toamw9K4i5kyw5OiS6uS7AG8kXfXeptmuoXigpsCqSEOj/+UyzCh3UYTK2xM9gAa0hfQNlu2YCaQn5+zSecCsSXzHyADo51lFo37a9RokMI2q2jsUlIiUOE/XnTMmBNvCCbVXVicCVSFSaNkPE2KjeiV00ESjjM2T5/fq14Xc0mIgkyLl//LIUzxBzw9gxWKJfo+FtdU9fuGCJJWJ7Z3pQSHQk/RIDV3mTG00wt8wDuuGTyRNjRzDjyamNqXQLc/3PafJa5Xn7n0/JdOMs8u8UJ4BDLptre7uDDeOI98vB0FffAUel0vLk2HNhw8f4B1gkiv3xm9Qpy98UYKRAO1pndiuxs0eljRhQnmNY56GcRGhzbZZj57smXZZo9L6Vpgq2fSkI2rzMoyRpV4z/TYVEcaoavzKqlSTjrNPvK6/w/K1xGn9Fg+kgD2nEUrVP7WCbM9292xI+6a06qXaiOxZtnbRFRGl2yAbq8Tc3mbqa0bfyeuXEHM9JAcHyFXuueqCqpJqmuwOmJG0f3QnjF51p4u+1sjCDXilH5OWOZ0bzC4tvH7o6qpyNCGWUeYkZiAecWu8n1jcdTRScKiUFAl+OhWYx/TZ96qDAMavr2M4t1DnMN7txoHFu2jBNXRskHXycz2yoLegvptO/8l42qTMFdiBMsGHfSuSaz4GfMlibreF9aURqXaQV6E31a4vPdbvOtOBL1zSWDVRe5Ntwra8EvaInYClcwAff/lEvzpoEXYz7xJolzR9iGcO3a3tViyqzavI9gPo7pd+dmb5ORKCOlBrKbm75mC9tQf6e/7gh+3Q6J9E/PB0H57LgS9Obz51hLdm0djoOYrK3nda797vV2npd3G80v63yo5Q2HH93Y3+A/gwq0I=</source>
   </file>
-  <file path="ServiceProvider.php" generated-path="ServiceProvider.html" hash="8084f3b1a1b955ab12d9a81ce3787778" package="Default">
+  <file path="ServiceProvider.php" generated-path="ServiceProvider.html" hash="3b77d2d08bc68efa16e2d866f2110ee5" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -1439,8 +1439,8 @@ and returns an associative array containing the vendor and package name</descrip
         <docblock line="263">
           <description>Perform the booting of the service.</description>
           <long-description></long-description>
-          <tag name="return" line="263" description="" type="\Caffeinated\Beverage\Application">
-            <type>\Caffeinated\Beverage\Application</type>
+          <tag name="return" line="263" description="" type="\Illuminate\Foundation\Application">
+            <type>\Illuminate\Foundation\Application</type>
           </tag>
         </docblock>
       </method>
@@ -1490,8 +1490,8 @@ and returns an associative array containing the vendor and package name</descrip
         <docblock line="357">
           <description>Registers the server in the container.</description>
           <long-description></long-description>
-          <tag name="return" line="357" description="" type="\Caffeinated\Beverage\Application">
-            <type>\Caffeinated\Beverage\Application</type>
+          <tag name="return" line="357" description="" type="\Illuminate\Foundation\Application">
+            <type>\Illuminate\Foundation\Application</type>
           </tag>
           <tag name="throws" line="357" description="" type="\Exception">
             <type>\Exception</type>
@@ -1650,7 +1650,7 @@ and returns an associative array containing the vendor and package name</descrip
       <error line="203" code="PPC:ERR-50007">No summary for property $bindings</error>
       <error line="205" code="PPC:ERR-50007">No summary for property $singletons</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
   </file>
   <file path="helpers.php" generated-path="helpers.html" hash="486cc4012dc76296e81f09265a922da8" package="Caffeinated\Beverage">
     <docblock line="0">
@@ -4743,7 +4743,7 @@ file is loaded before the config service provider is kicked in.</description>
     </parse_markers>
     <source>eJytVttu2zAMffdXEEMBJ0EWbwP20u6e3QpsQ7EV2MNaGIrNJEJl2ZDkdMXWfx8lW4kSe92Q1C++iDzkOaREP3tZLasoGY2iEZwxZaCcg1kiTNl8jlwygzmcfTyDimVXbIF6ElnLz6fn8IlnKDUCkzlkZXWj+GJpgMt5qQpmeClhVstckP81N0sC5dqjkJUL8ul0+u7Lt3cw5wIjGCWRZAVqMtqKf/EGV6jI7SRyicJoKzu/Cq+rSvDMhSYba/aK1WZZKqAr9HiLKzhHVjiTTerT9dMgG8KTR4+fjkM3Zy1a0gBLYyp9nCRG5ErggolJVhZJu54U3Dz0toFYDsOLAL0knQ6ZYFqHhAB/GpS5hotTIerC+Vy8L0lgt3wRcv8VWcJOKXuN4JykZkqxG1vctVxZKed8AdxgQVVtTL3HqxVTjUv7JXH3SpUGMyvh0WxTk51oU4WUHDCQeN1fKBbw4lIbJjPsZFAxxQoAbRSXi9+yFgIoKtN4xsxybaXQ1ErCquT5dqb1jELAvJaZC5OmRJew6swM1ijwHCzuGI4aLYJvQ4fSKGkvPoeN3zBYsNeR7e2HLzSaN61FYHuyNr2Noh0PLyIFbb+IkuVTl8wgSGp4snElXVCa4+NeRm20205RPqBxO66yFE3pnsMyPKCXB5BzReUt1U2nGq3OTTXuVNpGGOzK17p72m22kziJJztS/Igpk9SCxJf7kmmEq1XzZg+XboP/P6FNGQ6i1cDswYx2OLPQ91IdD3YwHQ+0ByHB5KK2XX9oZSzQwUQsyB4k2lwSuMbZ/ewb934wnQZmD0Ka8rdFuQ8uLdYWmb3YtED/oPOZyZoJcQP29ISyVjDbGXK20ybwHWkm0SAixnnZ/JBoTrPHPXowawq0YrHIdob0P4NOoRZLo1rRNLfDcMVzVNb4imdXZMzl30S7a5Zu+jk8/GviXkz/Zy5xndqlrs+wM6h6ULt1aHjG/YPLK7uFQRNfuHM/Td+efk1TAplMPE4wAXe831upn/dhEoD/OKH/0yCXLQoOACzELrEuQD+C8/5x+dcUaZU6RNQ5DnqSD+eyrYTtnRR/cm30oJPo3dUIA3U8+0uReUfXXKnCStCfM92zWmm+6mQ83o64m3y3fTr5uiU/yuJLCk2HgQ886NnRY4jjcbc6ISFAQbPt35Hiu9rSnymNjT8nbqM/eCTWLg==</source>
   </file>
-  <file path="Filesystem.php" generated-path="Filesystem.html" hash="3812e2a132e40d57ae84cc8c76f32b6a" package="Default">
+  <file path="Filesystem.php" generated-path="Filesystem.html" hash="1c3ab1d2c3075747e0010373cae66e0c" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -4754,27 +4754,28 @@ file is loaded before the config service provider is kicked in.</description>
     <namespace-alias name="RegexIterator">\RegexIterator</namespace-alias>
     <namespace-alias name="IlluminateFilesystem">\Illuminate\Filesystem\Filesystem</namespace-alias>
     <namespace-alias name="SymfonyFilesystem">\Symfony\Component\Filesystem\Filesystem</namespace-alias>
-    <class final="false" abstract="false" namespace="Caffeinated\Beverage" line="24" package="Caffeinated\Beverage">
+    <class final="false" abstract="false" namespace="Caffeinated\Beverage" line="25" package="Caffeinated\Beverage">
       <extends>\Illuminate\Filesystem\Filesystem</extends>
       <name>Filesystem</name>
       <full_name>\Caffeinated\Beverage\Filesystem</full_name>
-      <docblock line="24">
+      <docblock line="25">
         <description>Caffeinated Beverage Filesystem</description>
         <long-description></long-description>
-        <tag name="author" line="24" description="Caffeinated Dev Team"/>
-        <tag name="copyright" line="24" description="Copyright (c) 2015, Caffeinated"/>
-        <tag name="license" line="24" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
-        <tag name="package" line="24" description="Caffeinated\Beverage"/>
-        <tag name="mixin" line="24" description="\Symfony\Component\Filesystem\Filesystem"/>
+        <tag name="author" line="25" description="Caffeinated Dev Team"/>
+        <tag name="copyright" line="25" description="Copyright (c) 2015, Caffeinated"/>
+        <tag name="license" line="25" description="MIT License" link="https://tldrlegal.com/license/mit-license"/>
+        <tag name="package" line="25" description="Caffeinated\Beverage"/>
+        <tag name="mixin" line="25" description="\Symfony\Component\Filesystem\Filesystem"/>
+        <tag name="see" line="25" description="" link="\Symfony\Component\Filesystem\Filesystem"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Caffeinated\Beverage" line="29" package="Caffeinated\Beverage">
+      <property static="false" visibility="protected" namespace="Caffeinated\Beverage" line="30" package="Caffeinated\Beverage">
         <name>$SymfonyFilesystem</name>
         <full_name>\Caffeinated\Beverage\Filesystem::SymfonyFilesystem</full_name>
         <default></default>
-        <docblock line="29">
+        <docblock line="30">
           <description></description>
           <long-description></long-description>
-          <tag name="var" line="29" description="" type="\Symfony\Component\Filesystem\Filesystem" variable="">
+          <tag name="var" line="30" description="" type="\Symfony\Component\Filesystem\Filesystem" variable="">
             <type>\Symfony\Component\Filesystem\Filesystem</type>
           </tag>
         </docblock>
@@ -4785,9 +4786,6 @@ file is loaded before the config service provider is kicked in.</description>
         <docblock line="36">
           <description>Create a new filesystem instance.</description>
           <long-description></long-description>
-          <tag name="return" line="36" description="" type="void">
-            <type>void</type>
-          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="Caffeinated\Beverage" line="48" package="Caffeinated\Beverage">
@@ -4871,9 +4869,9 @@ a regular expression pattern.</description>
       </method>
     </class>
     <parse_markers>
-      <error line="29" code="PPC:ERR-50007">No summary for property $SymfonyFilesystem</error>
+      <error line="30" code="PPC:ERR-50007">No summary for property $SymfonyFilesystem</error>
     </parse_markers>
-    <source>eJyVVk1v2zgQvftXzMFA5EC12wK9JNv9qJO2BpwPJL4UTSEw0kgiVqIEknJstPnvO6Qom5btJquDLYtv3jy+mRH9x191Xg8mp6cDOIVbJjVUKegcYcrSFLlgGhO4/XoLNYv/ZRmqMQEN9mq2gDmPUSgEJhKIq3oteZZr4CKtZMk0rwQ8NiIpiOGJ65xouep4CGXTzGfTy+v7S0h5gUQ7GQhWoiLQjoKHT7hESWHng0FDCe8wbqTiS7zgEmNdyfVM0zrdnO+ud4/7yxmudh/NiqIpbbKHzyRFrZXG0rsFpjzM9nkbfb8u00qsH6ZVWVcChT5O4qA+Q2e/b3m3YdgCnfF/s0bnlQS6/IALXMICWWkh22JMN3dBPIL3b999CP0wiy5cGQFyrWt1NpnoIpEFZqwYx1U5ceuTkus3HdYrv+XoygoHy2YhJV9R0R9e6ZVthrhgSnkWAK40iuRwKQY/B8YUa6a5KOWSyf+R0AZN7HctK02NRb4ODxWsl2cqkZQAA4FPtpOdWi6UZiLGsQNudEnUjRSwrHiym7Z5JIMhbURsxyeK4oo4ZBPrYGQR7R7NNTTj9ObPPXnw0co4INtEPe+J38xKsSbtNMk107mdQqAhjnMuMjupGUGEWaS5EXs7qplkJQBpNXgYOlx/nQvdik8Llqm+H0xKtv6tITIrqsegYw8dD2357Z49tg60cjBi5IpoLnpbIYtzCCwy4dJsfhMxGp9MTk9C+DK/+RTdXM+/Xczu4Ff78/rm/uZuMTJjPaS4kZd+R4LdV1SizIjXPgy78rkNUTTlORk/MoW76TeKR+cb8ueteOdcy3qsxPfIZJx7VUyrIkFJwV7p6ZXS6m0UlbALZQTKmoLmCFe1RKVMFV7bBG2aV/fI67tA2Q0FLkG4odprAvK1vWuH4vi50XF5Lg+5W+sH9w8VWz4/sPXRy+odN8GGdis73IWcnX25XERX/yymX/usc640sX7/cah/XV7TjebuYDs6gr2ONM9DF/dioxnwsV67YhmVKmZFASXSQZW82CUtrL9MpwW9fW2X0G8ka9Rve4JelZQzcGyhH9fvCp5C0MIiXNFWVHDsXRp26kZ9M50dJmdE/wBkZIRE1tbg+4t0P3b1+Ya3n8+D/wC+5vrU</source>
+    <source>eJyVVk1v2zgQvetXzMFA5EC1ugvsJdmv1sm2BpwPJL4smkJg5JFEVKIEkkpttPnvHVKUTct2k+pg05o3b4ZvZkj/+U9TNEF8ehrAKdwyqaHOQBcIU5ZlyAXTuITbj7fQsPQLy1FNCGiwV7MFzHmKQiEwsYS0btaS54UGLrJaVkzzWsBjK5YlMXzluiBarnoeQtkw89n08vr+EjJeItHGgWAVKgLtZPDwHp9Qktt5ELQU8A7TVir+hBdcYqpruZ5pstPifNfevx6ac1ztvpqVZVvZYA//USpqrTRW3hKY8jDb9533/brKarF+mNZVUwsU+jiJg/oMvfy+5P2GYQt0wv/LWl3UEujxHS7wCRbIKgvZFmO6WYXpGH5/+9sfke9m0aUrI0ChdaPO4liXS1lizspJWlexs8cV1296rFd+y9GXFQ6WzUIqvqKiP7xSK+uiEH/FIQ7SkinlaQa40iiWh2sXfAuMilZ981DAJyZ/IaB1iu13I2tNnUiFGB2q8CDOVCJlAgwEfrWt77LlQmkmUpw44G6I9pHUh6wVqZ2tJElrwss21eHYIrr9mGdkZu3N33upwF825IEUjdfzXqKbQSrXlCeNecN0YUcUaMLTgovcjnFOEGGMNFRikL1pDskqAMrV4GHkcEM7F7pLPitZrjZWibqVApiUbP1TQWRe1o9hzx45Htry2z15rOZkOegxdgUzDx1lyNICQotccmk2v/EYT07i05MIPsxv3ic31/P/L2Z38L37eX1zf3O3GJuZH5Hf2Au/k4LdV1KhzInXvoz68rkNkTfFOZk8MoW74TcZj8835M/b5J1yHeuxEt8jk2nhVTGryyVKcvZKT+dNl2+rqIS9KyNQ3pY0M7hqJCplqvDaJujCvLpHXt8Fym4odAGiDdVeE5Cu3aobiuOXSs/lqTzizjZ0Ht44tny+Y6ejF9W7i8IN7TbtaBdydvbhcpFcvVtMPw5Z51xpYv30+VD/urimG83qYDs6gr2ONO8j5/dioxnwsV67YjmVKmVlCRXSLbZ8sUs62NBMVwmdtLZL6DeSNOqnPUFHJcUMHVvk+w27gmcQdrAEV7QVFR47S6M+u/FQTCeHiZnQ3wOZmEQSK2v46UW6z7v5+YJ3n8/BD7hzB7A=</source>
   </file>
   <file path="Command.php" generated-path="Command.html" hash="24fc8532ce78f52dcf5451424e9e4d95" package="Default">
     <docblock line="0">
@@ -5632,8 +5630,8 @@ a regular expression pattern.</description>
         <docblock line="263">
           <description>Perform the booting of the service.</description>
           <long-description></long-description>
-          <tag name="return" line="263" description="" type="\Caffeinated\Beverage\Application">
-            <type>\Caffeinated\Beverage\Application</type>
+          <tag name="return" line="263" description="" type="\Illuminate\Foundation\Application">
+            <type>\Illuminate\Foundation\Application</type>
           </tag>
         </docblock>
         <inherited_from>\Caffeinated\Beverage\ServiceProvider</inherited_from>
@@ -5689,8 +5687,8 @@ a regular expression pattern.</description>
         <docblock line="357">
           <description>Registers the server in the container.</description>
           <long-description></long-description>
-          <tag name="return" line="357" description="" type="\Caffeinated\Beverage\Application">
-            <type>\Caffeinated\Beverage\Application</type>
+          <tag name="return" line="357" description="" type="\Illuminate\Foundation\Application">
+            <type>\Illuminate\Foundation\Application</type>
           </tag>
           <tag name="throws" line="357" description="" type="\Exception">
             <type>\Exception</type>
