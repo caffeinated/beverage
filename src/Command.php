@@ -12,7 +12,7 @@ use Caffeinated\Beverage\Vendor\ConsoleColor;
 use Illuminate\Console\Command as BaseCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\VarDumper\VarDumper;
+
 
 /**
  * The abstract Command class. Other commands can extend this class to benefit from a larger toolset
@@ -137,7 +137,14 @@ abstract class Command extends BaseCommand
      */
     public function dump($dump)
     {
-        VarDumper::dump(func_get_args());
+        if(class_exists('Kint')){
+            \Kint::dump(func_get_args());
+        } elseif(class_exists('Symfony\\Component\\VarDumper\\VarDumper')) {
+            \Symfony\Component\VarDumper\VarDumper::dump(func_get_args());
+        } else {
+            var_dump(func_get_args());
+        }
+
     }
 
     /**

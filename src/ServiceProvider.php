@@ -508,7 +508,7 @@ abstract class ServiceProvider extends BaseServiceProvider
      */
     public function provides()
     {
-        $provides = [ ];
+        $provides = $this->provides;
 
         foreach ($this->providers as $provider) {
             $instance = $this->app->resolveProviderClass($provider);
