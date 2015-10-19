@@ -13,7 +13,6 @@ use Illuminate\Console\Command as BaseCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-
 /**
  * The abstract Command class. Other commands can extend this class to benefit from a larger toolset
  *
@@ -137,9 +136,9 @@ abstract class Command extends BaseCommand
      */
     public function dump($dump)
     {
-        if(class_exists('Kint')){
+        if (class_exists('Kint')) {
             \Kint::dump(func_get_args());
-        } elseif(class_exists('Symfony\\Component\\VarDumper\\VarDumper')) {
+        } elseif (class_exists('Symfony\\Component\\VarDumper\\VarDumper')) {
             \Symfony\Component\VarDumper\VarDumper::dump(func_get_args());
         } else {
             var_dump(func_get_args());
