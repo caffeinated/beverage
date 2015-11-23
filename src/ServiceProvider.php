@@ -338,6 +338,9 @@ abstract class ServiceProvider extends BaseServiceProvider
                 $this->publishes([ $this->getDatabasePath($dirPath) => database_path($this->migrationDestinationPath) ], 'migrations');
             }
         }
+
+
+
     }
 
 
@@ -417,8 +420,11 @@ abstract class ServiceProvider extends BaseServiceProvider
     protected function registerConfigFiles()
     {
         if (isset($this->dir) and isset($this->configFiles) and is_array($this->configFiles)) {
-            foreach ($this->configFiles as $filename) {
-                $this->mergeConfigFrom($this->getConfigFilePath($filename), $filename);
+            foreach ($this->configFiles as $key) {
+                $path = $this->getConfigFilePath($key);
+                //$this->mergeConfigFrom($this->getConfigFilePath($filename), $filename);
+                $config = $this->app->make('config')->get($key, []);
+                $this->app->make('config')->set($key, array_replace_recursive(require $path, $config));
             }
         }
     }
